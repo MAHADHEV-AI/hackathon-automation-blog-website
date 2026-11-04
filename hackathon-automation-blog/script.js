@@ -1,205 +1,798 @@
-const posts = [
-  {
-    id: 'agentic-checklist', category: 'AI workflows', readTime: '6 MIN READ', date: 'OCT 18, 2026',
-    title: 'The tiny AI agent that keeps your team out of spreadsheet jail',
-    excerpt: 'A lightweight way to turn messy form responses into a clean, useful project brief before kickoff.',
-    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=82', alt: 'Notebook and pen on a desk',
-    body: [
-      ['p', 'Hackathon ideas arrive in every shape: a voice note, a half-filled form, a long chat message sent at midnight. The first job is not to judge the idea. It is to make the useful bits easy to see.'],
-      ['h3', 'Give the agent one job'],
-      ['p', 'We made a small workflow that reads each submission and returns four fields: the problem, who feels it, the proposed experiment, and the first thing the team needs to learn. That is the whole brief. No surprise strategy deck.'],
-      ['ul', 'Keep the original response beside the summary|Ask for missing information instead of inventing it|Route anything uncertain to a person|Let the team edit the brief before it becomes official'],
-      ['p', 'The useful part is less the AI than the shared starting point. Teams begin with the same clear shape and spend their attention on the actual idea.']
-    ]
-  },
-  {
-    id: 'no-code-intake', category: 'No-code', readTime: '4 MIN READ', date: 'OCT 12, 2026',
-    title: 'A no-code participant check-in that doesn’t make a line',
-    excerpt: 'Connect a simple form, a live roster, and a welcome message. Your volunteers get their hands back.',
-    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=82', alt: 'People collaborating at a workshop table',
-    body: [
-      ['p', 'The check-in desk is where a carefully planned event meets real life. Names are misspelled, teams change size, and somebody forgot their confirmation email. The best workflow makes exceptions easy instead of pretending they will not happen.'],
-      ['h3', 'Three pieces, one calm arrival'],
-      ['p', 'Start with a mobile-friendly form that looks up a participant by email. On a match, mark them arrived and show their team name. On a miss, give the volunteer a short manual path and record the fix for later.'],
-      ['ul', 'A single shared source of truth for registrations|A clear confirmation state on the volunteer screen|A human override for last-minute changes|A welcome message with the right room and schedule'],
-      ['p', 'Test it with a few deliberately awkward cases before doors open. Your future self, standing beside the badge printer, will be grateful.']
-    ]
-  },
-  {
-    id: 'team-standup', category: 'Team ops', readTime: '5 MIN READ', date: 'OCT 06, 2026',
-    title: 'The two-minute async standup for a team that just met',
-    excerpt: 'Get everyone moving in the same direction without scheduling yet another meeting.',
-    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=82', alt: 'A team sharing ideas in a bright meeting room',
-    body: [
-      ['p', 'New teams do not need process theater. They do need a reliable way to surface who is working on what and where a small snag could become a big one.'],
-      ['h3', 'Three prompts are enough'],
-      ['p', 'Use one async check-in at a predictable time. Ask each person for their next small deliverable, anything they are waiting on, and a request for help if they have one. Keep answers visible to the whole team.'],
-      ['ul', 'What will you move forward next?|What is blocked or still unclear?|Who could unblock you in five minutes?'],
-      ['p', 'If a thread needs a real conversation, move just that thread into a quick call. The check-in is a radar, not a replacement for talking to each other.']
-    ]
-  },
-  {
-    id: 'demo-rehearsal', category: 'AI workflows', readTime: '7 MIN READ', date: 'SEP 28, 2026',
-    title: 'From working prototype to demo story, without the panic',
-    excerpt: 'A repeatable rehearsal workflow that turns a half-finished feature into a clear, honest walkthrough.',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=82', alt: 'A team planning a presentation together',
-    body: [
-      ['p', 'A compelling demo is not a tour of every button. It is one person, one frustrating moment, and a believable glimpse of a better way. A little structure helps your team find that story sooner.'],
-      ['h3', 'Automate the prep, keep the story human'],
-      ['p', 'Collect each teammate’s best-working feature and its current limitations in one place. Use an assistant to cluster the overlaps and draft a short run-of-show. Then have the presenter rewrite it in their own voice and verify every claim against the live build.'],
-      ['ul', 'Name the audience and the problem in one sentence|Show the shortest path to a meaningful result|Say what is real and what is still a prototype|Prepare a fallback recording for fragile network moments'],
-      ['p', 'A two-minute honest demo beats a ten-minute feature inventory. Rehearse once for timing and once for the handoffs.']
-    ]
-  },
-  {
-    id: 'n8n-first-flow', category: 'No-code', readTime: '5 MIN READ', date: 'SEP 19, 2026',
-    title: 'Your first n8n flow: send the update, not another reminder',
-    excerpt: 'A beginner-friendly pattern for collecting project updates and posting a neat digest where your team already works.',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=82', alt: 'Collaborators working together on a laptop',
-    body: [
-      ['p', 'Automation earns its place when it removes a repeat task without adding a new thing people have to babysit. A daily update digest is a good first workflow because the result is visible and the failure is easy to catch.'],
-      ['h3', 'A small, inspectable flow'],
-      ['p', 'Collect updates in a short form, normalize the answers, and post a digest to your team channel at a set time. Keep the workflow readable: one node for intake, one for cleanup, one for delivery.'],
-      ['ul', 'Start with sample submissions and inspect every output|Skip blank updates rather than posting noise|Include a link back to the original submission|Tell the team where to report a broken automation'],
-      ['p', 'Use test credentials and a private channel while you build. Once the digest has survived a real day of updates, invite the rest of the team in.']
-    ]
-  },
-  {
-    id: 'scope-cut', category: 'Team ops', readTime: '4 MIN READ', date: 'SEP 11, 2026',
-    title: 'The kindest thing a team can automate is its scope cut',
-    excerpt: 'A friendly decision ritual for choosing the smallest version you can actually finish by demo time.',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=82', alt: 'A focused team working through a shared challenge',
-    body: [
-      ['p', 'At some point, nearly every hackathon team has a lovely idea, a growing backlog, and not enough hours. The problem is not ambition; it is that nobody has made the trade-offs visible yet.'],
-      ['h3', 'Sort by proof, not polish'],
-      ['p', 'Write down the user outcome the demo must prove. Put every planned feature into must-show, helps-show, or nice-if-time. Agree on a stop time for adding anything new, then protect the time left for testing and the story.'],
-      ['ul', 'One outcome the audience should understand|One happy path that demonstrates it|A named person who can call a scope decision|A small list of things the demo will not pretend to do'],
-      ['p', 'A scope cut is not a smaller idea. It is the shortest honest path to showing why the idea matters.']
-    ]
+/**
+ * HACKSCALE PLATFORM - INTERACTIVE JAVASCRIPT ENGINE
+ * Full functionality: State management, live search, category filtering,
+ * interactive sandbox tabs, rubric scoring simulator, sponsor playground,
+ * pitch deck carousel, bookmark persistence, modal reader, and form feedback.
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // ==========================================================================
+  // 1. PRELOADER DISMISSAL
+  // ==========================================================================
+  const loader = document.getElementById('loading-screen');
+  if (loader) {
+    setTimeout(() => {
+      loader.classList.add('loaded');
+      setTimeout(() => {
+        loader.remove();
+      }, 600);
+    }, 800);
   }
-];
 
-const postGrid = document.querySelector('#post-grid');
-const searchInput = document.querySelector('#post-search');
-const resultsMessage = document.querySelector('#results-message');
-const emptyState = document.querySelector('#empty-state');
-const savedStorageKey = 'loop-blog-saved-posts';
-let activeCategory = 'All';
-let savedPosts = loadSavedPosts();
+  // ==========================================================================
+  // 2. MOBILE NAVIGATION DRAWER
+  // ==========================================================================
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  const mobLinks = document.querySelectorAll('.mob-link');
 
-function loadSavedPosts() {
-  try {
-    const stored = JSON.parse(localStorage.getItem(savedStorageKey) || '[]');
-    return Array.isArray(stored) ? stored : [];
-  } catch {
-    return [];
+  if (mobileToggle && mobileDrawer) {
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = mobileDrawer.classList.toggle('open');
+      mobileToggle.setAttribute('aria-expanded', isOpen);
+      document.body.classList.toggle('modal-open', isOpen);
+    });
+
+    mobLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('modal-open');
+      });
+    });
   }
-}
 
-function iconMarkup(isSaved) {
-  return `<svg viewBox="0 0 24 24" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.75A1.75 1.75 0 0 1 7.75 3h8.5A1.75 1.75 0 0 1 18 4.75V21l-6-3.6L6 21V4.75Z"/></svg>`;
-}
+  // ==========================================================================
+  // 3. ARTICLES CATALOG DATA (RICH ORIGINAL FIELD NOTES)
+  // ==========================================================================
+  const ARTICLES = [
+    {
+      id: "eth-global-win",
+      title: "How We Won $50,000 at ETHGlobal: The 3-Minute Demo Rule",
+      category: "Playbooks",
+      readTime: "6 min read",
+      date: "Oct 28, 2026",
+      author: { name: "Marcus Vance", initials: "MV", role: "Grand Prize Winner" },
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      excerpt: "Why the most technically complex repos frequently lose to teams that master the 180-second pitch window. The exact slide structure and live demo choreography that won over judges.",
+      content: `
+        <h2>The Brutal Truth About Hackathon Judging</h2>
+        <p>In a standard hackathon with 400 projects, judges are tasked with reviewing between 20 and 40 projects in roughly two hours. That means your project does not get 15 minutes of thoughtful architectural review. You get exactly <strong>180 seconds</strong> to establish relevance, prove technical credibility, and spark an emotional reaction.</p>
+        
+        <h3>The 180-Second Breakdown Formula</h3>
+        <p>Here is the exact timing formula we followed at ETHGlobal Brussels to secure the grand prize across 380 competing teams:</p>
+        <ul>
+          <li><strong>0:00 - 0:30 (The Problem):</strong> Never start with "Hi, our project is called X". Start with the visceral problem: "Every single day, 80,000 Web3 developers lose 3 hours verifying cross-chain telemetry manually."</li>
+          <li><strong>0:30 - 2:00 (The Live Magic Moment):</strong> Jump directly into your production URL. Do not click through login screens or fill out signup forms. Have mock data loaded. Show the user initiating a complex action and the instantaneous result.</li>
+          <li><strong>2:00 - 2:30 (The Technical Architecture):</strong> Show a clean diagram explaining why this wasn't trivial to build. Mention specific sponsor SDKs: "We wired Google Gemini for multi-modal reasoning and anchored consensus onto Polygon zkEVM."</li>
+          <li><strong>2:30 - 3:00 (Vision & Future Roadmap):</strong> Conclude with a strong commercial vision: "We're launching on testnet next Tuesday with 4 enterprise design partners already signed up."</li>
+        </ul>
 
-function updateSavedCount() {
-  document.querySelector('.saved-count').textContent = String(savedPosts.length);
-}
+        <blockquote>"Judges don't remember lines of code. They remember the team that solved a painful headache and demonstrated working software with flawless confidence."</blockquote>
 
-function getVisiblePosts() {
-  const term = searchInput.value.trim().toLowerCase();
-  return posts.filter((post) => {
-    const categoryMatches = activeCategory === 'All'
-      || (activeCategory === 'Saved' ? savedPosts.includes(post.id) : post.category === activeCategory);
-    const searchMatches = !term || `${post.title} ${post.excerpt} ${post.category}`.toLowerCase().includes(term);
-    return categoryMatches && searchMatches;
+        <h3>Key Takeaway Checklist</h3>
+        <p>Before recording your Devpost video or getting on stage, verify that you have zero cold starts, pre-filled forms, a backup video file on your local desktop, and a high-contrast dark mode interface that shows up crisp on projector screens.</p>
+      `
+    },
+    {
+      id: "ai-agent-stack",
+      title: "The 2026 AI Agent Hackathon Stack: Gemini 2.5 + Supabase Vector",
+      category: "AI Workflows",
+      readTime: "8 min read",
+      date: "Nov 02, 2026",
+      author: { name: "Dr. Elena Rostova", initials: "ER", role: "AI Systems Lead" },
+      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      excerpt: "How to scaffold a multi-modal reasoning agent with sub-second latency and persistent vector memory in under 90 minutes using modern TypeScript primitives.",
+      content: `
+        <h2>Why Traditional LLM Wrappers No Longer Win Hackathons</h2>
+        <p>Two years ago, building a UI around a basic chat completion endpoint was enough to win a sponsor prize. In 2026, judges immediately disqualify thin ChatGPT wrappers. Winning projects now demonstrate <strong>autonomous tool execution</strong>, <strong>persistent stateful memory</strong>, and <strong>multi-modal context</strong>.</p>
+
+        <h3>The 90-Minute Production Architecture</h3>
+        <p>To win competitive AI tracks, use a decoupled architectural pattern:</p>
+        <pre><code>// Fast Multimodal Agent Pipeline
+import { GoogleGenAI } from '@google/genai';
+import { createClient } from '@supabase/supabase-js';
+
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_KEY);
+
+export async function runAgentWorkflow(taskPrompt, userFiles) {
+  // 1. Query vector index for relevant past context
+  const { data: memories } = await supabase.rpc('match_memories', { query_embedding: ... });
+  
+  // 2. Execute reasoning with Gemini 2.5 Flash
+  const response = await ai.models.generateContent({
+    model: 'gemini-2.5-flash',
+    contents: [{ text: taskPrompt }, ...userFiles]
   });
-}
 
-function renderPosts() {
-  const visiblePosts = getVisiblePosts();
-  postGrid.innerHTML = visiblePosts.map((post) => {
-    const isSaved = savedPosts.includes(post.id);
-    return `<article class="post-card">
-      <div class="post-image-wrap">
-        <img class="post-image" src="${post.image}" alt="${post.alt}" loading="lazy">
-        <button class="save-button${isSaved ? ' is-saved' : ''}" type="button" data-save="${post.id}" aria-label="${isSaved ? 'Remove saved article' : 'Save article'}: ${post.title}" aria-pressed="${isSaved}">${iconMarkup(isSaved)}</button>
+  return response.text;
+}</code></pre>
+
+        <h3>Three Rules for AI Hackathon Demos</h3>
+        <ol>
+          <li><strong>Never show an infinite loader:</strong> Implement streaming UI or simulated optimistic responses so the judge is never waiting in silence.</li>
+          <li><strong>Expose agent reasoning logs:</strong> Judges love seeing the "thought trace" or internal step execution in an animated side drawer.</li>
+          <li><strong>Have a hardcoded fallback mock:</strong> If the model rate-limits during your presentation, your client should seamlessly fallback to cached response JSON.</li>
+        </ol>
+      `
+    },
+    {
+      id: "sponsor-bounties-guide",
+      title: "Sponsor Bounties 101: How to Stack 4 Prizes in a Single 48-Hour Project",
+      category: "Sponsor Bounties",
+      readTime: "7 min read",
+      date: "Oct 24, 2026",
+      author: { name: "Kenji Sato", initials: "KS", role: "DevRel & 12x Winner" },
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
+      excerpt: "Stop competing only for the overcrowded Grand Prize. Here is how our team unlocked $18,500 by strategically targeting multiple sponsor tracks simultaneously.",
+      content: `
+        <h2>The Math of Hackathon Bounties</h2>
+        <p>The Grand Prize typically has 300+ teams competing for a single $10,000 purse. Meanwhile, specific sponsor bounties (such as "Best Implementation of Polygon zkEVM" or "Best Voice Integration via ElevenLabs") often have only 8 to 15 qualified submissions, offering $3,000 to $5,000 each.</p>
+
+        <h3>The Multi-Sponsor Stacking Matrix</h3>
+        <p>Winning teams architect their project to naturally satisfy 3 to 4 sponsor requirements simultaneously without making the app feel like a Franken-stack:</p>
+        <ul>
+          <li><strong>Compute & Intelligence:</strong> Google Gemini 2.5 (Qualifies for AI Foundation track)</li>
+          <li><strong>Identity & Verification:</strong> Polygon / Chainlink (Qualifies for Web3 / Oracle track)</li>
+          <li><strong>Accessibility & UI:</strong> ElevenLabs Voice (Qualifies for Best Voice/Assistive Tech track)</li>
+          <li><strong>Database & Edge:</strong> Supabase or Cloudflare (Qualifies for Best Developer Tooling track)</li>
+        </ul>
+
+        <blockquote>"Always visit the sponsor booths within the first 3 hours of the hackathon. Ask their Developer Advocates: 'What kind of project do you rarely see that would genuinely impress your team?' They will literally tell you the winning formula."</blockquote>
+      `
+    },
+    {
+      id: "edge-deployment-guide",
+      title: "Zero to Production URL in 15 Minutes: Serverless Edge Boilerplate Guide",
+      category: "AI Workflows",
+      readTime: "5 min read",
+      date: "Oct 19, 2026",
+      author: { name: "Priya Sharma", initials: "PS", role: "Infrastructure Architect" },
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+      excerpt: "Never suffer localhost crashes during judging again. How to set up continuous edge deployments, automated healthcheck probes, and instant demo mocks.",
+      content: `
+        <h2>The Localhost Graveyard</h2>
+        <p>Every hackathon organizer has seen it: a developer frantically plugging their HDMI cable into a laptop screen, muttering "It worked on localhost 5 minutes ago!" while a 500 internal server error stares back at the judges.</p>
+
+        <h3>Deploy on Hour 2, Not Hour 46</h3>
+        <p>The secret to bulletproof hackathon demos is deploying your project to a public live URL within the first 120 minutes of the event. Even if your repository only contains a simple Next.js welcome page, deploy it immediately with automatic CI/CD on every Git push.</p>
+
+        <h3>The Fail-Safe Mock Strategy</h3>
+        <p>When internet connectivity in crowded convention halls degrades, configure your frontend client with a simple query parameter toggle: <code>?demo=true</code>. When active, all external API network calls resolve to instant, realistic mock JSON stored in memory, guaranteeing a 100% smooth presentation regardless of Wi-Fi drops.</p>
+      `
+    },
+    {
+      id: "yc-pitch-template",
+      title: "The YC-Style Hackathon Pitch Deck Template That Converts Judges",
+      category: "Pitch Decks",
+      readTime: "6 min read",
+      date: "Oct 15, 2026",
+      author: { name: "David Chen", initials: "DC", role: "Angel Investor & Judge" },
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      excerpt: "A battle-tested 4-slide structure that cleanly communicates problem urgency, technical differentiation, and venture-scale market opportunity.",
+      content: `
+        <h2>Slide 1: The Urgent Hair-On-Fire Problem</h2>
+        <p>Frame the problem in terms of lost capital, wasted engineer hours, or human frustration. Do not use generic market reports; highlight a sharp, unmistakable friction point.</p>
+
+        <h2>Slide 2: Your Unfair Technological Advantage</h2>
+        <p>Show what made this impossible to build 6 months ago that is now possible because of your architecture or new foundation models.</p>
+
+        <h2>Slide 3: The 90-Second Working MVP</h2>
+        <p>Demonstrate the interface solving the problem live with zero friction.</p>
+
+        <h2>Slide 4: Traction, Team & Future Scale</h2>
+        <p>Prove that your squad has the engineering chops and grit to turn this prototype into a sustainable company.</p>
+      `
+    },
+    {
+      id: "post-hackathon-scale",
+      title: "Post-Hackathon Playbook: Turning a 48-Hour Prototype into a VC-Backed Startup",
+      category: "Playbooks",
+      readTime: "9 min read",
+      date: "Oct 09, 2026",
+      author: { name: "Sarah Al-Mansoor", initials: "SA", role: "Founder, NeuroMesh" },
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+      excerpt: "What to do in the 7 days immediately after winning. Outreach email scripts to angel investors, customer interview workflows, and Y Combinator tips.",
+      content: `
+        <h2>The 72-Hour Momentum Window</h2>
+        <p>When you place on the podium at a major hackathon, you have an unfair advantage: social proof, a working product, and media attention. However, this momentum evaporates within 7 days if you do not capitalize on it immediately.</p>
+
+        <h3>Step 1: The Sunday Night Email Blast</h3>
+        <p>Before leaving the venue, draft an update email to every judge, mentor, and investor you met. Include the live URL, the 180-second demo video, and a 2-sentence summary of your roadmap for next week.</p>
+
+        <h3>Step 2: Securing 5 Design Partner Pilot Users</h3>
+        <p>Do not rebuild the codebase yet. Spend Monday and Tuesday interviewing real potential users who experience the problem your hackathon project addressed. Offer free access in exchange for a 20-minute weekly feedback call.</p>
+
+        <blockquote>"Over 60% of top YC startups built their initial v0 over a single weekend. A hackathon is not an end; it is the cheapest, most exhilarating customer discovery sprint in the world."</blockquote>
+      `
+    }
+  ];
+
+  // ==========================================================================
+  // 4. BLOG DISCOVERY, SEARCH & REAL-TIME FILTERING
+  // ==========================================================================
+  const articlesGrid = document.getElementById('articles-grid');
+  const searchInput = document.getElementById('blog-search');
+  const searchFeedback = document.getElementById('search-feedback');
+  const emptyState = document.getElementById('blog-empty-state');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const savedCountPill = document.getElementById('saved-count-pill');
+  const clearSearchBtn = document.getElementById('clear-search-btn');
+
+  let activeCategory = 'All';
+  let searchQuery = '';
+
+  // LocalStorage for bookmarks
+  function getSavedBookmarks() {
+    try {
+      return JSON.parse(localStorage.getItem('hackscale_saved_articles') || '[]');
+    } catch {
+      return [];
+    }
+  }
+
+  function setSavedBookmarks(arr) {
+    localStorage.setItem('hackscale_saved_articles', JSON.stringify(arr));
+    updateSavedCount();
+  }
+
+  function updateSavedCount() {
+    if (savedCountPill) {
+      savedCountPill.textContent = getSavedBookmarks().length;
+    }
+  }
+
+  function toggleBookmark(articleId) {
+    let saved = getSavedBookmarks();
+    if (saved.includes(articleId)) {
+      saved = saved.filter(id => id !== articleId);
+    } else {
+      saved.push(articleId);
+    }
+    setSavedBookmarks(saved);
+    renderArticles();
+  }
+
+  function renderArticles() {
+    if (!articlesGrid) return;
+
+    const saved = getSavedBookmarks();
+
+    const filtered = ARTICLES.filter(art => {
+      // Category match
+      let matchesCat = true;
+      if (activeCategory === 'Saved') {
+        matchesCat = saved.includes(art.id);
+      } else if (activeCategory !== 'All') {
+        matchesCat = art.category.toLowerCase() === activeCategory.toLowerCase();
+      }
+
+      // Search match
+      const query = searchQuery.trim().toLowerCase();
+      const matchesSearch = !query || 
+        art.title.toLowerCase().includes(query) ||
+        art.excerpt.toLowerCase().includes(query) ||
+        art.category.toLowerCase().includes(query) ||
+        art.author.name.toLowerCase().includes(query);
+
+      return matchesCat && matchesSearch;
+    });
+
+    // Feedback message
+    if (searchQuery.trim()) {
+      searchFeedback.textContent = `Showing ${filtered.length} notes matching "${searchQuery}"`;
+    } else {
+      searchFeedback.textContent = '';
+    }
+
+    if (filtered.length === 0) {
+      articlesGrid.innerHTML = '';
+      if (emptyState) emptyState.hidden = false;
+      return;
+    }
+
+    if (emptyState) emptyState.hidden = true;
+
+    articlesGrid.innerHTML = filtered.map(art => {
+      const isSaved = saved.includes(art.id);
+      return `
+        <article class="article-card" data-id="${art.id}">
+          <div class="card-media">
+            <img src="${art.image}" alt="${art.title}" loading="lazy" />
+            <span class="card-category-badge">${art.category}</span>
+            <button class="card-bookmark-btn ${isSaved ? 'saved' : ''}" 
+                    aria-label="${isSaved ? 'Remove bookmark' : 'Bookmark note'}"
+                    onclick="window.hackScaleApp.toggleBookmark('${art.id}', event)">
+              ${isSaved ? '★' : '☆'}
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="card-meta-top">
+              <span>📅 ${art.date}</span>
+              <span>•</span>
+              <span>⏱ ${art.readTime}</span>
+            </div>
+            <h3>${art.title}</h3>
+            <p>${art.excerpt}</p>
+            <div class="card-footer">
+              <div class="card-author">
+                <span class="author-img">${art.author.initials}</span>
+                <span class="author-name">${art.author.name}</span>
+              </div>
+              <button class="read-btn" onclick="window.hackScaleApp.openModal('${art.id}')">
+                Read Guide <span>→</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join('');
+  }
+
+  // Filter Buttons
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = btn.getAttribute('data-category');
+      renderArticles();
+    });
+  });
+
+  // Search Input
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderArticles();
+    });
+  }
+
+  // Clear search button in empty state
+  if (clearSearchBtn) {
+    clearSearchBtn.addEventListener('click', () => {
+      searchQuery = '';
+      if (searchInput) searchInput.value = '';
+      activeCategory = 'All';
+      filterBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-category') === 'All'));
+      renderArticles();
+    });
+  }
+
+  // ==========================================================================
+  // 5. ARTICLE FULL READING MODAL
+  // ==========================================================================
+  const articleModal = document.getElementById('article-modal');
+  const modalCloseBtn = document.getElementById('modal-close-btn');
+  const modalContent = document.getElementById('modal-article-content');
+
+  function openArticleModal(articleId) {
+    const article = ARTICLES.find(a => a.id === articleId);
+    if (!article || !articleModal || !modalContent) return;
+
+    modalContent.innerHTML = `
+      <div class="modal-meta">
+        <span><strong>Track:</strong> ${article.category}</span>
+        <span>•</span>
+        <span><strong>Author:</strong> ${article.author.name} (${article.author.role})</span>
+        <span>•</span>
+        <span><strong>Published:</strong> ${article.date}</span>
       </div>
-      <div class="post-meta"><span>${post.date}</span><span>${post.readTime}</span></div>
-      <p class="post-category">${post.category}</p>
-      <h3>${post.title}</h3><p>${post.excerpt}</p>
-      <a class="post-read" href="#${post.id}" data-read="${post.id}">Read the field note <span aria-hidden="true">↗</span></a>
-    </article>`;
-  }).join('');
-  emptyState.hidden = visiblePosts.length > 0;
-  postGrid.hidden = visiblePosts.length === 0;
-  resultsMessage.textContent = activeCategory === 'Saved'
-    ? `${visiblePosts.length} saved ${visiblePosts.length === 1 ? 'note' : 'notes'}`
-    : `${visiblePosts.length} ${visiblePosts.length === 1 ? 'field note' : 'field notes'}`;
-  updateSavedCount();
-}
+      <h2>${article.title}</h2>
+      ${article.content}
+    `;
 
-function showArticle(postId) {
-  const post = posts.find((item) => item.id === postId);
-  if (!post) return;
-  const dialogContent = document.querySelector('#dialog-content');
-  dialogContent.innerHTML = `<img class="dialog-cover" src="${post.image}" alt="${post.alt}"><p class="dialog-category">${post.category} / ${post.readTime}</p><h2 id="dialog-title">${post.title}</h2><p class="dialog-byline">FIELD NOTE / ${post.date}</p><div class="dialog-body">${post.body.map(([type, text]) => type === 'ul' ? `<ul>${text.split('|').map((item) => `<li>${item}</li>`).join('')}</ul>` : `<${type}>${text}</${type}>`).join('')}</div>`;
-  document.querySelector('#article-dialog').showModal();
-}
+    articleModal.classList.add('open');
+    articleModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
 
-document.querySelectorAll('.filter-button').forEach((button) => {
-  button.addEventListener('click', () => {
-    activeCategory = button.dataset.category;
-    document.querySelectorAll('.filter-button').forEach((item) => item.classList.toggle('is-active', item === button));
-    renderPosts();
+  function closeArticleModal() {
+    if (!articleModal) return;
+    articleModal.classList.remove('open');
+    articleModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  }
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeArticleModal);
+  }
+
+  if (articleModal) {
+    articleModal.addEventListener('click', (e) => {
+      if (e.target === articleModal) {
+        closeArticleModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && articleModal && articleModal.classList.contains('open')) {
+      closeArticleModal();
+    }
   });
-});
 
-searchInput.addEventListener('input', renderPosts);
-postGrid.addEventListener('click', (event) => {
-  const saveButton = event.target.closest('[data-save]');
-  if (saveButton) {
-    const postId = saveButton.dataset.save;
-    savedPosts = savedPosts.includes(postId) ? savedPosts.filter((id) => id !== postId) : [...savedPosts, postId];
-    try { localStorage.setItem(savedStorageKey, JSON.stringify(savedPosts)); } catch { /* Saved state remains available for this page view. */ }
-    renderPosts();
-    return;
+  // ==========================================================================
+  // 6. INTERACTIVE SANDBOX TABS (#demo)
+  // ==========================================================================
+  const sandboxTabs = document.querySelectorAll('.s-tab');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  sandboxTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.getAttribute('data-tab');
+
+      sandboxTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tabPanels.forEach(p => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    });
+  });
+
+  // Tab 1: Sprint Kanban interactive task addition
+  const addTaskBtn = document.getElementById('kanban-add-task');
+  const todoCol = document.getElementById('col-todo');
+
+  if (addTaskBtn && todoCol) {
+    addTaskBtn.addEventListener('click', () => {
+      const taskNames = [
+        "Hook up ElevenLabs voice feedback loop",
+        "Add judge score badge to README.md",
+        "Configure SSL cert & custom subdomain",
+        "Implement rate limit throttling for demo keys",
+        "Record 30-second live demo backup GIF"
+      ];
+      const randomTask = taskNames[Math.floor(Math.random() * taskNames.length)];
+      const taskEl = document.createElement('div');
+      taskEl.className = 'k-task';
+      taskEl.innerHTML = `
+        <div class="k-tag tag-core">Sprint Auto</div>
+        <h5>${randomTask}</h5>
+        <div class="k-meta"><span>Assignee: You</span><span>#dev-new</span></div>
+      `;
+      todoCol.prepend(taskEl);
+
+      addTaskBtn.textContent = '✓ Added!';
+      setTimeout(() => {
+        addTaskBtn.textContent = '+ Add Task';
+      }, 1200);
+    });
   }
-  const readLink = event.target.closest('[data-read]');
-  if (readLink) {
-    event.preventDefault();
-    showArticle(readLink.dataset.read);
+
+  // Tab 2: Judge Rubric Scoring Simulator
+  const rubricInnov = document.getElementById('rubric-innov');
+  const rubricTech = document.getElementById('rubric-tech');
+  const rubricDesign = document.getElementById('rubric-design');
+  const rubricPitch = document.getElementById('rubric-pitch');
+
+  const innovVal = document.getElementById('innov-val');
+  const techVal = document.getElementById('tech-val');
+  const designVal = document.getElementById('design-val');
+  const pitchVal = document.getElementById('pitch-val');
+
+  const totalScoreEl = document.getElementById('total-score');
+  const scoreMeter = document.getElementById('score-meter');
+  const scoreTierBadge = document.getElementById('score-tier-badge');
+  const scoreFeedback = document.getElementById('score-feedback');
+
+  function calculateScore() {
+    if (!rubricInnov || !rubricTech || !rubricDesign || !rubricPitch) return;
+
+    const vInnov = parseInt(rubricInnov.value, 10);
+    const vTech = parseInt(rubricTech.value, 10);
+    const vDesign = parseInt(rubricDesign.value, 10);
+    const vPitch = parseInt(rubricPitch.value, 10);
+
+    if (innovVal) innovVal.textContent = `${vInnov} / 30`;
+    if (techVal) techVal.textContent = `${vTech} / 30`;
+    if (designVal) designVal.textContent = `${vDesign} / 20`;
+    if (pitchVal) pitchVal.textContent = `${vPitch} / 20`;
+
+    const total = vInnov + vTech + vDesign + vPitch;
+    if (totalScoreEl) totalScoreEl.textContent = total;
+
+    // 314 is circumference of r=50 circle
+    if (scoreMeter) {
+      const offset = 314 - (314 * (total / 100));
+      scoreMeter.style.strokeDashoffset = offset;
+    }
+
+    if (scoreTierBadge && scoreFeedback) {
+      if (total >= 90) {
+        scoreTierBadge.textContent = "🏆 PODIUM FAVORITE (TOP 1%)";
+        scoreTierBadge.style.color = "#67e8f9";
+        scoreTierBadge.style.background = "rgba(6, 182, 212, 0.2)";
+        scoreFeedback.textContent = "Outstanding submission. Your technical depth and high polish place your team squarely in contention for Grand Prize and Sponsor Track Bounties.";
+      } else if (total >= 75) {
+        scoreTierBadge.textContent = "🥈 FINALIST CONTENDER (TOP 10%)";
+        scoreTierBadge.style.color = "#a78bfa";
+        scoreTierBadge.style.background = "rgba(124, 58, 237, 0.2)";
+        scoreFeedback.textContent = "Solid project. Strengthen the live demo and clarify your 30-second problem statement to push your score into 1st place contention.";
+      } else {
+        scoreTierBadge.textContent = "⚡ NEEDS ITERATION";
+        scoreTierBadge.style.color = "#fbbf24";
+        scoreTierBadge.style.background = "rgba(245, 158, 11, 0.2)";
+        scoreFeedback.textContent = "High potential, but missing key polish or live working endpoints. Ensure your public deployment doesn't return 404s during judge review.";
+      }
+    }
   }
-});
 
-document.querySelector('.clear-filters').addEventListener('click', () => {
-  activeCategory = 'All';
-  searchInput.value = '';
-  document.querySelectorAll('.filter-button').forEach((button) => button.classList.toggle('is-active', button.dataset.category === 'All'));
-  renderPosts();
-});
+  [rubricInnov, rubricTech, rubricDesign, rubricPitch].forEach(input => {
+    if (input) input.addEventListener('input', calculateScore);
+  });
+  calculateScore();
 
-document.querySelector('.dialog-close').addEventListener('click', () => document.querySelector('#article-dialog').close());
-document.querySelector('#article-dialog').addEventListener('click', (event) => {
-  if (event.target === event.currentTarget) event.currentTarget.close();
-});
+  // Tab 3: Sponsor API Playground
+  const apiBtns = document.querySelectorAll('.api-btn');
+  const codeSnippetTitle = document.getElementById('code-snippet-title');
+  const apiCodeDisplay = document.getElementById('api-code-display');
+  const apiResponseOutput = document.getElementById('api-response-output');
+  const copyApiCodeBtn = document.getElementById('copy-api-code');
+  const runApiBtn = document.getElementById('run-api-btn');
 
-document.querySelector('#newsletter-form').addEventListener('submit', (event) => {
-  event.preventDefault();
-  const emailInput = document.querySelector('#email-address');
-  document.querySelector('#form-status').textContent = `Thanks, ${emailInput.value}. This demo doesn't send or store your email.`;
-  emailInput.value = '';
-});
+  const API_TEMPLATES = {
+    gemini: {
+      filename: "gemini-service.ts",
+      code: `// Initializing Gemini 2.5 Multimodal Client
+import { GoogleGenAI } from '@google/genai';
 
-const menuToggle = document.querySelector('.nav-toggle');
-const mobileNav = document.querySelector('.mobile-nav');
-menuToggle.addEventListener('click', () => {
-  const isOpen = mobileNav.classList.toggle('is-open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-  menuToggle.lastElementChild.textContent = isOpen ? '−' : '+';
-});
-mobileNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-  mobileNav.classList.remove('is-open');
-  menuToggle.setAttribute('aria-expanded', 'false');
-  menuToggle.lastElementChild.textContent = '+';
-}));
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
-renderPosts();
+export async function analyzeHackathonIdea(prompt: string) {
+  const response = await ai.models.generateContent({
+    model: 'gemini-2.5-flash',
+    contents: prompt,
+    config: { temperature: 0.7, maxOutputTokens: 800 }
+  });
+  return response.text;
+}`,
+      response: `{
+  "status": 200,
+  "service": "Google Gemini 2.5 Flash",
+  "latencyMs": 38,
+  "analysis": {
+    "viability": "9.6/10",
+    "uniqueDifferentiator": "Real-time edge telemetry with automated prompt caching",
+    "recommendedBounties": ["Google Cloud AI Track", "Best Multimodal Hack"]
+  }
+}`
+    },
+    polygon: {
+      filename: "polygon-verify.ts",
+      code: `// Instant Polygon zkEVM Attestation
+import { ethers } from 'ethers';
+
+const provider = new ethers.JsonRpcProvider(process.env.POLYGON_RPC_URL);
+const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
+
+export async function stampMilestone(sprintHash: string) {
+  const tx = await wallet.sendTransaction({
+    to: "0xHackathonRegistryContract...",
+    data: ethers.hexlify(ethers.toUtf8Bytes(sprintHash))
+  });
+  await tx.wait(1);
+  return tx.hash;
+}`,
+      response: `{
+  "status": 200,
+  "network": "Polygon zkEVM Testnet",
+  "blockNumber": 1492084,
+  "txHash": "0x8a4b3d8f1e92c01a9b2d8e4f1a2b3c4d5e6f7a8b",
+  "gasUsed": "21,400 Gwei",
+  "bountyEligibility": "Verified 100%"
+}`
+    },
+    supabase: {
+      filename: "supabase-vector.ts",
+      code: `// Hybrid Vector & Relational Query
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_ANON_KEY!
+);
+
+export async function matchFieldNotes(queryEmbedding: number[]) {
+  return await supabase.rpc('match_articles', {
+    query_embedding: queryEmbedding,
+    match_threshold: 0.82,
+    match_count: 3
+  });
+}`,
+      response: `{
+  "status": 200,
+  "vectorIndex": "HNSW (1536 dims)",
+  "retrievalLatency": "18ms",
+  "matchesFound": 3,
+  "topSimilarity": 0.941
+}`
+    },
+    eleven: {
+      filename: "elevenlabs-voice.ts",
+      code: `// Real-Time Demo Audio Synthesizer
+import { ElevenLabsClient } from 'elevenlabs';
+
+const client = new ElevenLabsClient({ apiKey: process.env.ELEVEN_API_KEY });
+
+export async function streamDemoAudio(script: string) {
+  return await client.generate({
+    voice: "Rachel",
+    model_id: "eleven_turbo_v2_5",
+    text: script
+  });
+}`,
+      response: `{
+  "status": 200,
+  "streamRate": "44.1kHz PCM",
+  "model": "eleven_turbo_v2_5",
+  "timeToFirstByte": "92ms",
+  "accessibilityTrackReady": true
+}`
+    }
+  };
+
+  let currentApi = 'gemini';
+
+  apiBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      apiBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentApi = btn.getAttribute('data-api');
+
+      const template = API_TEMPLATES[currentApi];
+      if (template) {
+        if (codeSnippetTitle) codeSnippetTitle.textContent = template.filename;
+        if (apiCodeDisplay) apiCodeDisplay.textContent = template.code;
+        if (apiResponseOutput) apiResponseOutput.textContent = template.response;
+      }
+    });
+  });
+
+  if (copyApiCodeBtn && apiCodeDisplay) {
+    copyApiCodeBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(apiCodeDisplay.textContent).then(() => {
+        copyApiCodeBtn.textContent = '✓ Copied!';
+        setTimeout(() => { copyApiCodeBtn.textContent = 'Copy Code'; }, 1500);
+      });
+    });
+  }
+
+  if (runApiBtn && apiResponseOutput) {
+    runApiBtn.addEventListener('click', () => {
+      apiResponseOutput.textContent = '// Sending request to ' + currentApi.toUpperCase() + ' edge node...\n// Awaiting streaming JSON payload...';
+      setTimeout(() => {
+        const template = API_TEMPLATES[currentApi];
+        if (template) apiResponseOutput.textContent = template.response;
+      }, 400);
+    });
+  }
+
+  // Tab 4: 3-Min Pitch Preview Carousel
+  const pitchSlides = document.querySelectorAll('.pitch-slide');
+  const slideDots = document.querySelectorAll('.s-dot');
+  const prevSlideBtn = document.getElementById('prev-slide');
+  const nextSlideBtn = document.getElementById('next-slide');
+
+  let currentSlide = 1;
+  const totalSlides = pitchSlides.length;
+
+  function setSlide(n) {
+    if (n < 1) n = totalSlides;
+    if (n > totalSlides) n = 1;
+    currentSlide = n;
+
+    pitchSlides.forEach((slide, idx) => {
+      slide.classList.toggle('active', (idx + 1) === currentSlide);
+    });
+
+    slideDots.forEach((dot, idx) => {
+      dot.classList.toggle('active', (idx + 1) === currentSlide);
+    });
+  }
+
+  if (prevSlideBtn) prevSlideBtn.addEventListener('click', () => setSlide(currentSlide - 1));
+  if (nextSlideBtn) nextSlideBtn.addEventListener('click', () => setSlide(currentSlide + 1));
+  slideDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const target = parseInt(dot.getAttribute('data-dot'), 10);
+      setSlide(target);
+    });
+  });
+
+  // ==========================================================================
+  // 7. HERO SPRINT CONSOLE INTERACTION
+  // ==========================================================================
+  const pingBtn = document.getElementById('console-ping-btn');
+  const terminalStream = document.getElementById('terminal-stream');
+  const sprintCountdown = document.getElementById('sprint-countdown');
+
+  // Simulated countdown timer
+  if (sprintCountdown) {
+    let totalSecs = 36 * 3600 + 42 * 60 + 19;
+    setInterval(() => {
+      totalSecs = Math.max(0, totalSecs - 1);
+      const h = String(Math.floor(totalSecs / 3600)).padStart(2, '0');
+      const m = String(Math.floor((totalSecs % 3600) / 60)).padStart(2, '0');
+      const s = String(totalSecs % 60).padStart(2, '0');
+      sprintCountdown.textContent = `${h}:${m}:${s}`;
+    }, 1000);
+  }
+
+  // Ping button simulates team event
+  if (pingBtn && terminalStream) {
+    pingBtn.addEventListener('click', () => {
+      const now = new Date();
+      const timeStr = now.toTimeString().split(' ')[0];
+      const commits = [
+        "[DEPLOY] Edge preview container rebuilt in 410ms.",
+        "[AGENT] Tool call verified: vector memory fetched 4 results.",
+        "[DEVPOST] README generated with live sponsor architecture diagrams.",
+        "[TESTS] 24/24 unit & integration assertions passing."
+      ];
+      const commit = commits[Math.floor(Math.random() * commits.length)];
+
+      const newLine = document.createElement('div');
+      newLine.className = 't-line active-line';
+      newLine.innerHTML = `<span class="t-time">${timeStr}</span> <span class="t-tag">[LIVE]</span> ${commit}`;
+      terminalStream.appendChild(newLine);
+      terminalStream.scrollTop = terminalStream.scrollHeight;
+
+      pingBtn.textContent = '⚡ Commit Pushed!';
+      setTimeout(() => {
+        pingBtn.textContent = '⚡ Simulate Commit';
+      }, 1200);
+    });
+  }
+
+  // ==========================================================================
+  // 8. CONTACT FORM DISPATCH
+  // ==========================================================================
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn');
+
+  if (contactForm && formStatus) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (submitBtn) submitBtn.disabled = true;
+      formStatus.textContent = 'Transmitting dispatch to HackScale War Room mentors...';
+
+      setTimeout(() => {
+        contactForm.reset();
+        formStatus.className = 'form-status success';
+        formStatus.innerHTML = '✓ Message received! A veteran hackathon mentor has been dispatched to your email.';
+        if (submitBtn) submitBtn.disabled = false;
+
+        setTimeout(() => {
+          formStatus.textContent = '';
+        }, 6000);
+      }, 1000);
+    });
+  }
+
+  // ==========================================================================
+  // 9. INITIAL RENDER & GLOBAL APP EXPORTS
+  // ==========================================================================
+  updateSavedCount();
+  renderArticles();
+
+  window.hackScaleApp = {
+    openModal: openArticleModal,
+    closeModal: closeArticleModal,
+    toggleBookmark: (id, e) => {
+      if (e) e.stopPropagation();
+      toggleBookmark(id);
+    }
+  };
+
+});

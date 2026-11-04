@@ -1,593 +1,1256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Komban Cuts | Farm-Fresh Country Chicken &amp; Premium Cuts</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#030712" />
+  <meta name="color-scheme" content="dark" />
+  <title>HackScale | The Ultimate Hackathon Stack &amp; Field Notes</title>
   
   <!-- SEO & Social Meta -->
-  <meta name="description" content="Order farm-fresh country chicken (Naatu Kozhi), tender broiler cuts, boneless breasts, and farm fresh eggs online. 100% antibiotic-free, butchered fresh to order, and delivered chilled in 90 minutes.">
-  <meta property="og:title" content="Komban Cuts | Farm-Fresh Country Chicken &amp; Premium Cuts">
-  <meta property="og:description" content="Fresh country chicken, boneless cuts, and farm eggs delivered directly to your doorstep. Order via WhatsApp or online in seconds.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=1200&q=80">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Turn 48-hour ideas into winning venture-scale products. The all-in-one hackathon platform and knowledge base with boilerplates, sponsor SDKs, pitch builders, and field notes." />
+  <meta name="keywords" content="hackathon, hackathon blog, hackathon guide, winning hackathon, developer boilerplate, sponsor bounties, pitch deck template, Devpost submission, AI hackathon" />
+  <meta name="author" content="HackScale Labs" />
 
-  <!-- Modern Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HackScale" />
+  <meta property="og:title" content="HackScale | The Ultimate Hackathon Stack &amp; Field Notes" />
+  <meta property="og:description" content="Turn 48-hour ideas into winning venture-scale products. The all-in-one hackathon platform and knowledge base." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" />
 
-  <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HackScale | The Ultimate Hackathon Stack &amp; Field Notes" />
+  <meta name="twitter:description" content="The all-in-one hackathon operating system, project teardowns, and engineering field notes." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Google Fonts: Inter & Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="announcement-bar">
-    <span class="badge">Today's Fresh Batch</span>
-    <span>⚡ Morning butchered farm stock ready • Express 90-Min Delivery • Use code <strong>FIRST50</strong> for ₹50 OFF</span>
+  <!-- Loading Preloader Screen -->
+  <div class="loading-screen" id="loading-screen">
+    <div class="brand-logo large">
+      <div class="brand-orbit"></div>
+      <svg class="brand-svg" viewBox="0 0 40 40" fill="none">
+        <path d="M12 28L20 8L28 28L20 22L12 28Z" fill="url(#loader-grad)" />
+        <circle cx="20" cy="20" r="3" fill="#67e8f9" />
+        <defs>
+          <linearGradient id="loader-grad" x1="12" y1="8" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#2563eb" />
+            <stop offset="0.5" stop-color="#7c3aed" />
+            <stop offset="1" stop-color="#06b6d4" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="loader-particles">
+      <span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span>
+      <span style="--i:5"></span><span style="--i:6"></span><span style="--i:7"></span><span style="--i:8"></span>
+      <span style="--i:9"></span><span style="--i:10"></span><span style="--i:11"></span><span style="--i:12"></span>
+      <span style="--i:13"></span><span style="--i:14"></span><span style="--i:15"></span><span style="--i:16"></span>
+    </div>
+    <strong>HACKSCALE</strong>
+    <p>Initializing hackathon workspace &amp; field telemetry...</p>
+    <div class="loader-track">
+      <span></span>
+    </div>
   </div>
 
-  <!-- Site Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <!-- Brand Logo -->
-      <a href="#" class="brand" aria-label="Komban Cuts Home">
-        <div class="brand-icon">🍗</div>
-        <div class="brand-info">
-          <span class="brand-name">KOMBAN CUTS</span>
-          <span class="brand-tagline">Artisanal Farm Poultry</span>
-        </div>
+  <!-- Parallax Mesh Glow Overlays -->
+  <div class="parallax-glow glow-one" aria-hidden="true"></div>
+  <div class="parallax-glow glow-two" aria-hidden="true"></div>
+  <div class="parallax-glow glow-three" aria-hidden="true"></div>
+
+  <!-- Floating Frosted Glass Navigation -->
+  <header class="nav" id="main-nav">
+    <a href="#top" class="logo" aria-label="HackScale Home">
+      <div class="brand-logo">
+        <div class="brand-orbit"></div>
+        <svg class="brand-svg" viewBox="0 0 40 40" fill="none">
+          <path d="M12 28L20 8L28 28L20 22L12 28Z" fill="url(#nav-grad)" />
+          <circle cx="20" cy="20" r="2.5" fill="#67e8f9" />
+          <defs>
+            <linearGradient id="nav-grad" x1="12" y1="8" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#2563eb" />
+              <stop offset="0.5" stop-color="#7c3aed" />
+              <stop offset="1" stop-color="#06b6d4" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">HACK<span>SCALE</span></span>
+    </a>
+
+    <nav aria-label="Main Navigation">
+      <a href="#features">Platform</a>
+      <a href="#process">Sprint Flow</a>
+      <a href="#demo">Live Sandbox</a>
+      <a href="#blog">Field Notes</a>
+      <a href="#pricing">Tiers</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#blog" class="nav-secondary-link">Read Notes</a>
+      <a href="#demo" class="nav-cta">
+        <span>Launch Sprint</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
       </a>
-
-      <!-- Location Selector -->
-      <div class="location-pill" onclick="document.getElementById('pincode-input').focus()">
-        <span class="loc-icon">📍</span>
-        <div class="loc-text">
-          <span>Deliver to: </span><strong>Salem / Attur (636102)</strong>
-        </div>
-      </div>
-
-      <!-- Live Search Bar -->
-      <div class="header-search">
-        <span class="search-icon">🔍</span>
-        <input 
-          type="text" 
-          id="header-search-input" 
-          placeholder="Search Naatu Kozhi, boneless breast, biryani cut..." 
-          aria-label="Search meat products"
-        >
-      </div>
-
-      <!-- Header Actions -->
-      <div class="header-actions">
-        <!-- Direct WhatsApp Action -->
-        <a 
-          href="https://wa.me/918489542722?text=Hello%20Komban%20Cuts!%20I%20would%20like%20to%20order%20fresh%20chicken." 
-          target="_blank" 
-          rel="noopener" 
-          class="whatsapp-quick-btn"
-          title="Chat or order on WhatsApp"
-        >
-          <span>💬 WhatsApp Order</span>
-        </a>
-
-        <!-- Cart Button -->
-        <button class="cart-btn" onclick="toggleCartDrawer(true)" aria-label="View Cart">
-          <span>🛒 Cart</span>
-          <span class="cart-count-badge">0</span>
-        </button>
-      </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-pill-badge">
-            <span>🌿 100% Free-Range &amp; Antibiotic-Free</span>
-          </div>
-          
-          <h1 class="hero-title">
-            Farm-Fresh Country Chicken, <span class="highlight">Butchered to Order.</span>
-          </h1>
-
-          <p class="hero-desc">
-            Experience authentic free-range Naatu Kozhi and prime tender cuts. Raised naturally on open pastures, washed in RO water, custom-cut to your choice, and delivered chilled in 90 minutes.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#catalog" class="btn-primary">
-              <span>Explore Today's Fresh Cuts</span>
-              <span>↓</span>
-            </a>
-            <a 
-              href="https://wa.me/918489542722?text=Hi!%20Can%20you%20share%20today's%20available%20chicken%20and%20egg%20cuts?" 
-              target="_blank" 
-              rel="noopener" 
-              class="btn-outline"
-            >
-              <span>Quick WhatsApp Enquiry</span>
-              <span>↗</span>
-            </a>
-          </div>
-
-          <!-- Trust Badges Row -->
-          <div class="hero-badges-row">
-            <div class="hero-badge-item">
-              <span class="hero-badge-icon">⚡</span>
-              <div class="hero-badge-text">
-                <strong>90-Min Delivery</strong>
-                <span>Direct to your doorstep</span>
-              </div>
-            </div>
-            <div class="hero-badge-item">
-              <span class="hero-badge-icon">❄️</span>
-              <div class="hero-badge-text">
-                <strong>Chilled 0-4°C</strong>
-                <span>Never frozen, always fresh</span>
-              </div>
-            </div>
-            <div class="hero-badge-item">
-              <span class="hero-badge-icon">🔪</span>
-              <div class="hero-badge-text">
-                <strong>Custom Cuts</strong>
-                <span>Biryani, curry or keema</span>
-              </div>
-            </div>
-            <div class="hero-badge-item">
-              <span class="hero-badge-icon">🛡️</span>
-              <div class="hero-badge-text">
-                <strong>Clean &amp; Halal</strong>
-                <span>100% hygienic process</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hero Media Card -->
-        <div class="hero-media-wrap">
-          <div class="hero-image-card">
-            <img 
-              src="https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=1200&q=80" 
-              alt="Fresh artisanal raw chicken cuts on slate board"
-              loading="eager"
-            >
-            <div class="hero-discount-stamp">
-              <div>FLAT</div>
-              <div style="font-size: 1.1rem; line-height: 1;">₹50 OFF</div>
-              <div style="font-size: 0.65rem; opacity: 0.9;">CODE: FIRST50</div>
-            </div>
-            <div class="hero-float-tag">
-              <div class="fresh-pulse-dot"></div>
-              <div class="hero-float-text">
-                <strong>Morning Butchery Batch</strong>
-                <span style="color: var(--text-secondary); font-size: 0.74rem;">Cut fresh at 5:30 AM today</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pincode Delivery Availability Checker Strip -->
-    <div class="pincode-strip">
-      <div class="container pincode-inner">
-        <div class="pincode-left">
-          <span class="icon">📍</span>
-          <div>
-            <strong>Check 90-Minute Delivery to Your Area:</strong>
-            <span style="color: var(--text-secondary); margin-left: 6px;">Serving Salem, Attur, Kothambadi, and surrounding regions.</span>
-          </div>
-        </div>
-
-        <div class="pincode-form">
-          <input 
-            type="text" 
-            id="pincode-input" 
-            placeholder="Enter 6-digit PIN" 
-            maxlength="6"
-            value="636102"
-          >
-          <button type="button" onclick="checkPincode()">Check PIN</button>
-          <div id="pincode-status" class="pincode-status valid">
-            ⚡ <strong>Express Available!</strong> Dispatch in 90 mins to 636102.
-          </div>
-        </div>
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-nav-links">
+      <a href="#features" class="mob-link">Platform Stack</a>
+      <a href="#process" class="mob-link">Sprint Flow</a>
+      <a href="#demo" class="mob-link">Live Sandbox</a>
+      <a href="#blog" class="mob-link">Field Notes &amp; Blog</a>
+      <a href="#pricing" class="mob-link">Hacker Tiers</a>
+      <a href="#faq" class="mob-link">FAQ</a>
+      <a href="#contact" class="mob-link">Contact War Room</a>
+      <div class="mob-cta-wrap">
+        <a href="#demo" class="button primary full-width mob-link">Launch Live Demo</a>
       </div>
     </div>
+  </div>
 
-    <!-- Store Catalog Section -->
-    <section id="catalog" class="catalog-section">
-      <div class="container">
-        <!-- Section Heading & Filter Tabs -->
-        <div class="section-head">
-          <div>
-            <h2 class="section-title">Today's Fresh Harvest &amp; Cuts</h2>
-            <p class="section-subtitle">Chilled, sanitized, and packed in temperature-controlled food-grade trays.</p>
-          </div>
+  <main class="app" id="top">
 
-          <!-- Category Pills Filter -->
-          <div class="category-tabs" role="tablist">
-            <button class="tab-btn active" data-category="all">All Cuts (11)</button>
-            <button class="tab-btn" data-category="country">🍗 Naatu Kozhi (Country)</button>
-            <button class="tab-btn" data-category="curry">🍲 Curry &amp; Biryani Cuts</button>
-            <button class="tab-btn" data-category="boneless">🥩 Boneless &amp; Keema</button>
-            <button class="tab-btn" data-category="legs">🍗 Drumsticks &amp; Wings</button>
-            <button class="tab-btn" data-category="eggs">🥚 Farm Fresh Eggs</button>
-          </div>
+    <!-- HERO SECTION -->
+    <section class="hero section-pad">
+      <div class="hero-copy">
+        <div class="eyebrow" data-reveal>
+          <span class="pulse-beacon"></span>
+          <span class="eyebrow-text">BUILD &bull; SHIP &bull; SCALE &bull; WIN</span>
         </div>
 
-        <!-- Product Grid (Hydrated by script.js) -->
-        <div class="product-grid" id="product-grid">
-          <!-- Populated dynamically via JS -->
+        <h1 data-reveal>
+          Turn 48-Hour Ideas Into <span class="gradient-text">Winning Products</span>.
+        </h1>
+
+        <p class="hero-desc" data-reveal>
+          The end-to-end hackathon operating system and engineering knowledge base. Automate your boilerplate, wire sponsor APIs in minutes, track sprint milestones, and ship submissions that blow judges away.
+        </p>
+
+        <div class="hero-actions" data-reveal>
+          <a href="#demo" class="button primary">
+            <span>Try Interactive Sandbox</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          </a>
+          <a href="#blog" class="button secondary">
+            <span>Explore Field Notes</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Trust / Hacker Proof Badges -->
+        <div class="hero-trust" data-reveal>
+          <div class="hacker-avatars">
+            <span class="avatar" style="background:#2563eb">JD</span>
+            <span class="avatar" style="background:#7c3aed">KR</span>
+            <span class="avatar" style="background:#06b6d4">AM</span>
+            <span class="avatar" style="background:#10b981">SL</span>
+            <span class="avatar extra">+4.8k</span>
+          </div>
+          <div class="trust-text">
+            <strong>Trusted by 5,000+ Hackers</strong>
+            <span>Winning at ETHGlobal, MLH, HackMIT &amp; Devpost</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Right: Interactive Live Sprint Console -->
+      <div class="hero-console" data-reveal>
+        <div class="console-window">
+          <div class="console-header">
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="console-title">
+              <span class="live-status-pill">● LIVE SPRINT</span>
+              <span>Global AI Hackathon 2026</span>
+            </div>
+            <div class="console-badge" id="sprint-countdown">36:42:19</div>
+          </div>
+
+          <div class="console-body">
+            <!-- Stage Tracker -->
+            <div class="sprint-stage-bar">
+              <div class="stage-step completed">
+                <span class="step-num">✓</span>
+                <span class="step-label">Ideation</span>
+              </div>
+              <div class="stage-step completed">
+                <span class="step-num">✓</span>
+                <span class="step-label">Scaffold</span>
+              </div>
+              <div class="stage-step active">
+                <span class="step-num">3</span>
+                <span class="step-label">MVP Sprint</span>
+              </div>
+              <div class="stage-step">
+                <span class="step-num">4</span>
+                <span class="step-label">Pitch Deck</span>
+              </div>
+            </div>
+
+            <!-- Real-time Telemetry Grid -->
+            <div class="telemetry-grid">
+              <div class="telemetry-card">
+                <span class="t-label">API LATENCY</span>
+                <strong class="t-val text-cyan">42 ms</strong>
+                <span class="t-sub">Gemini 2.5 Flash</span>
+              </div>
+              <div class="telemetry-card">
+                <span class="t-label">COMMITS SYNCED</span>
+                <strong class="t-val text-violet">38 / 40</strong>
+                <span class="t-sub">Auto-tests passing</span>
+              </div>
+              <div class="telemetry-card">
+                <span class="t-label">PREDICTED SCORE</span>
+                <strong class="t-val text-green">94.8 / 100</strong>
+                <span class="t-sub">Top 2% of track</span>
+              </div>
+              <div class="telemetry-card">
+                <span class="t-label">DEPLOYMENT</span>
+                <strong class="t-val text-blue">HEALTHY</strong>
+                <span class="t-sub">edge-live-preview.dev</span>
+              </div>
+            </div>
+
+            <!-- Active Live Log / Event Stream -->
+            <div class="console-terminal">
+              <div class="terminal-bar">
+                <span>WAR ROOM FEED</span>
+                <span class="terminal-pulse">Streaming</span>
+              </div>
+              <div class="terminal-lines" id="terminal-stream">
+                <div class="t-line"><span class="t-time">19:42:01</span> <span class="t-tag">[SPONSOR]</span> Google Gemini API key validated. 1M token context ready.</div>
+                <div class="t-line"><span class="t-time">19:42:18</span> <span class="t-tag">[INFRA]</span> Vector database index initialized on Supabase (1,536 dims).</div>
+                <div class="t-line active-line"><span class="t-time">19:42:35</span> <span class="t-tag">[PITCH]</span> Slide 3 "Technical Architecture" generated with KaTeX diagrams.</div>
+              </div>
+            </div>
+
+            <!-- Quick Action Interactive Ribbon -->
+            <div class="console-footer">
+              <div class="repo-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>main &bull; branch / feat-ai-agent</span>
+              </div>
+              <button class="console-simulate-btn" id="console-ping-btn">
+                <span>⚡ Simulate Commit</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Why Choose Our Meat (Trust & Quality Section) -->
-    <section class="features-section">
-      <div class="container">
-        <div style="text-align: center; max-width: 680px; margin: 0 auto 40px;">
-          <h2 class="section-title" style="font-size: 1.8rem;">The Komban Standard of Freshness</h2>
-          <p class="section-subtitle">Why our farm-direct poultry tastes distinctively better and tender.</p>
+    <!-- METRICS & TRACK LOGO STRIP -->
+    <section class="metrics-section">
+      <div class="metrics-container" data-reveal>
+        <div class="metric-card">
+          <span class="m-val counter" data-target="48">48</span><span class="m-unit">h</span>
+          <span class="m-label">Sprint to Production MVP</span>
+          <span class="m-badge">Zero Setup Latency</span>
+        </div>
+        <div class="metric-card">
+          <span class="m-unit">$</span><span class="m-val counter" data-target="4.8">4.8</span><span class="m-unit">M+</span>
+          <span class="m-label">Prize Bounties Unlocked</span>
+          <span class="m-badge">Across 1,200+ Teams</span>
+        </div>
+        <div class="metric-card">
+          <span class="m-val counter" data-target="99.2">99.2</span><span class="m-unit">%</span>
+          <span class="m-label">Demo Deployment Uptime</span>
+          <span class="m-badge">Zero 404 Disasters</span>
+        </div>
+        <div class="metric-card">
+          <span class="m-val counter" data-target="14">14</span><span class="m-unit">x</span>
+          <span class="m-label">Faster Sponsor API Integration</span>
+          <span class="m-badge">Verified Speedup</span>
+        </div>
+      </div>
+
+      <!-- Partner / Sponsor Logos Banner -->
+      <div class="sponsor-ticker" data-reveal>
+        <span class="ticker-label">OPTIMIZED FOR SPONSOR STACKS</span>
+        <div class="ticker-track">
+          <span class="ticker-pill">✦ Google Gemini 2.5</span>
+          <span class="ticker-pill">✦ Polygon PoS &amp; zkEVM</span>
+          <span class="ticker-pill">✦ Supabase Vector</span>
+          <span class="ticker-pill">✦ Vercel AI SDK</span>
+          <span class="ticker-pill">✦ ElevenLabs Voice</span>
+          <span class="ticker-pill">✦ Cloudflare Workers</span>
+          <span class="ticker-pill">✦ LangGraph Agents</span>
+          <span class="ticker-pill">✦ Stripe Checkout</span>
+          <span class="ticker-pill">✦ Google Gemini 2.5</span>
+          <span class="ticker-pill">✦ Polygon PoS &amp; zkEVM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAIN VS SOLUTION COMPARISON (Directly mirrors readytoscale.in UX pattern) -->
+    <section class="comparison-section section-pad" id="comparison">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">THE WINNING ADVANTAGE</span>
+        <h2>Winning Shouldn't Be Chaos</h2>
+        <p>Why 85% of hackathon teams build great code but still lose—and how the HackScale engine fixes it.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- The Chaotic Hackathon Reality -->
+        <div class="pain-panel" data-reveal>
+          <div class="panel-header">
+            <span class="panel-tag tag-pain">THE 48-HOUR STRUGGLE</span>
+            <h3>Without A Unified Stack</h3>
+          </div>
+          <div class="pain-list">
+            <div class="pain-item">
+              <span class="pain-x">✕</span>
+              <div>
+                <strong>3 to 6 hours wasted on boilerplate</strong>
+                <p>Configuring TypeScript, auth, environment variables, Tailwind, and database connections while the clock burns.</p>
+              </div>
+            </div>
+            <div class="pain-item">
+              <span class="pain-x">✕</span>
+              <div>
+                <strong>Broken demo URLs right during judging</strong>
+                <p>Localhost works fine, but production build fails with missing env tokens or cold-start timeouts.</p>
+              </div>
+            </div>
+            <div class="pain-item">
+              <span class="pain-x">✕</span>
+              <div>
+                <strong>Disqualified for missed sponsor requirements</strong>
+                <p>Failing to call specific SDK endpoints or leaving out the sponsor's required badge from your README.</p>
+              </div>
+            </div>
+            <div class="pain-item">
+              <span class="pain-x">✕</span>
+              <div>
+                <strong>Dull 3-minute pitch that loses non-technical judges</strong>
+                <p>Diving into terminal logs instead of highlighting problem value, TAM, UX delight, and business impact.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="features-grid">
-          <div class="feature-box">
-            <div class="feature-icon-circle">🌾</div>
-            <h3>Free-Range Open Pastures</h3>
-            <p>Our Country Chickens roam freely on green pastures with a natural diet of grains, seeds, and greens. No synthetic growth boosters ever.</p>
+        <!-- The HackScale Unified Platform Solution -->
+        <div class="solution-panel" data-reveal>
+          <div class="panel-header">
+            <span class="panel-tag tag-solution">THE HACKSCALE ADVANTAGE</span>
+            <h3>One Unified Operating System</h3>
           </div>
-
-          <div class="feature-box">
-            <div class="feature-icon-circle">🔥</div>
-            <h3>Flame-Singed Naatu Kozhi</h3>
-            <p>We preserve traditional culinary craft by flame-roasting the outer skin of country chicken, locking in that authentic earthy aroma for rich gravies.</p>
+          <div class="solution-orbit-wrap">
+            <div class="solution-orbit">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
           </div>
-
-          <div class="feature-box">
-            <div class="feature-icon-circle">❄️</div>
-            <h3>Strict 0-4°C Cold Chain</h3>
-            <p>From the moment the meat is prepared to your doorstep, it stays continuously chilled between 0-4°C. Never frozen, preserving maximum tenderness.</p>
-          </div>
-
-          <div class="feature-box">
-            <div class="feature-icon-circle">💧</div>
-            <h3>RO Water Triple Wash</h3>
-            <p>Cleaned and trimmed with 100% purified RO water in a sterile environment. 100% ready to cook straight out of the box with zero wastage.</p>
+          <div class="solution-content">
+            <h4>Every Critical Hackathon Weapon In One Dashboard</h4>
+            <p>
+              Your production boilerplate, pre-tested sponsor SDK kits, GitHub live commit telemetry, automated slide-deck generator, rubric score optimizer, and public judge sandbox live in one frictionless command station.
+            </p>
+            <div class="solution-tags">
+              <span>✦ Instant Boilerplate</span>
+              <span>✦ Sponsor Bounty Match</span>
+              <span>✦ 3-Min Pitch Studio</span>
+              <span>✦ Real-Time War Room</span>
+              <span>✦ Edge Hosting</span>
+            </div>
+            <a href="#features" class="solution-action">
+              <span>Inspect Full Feature Set</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Customer Reviews & Testimonials -->
-    <section style="padding: 60px 0; background: var(--bg-main);">
-      <div class="container">
-        <div style="text-align: center; margin-bottom: 36px;">
-          <h2 class="section-title" style="font-size: 1.8rem;">Loved by Home Chefs &amp; Biryani Lovers</h2>
-          <p class="section-subtitle">Real experiences from our customers in Salem and Attur.</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-          <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
-            <div style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 8px;">★★★★★</div>
-            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              "The Naatu Kozhi is genuinely authentic! The flame-singed skin gives the gravy that exact village flavor that you simply cannot find in city supermarkets. Delivered in under an hour."
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;">
-              <strong style="color: #fff;">Praveen Kumar</strong>
-              <span style="color: var(--accent-green);">✓ Verified Buyer • Attur</span>
-            </div>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
-            <div style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 8px;">★★★★★</div>
-            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              "Ordering via WhatsApp is ridiculously easy. I sent the order, received a confirmation instantly, and the chicken breast was super fresh and clean. Zero fat trimming needed."
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;">
-              <strong style="color: #fff;">Ananya S.</strong>
-              <span style="color: var(--accent-green);">✓ Verified Buyer • Salem</span>
-            </div>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
-            <div style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 8px;">★★★★★</div>
-            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              "The biryani cut pieces are large and juicy. They didn't break or get mushy even after 45 minutes of dum cooking. And the country eggs have deep rich golden yolks!"
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;">
-              <strong style="color: #fff;">Karthik Narayanan</strong>
-              <span style="color: var(--accent-green);">✓ Verified Buyer • Kothambadi</span>
-            </div>
-          </div>
-        </div>
+    <!-- CORE FEATURES SECTION (#features - Directly matching readytoscale.in/#features) -->
+    <section class="features-section section-pad" id="features">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">COMPLETE HACKATHON STACK</span>
+        <h2>Everything You Need To Win In One Platform</h2>
+        <p>Architected for high-velocity teams who refuse to let technical friction get between an ambitious vision and the 1st place podium.</p>
       </div>
-    </section>
 
-    <!-- Chef's Recipe Spotlight Accordion -->
-    <section style="padding: 50px 0; background: var(--bg-surface); border-top: 1px solid var(--border);">
-      <div class="container" style="max-width: 860px;">
-        <div style="text-align: center; margin-bottom: 30px;">
-          <h2 class="section-title" style="font-size: 1.7rem;">The Komban Recipe Corner</h2>
-          <p class="section-subtitle">How to cook traditional South Indian Country Chicken (Naatu Kozhi) to perfection.</p>
-        </div>
-
-        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px;">
-          <h3 style="color: var(--accent-amber); font-size: 1.2rem; margin-bottom: 10px;">Authentic Chettinad Naatu Kozhi Kozhambu</h3>
-          <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">
-            Because Country Chicken has firmer, natural muscle fibers, it requires a slow simmer or 4-5 pressure cooker whistles to release its rich bone marrow broth.
+      <div class="feature-grid" data-reveal>
+        <!-- Feature 1 -->
+        <article class="feature-card highlight-glow">
+          <div class="f-icon f-cyan">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <div class="f-badge">ZERO SETUP DELAY</div>
+          <h3>Instant Production Boilerplates</h3>
+          <p>
+            One-command starters tailored for AI agents, Web3 dApps, FinTech APIs, and mobile prototypes with Next.js 15, Tailwind CSS, Supabase, and authentication pre-configured.
           </p>
-          <ul style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.7; padding-left: 20px;">
-            <li><strong>Step 1:</strong> Marinate 1kg Naatu Kozhi with 1 tsp turmeric, 1 tbsp ginger-garlic paste, and rock salt for 20 mins.</li>
-            <li><strong>Step 2:</strong> In cold-pressed sesame oil, sauté shallots, fresh curry leaves, and freshly ground whole spices (coriander seeds, black pepper, fennel, and dried red chilies).</li>
-            <li><strong>Step 3:</strong> Sear the meat on high heat for 5 minutes to seal in the flavors, then add water and pressure cook for 4 whistles until the meat is fork-tender.</li>
+          <ul class="f-list">
+            <li>✓ Auth, DB schema &amp; storage wired in 60s</li>
+            <li>✓ Type-safe API routes &amp; state management</li>
+            <li>✓ Dark-mode component library included</li>
           </ul>
+        </article>
+
+        <!-- Feature 2 -->
+        <article class="feature-card">
+          <div class="f-icon f-violet">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+          </div>
+          <div class="f-badge">MAXIMIZE PRIZES</div>
+          <h3>Sponsor Bounty Fast-Track</h3>
+          <p>
+            Direct access to ready-to-paste SDK wrappers, token helpers, and sample workflows for Google Gemini, Polygon, Chainlink, ElevenLabs, and Stripe.
+          </p>
+          <ul class="f-list">
+            <li>✓ Bounty criteria auto-checker against your code</li>
+            <li>✓ Verified working copy-paste code snippets</li>
+            <li>✓ Eliminates disqualified submissions</li>
+          </ul>
+        </article>
+
+        <!-- Feature 3 -->
+        <article class="feature-card">
+          <div class="f-icon f-blue">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <div class="f-badge">JUDGE CONVERTER</div>
+          <h3>3-Minute Pitch &amp; Deck Studio</h3>
+          <p>
+            Generate high-converting slide decks and video demo scripts designed around the 4 things judges actually score: Problem, Solution, Demo, and Future Scale.
+          </p>
+          <ul class="f-list">
+            <li>✓ Export to Figma, Google Slides, or PDF</li>
+            <li>✓ Live KaTeX math &amp; architecture diagrams</li>
+            <li>✓ 180-second timed teleprompter script</li>
+          </ul>
+        </article>
+
+        <!-- Feature 4 -->
+        <article class="feature-card">
+          <div class="f-icon f-green">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="f-badge">TEAM VELOCITY</div>
+          <h3>48-Hour Sprint Kanban &amp; War Room</h3>
+          <p>
+            Real-time shared kanban board synced to GitHub pull requests and commit hashes. Keep designers, frontend, and backend coders in total synchronization.
+          </p>
+          <ul class="f-list">
+            <li>✓ Milestone countdown and burndown velocity</li>
+            <li>✓ Zero-leak environment token sharing</li>
+            <li>✓ Integrated audio and screen share hub</li>
+          </ul>
+        </article>
+
+        <!-- Feature 5 -->
+        <article class="feature-card">
+          <div class="f-icon f-cyan">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+            </svg>
+          </div>
+          <div class="f-badge">100% UPTIME</div>
+          <h3>One-Click Edge Cloud Deployments</h3>
+          <p>
+            Push to preview instantly with zero cold starts. Generates a custom, high-speed public URL with SSL, caching, and database seeds ready for judge inspection.
+          </p>
+          <ul class="f-list">
+            <li>✓ Global CDN deployment in under 45 seconds</li>
+            <li>✓ Auto-healing mock API fallback for outages</li>
+            <li>✓ QR code generation for judges' smartphones</li>
+          </ul>
+        </article>
+
+        <!-- Feature 6 -->
+        <article class="feature-card">
+          <div class="f-icon f-violet">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <div class="f-badge">DEVPOST READY</div>
+          <h3>Submission Polisher &amp; Formatter</h3>
+          <p>
+            Automatically generates rich Markdown README files, Devpost narrative summaries, architecture charts, and YouTube demo timestamp chapters.
+          </p>
+          <ul class="f-list">
+            <li>✓ Formatted for Devpost, Taikai &amp; Dorahacks</li>
+            <li>✓ High-res badge &amp; flow diagram export</li>
+            <li>✓ Automated grammar &amp; clarity enhancement</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- SPRINT FLOW / PROCESS SECTION (#process - Mirrors readytoscale.in/#process) -->
+    <section class="process-section section-pad" id="process">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">SIMPLE BY DESIGN</span>
+        <h2>From 00:00 Kickoff To 1st Place Podium</h2>
+        <p>A continuous synchronized pipeline that moves your team from a raw whiteboarding idea to a deployed product that commands respect.</p>
+      </div>
+
+      <!-- Animated Visual Sync Lane (Real-Time Animated Circuit) -->
+      <div class="sync-lane-wrap" data-reveal>
+        <div class="sync-lane">
+          <div class="sync-line"></div>
+          <div class="data-chip chip-idea">
+            <span class="chip-dot"></span>
+            <span>Idea &amp; Bounties</span>
+          </div>
+          <div class="data-chip chip-code">
+            <span class="chip-dot"></span>
+            <span>MVP Scaffold</span>
+          </div>
+          <div class="data-chip chip-demo">
+            <span class="chip-dot"></span>
+            <span>Live Edge Deploy</span>
+          </div>
+          <div class="data-chip chip-pitch">
+            <span class="chip-dot"></span>
+            <span>Judge Score 98%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Stepped Milestones -->
+      <div class="steps-grid" data-reveal>
+        <article class="step-card">
+          <div class="step-num-circle">01</div>
+          <span class="step-phase">HOUR 0 - 4</span>
+          <h3>Bounty Scoping &amp; Architecture</h3>
+          <p>
+            Identify target prize tracks, analyze sponsor judging rubrics, configure team roles, and scaffold your type-safe starter repository in under 20 minutes.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-num-circle">02</div>
+          <span class="step-phase">HOUR 4 - 24</span>
+          <h3>Core Engine &amp; API Integration</h3>
+          <p>
+            Wire up sponsor LLMs, vector indexes, and Web3 smart contracts using battle-tested SDK snippets. Establish the primary interactive user workflow.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-num-circle">03</div>
+          <span class="step-phase">HOUR 24 - 40</span>
+          <h3>Edge Deployment &amp; Live Polish</h3>
+          <p>
+            Deploy public URLs with automated fallback mocks. Test responsive mobile UI, fix edge cases, and run automated performance audits.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-num-circle">04</div>
+          <span class="step-phase">HOUR 40 - 48</span>
+          <h3>Demo Video &amp; Devpost Submission</h3>
+          <p>
+            Record the 180-second demo using our high-converting script outline, generate polished Devpost copy, and present with unmatched confidence.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE DEMO / SANDBOX SECTION (#demo - Mirrors readytoscale.in/#demo) -->
+    <section class="demo-section section-pad" id="demo">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">INTERACTIVE SANDBOX</span>
+        <h2>Test The Hackathon Command Center</h2>
+        <p>Switch between the live tools to experience how HackScale eliminates friction across every phase of the sprint.</p>
+      </div>
+
+      <!-- Sandbox Tabs Navigation -->
+      <div class="sandbox-tabs" role="tablist" data-reveal>
+        <button class="s-tab active" data-tab="tab-kanban" role="tab" aria-selected="true">
+          <span class="s-tab-icon">⚡</span>
+          <span>Sprint Kanban</span>
+        </button>
+        <button class="s-tab" data-tab="tab-rubric" role="tab" aria-selected="false">
+          <span class="s-tab-icon">⚖️</span>
+          <span>Judge Rubric Simulator</span>
+        </button>
+        <button class="s-tab" data-tab="tab-api" role="tab" aria-selected="false">
+          <span class="s-tab-icon">🔌</span>
+          <span>Sponsor API Playground</span>
+        </button>
+        <button class="s-tab" data-tab="tab-pitch" role="tab" aria-selected="false">
+          <span class="s-tab-icon">📊</span>
+          <span>3-Min Pitch Preview</span>
+        </button>
+      </div>
+
+      <!-- Sandbox Tab Panels -->
+      <div class="sandbox-container" data-reveal>
+        
+        <!-- Tab 1: Sprint Kanban -->
+        <div class="tab-panel active" id="tab-kanban" role="tabpanel">
+          <div class="kanban-header">
+            <div class="kanban-info">
+              <h4>Active Sprint: NeuroMesh AI Agent</h4>
+              <span class="kanban-time">Sprint Velocity: <strong>89% Ahead of Schedule</strong></span>
+            </div>
+            <button class="button primary small" id="kanban-add-task">
+              <span>+ Add Task</span>
+            </button>
+          </div>
+
+          <div class="kanban-board">
+            <div class="kanban-col">
+              <div class="col-header">
+                <span class="col-title">TO DO (2)</span>
+                <span class="col-count">02</span>
+              </div>
+              <div class="kanban-tasks" id="col-todo">
+                <div class="k-task">
+                  <div class="k-tag tag-sponsor">Google Gemini</div>
+                  <h5>Implement multi-modal image reasoning tool</h5>
+                  <div class="k-meta"><span>Assignee: Alex</span><span>#dev-04</span></div>
+                </div>
+                <div class="k-task">
+                  <div class="k-tag tag-pitch">Pitch Deck</div>
+                  <h5>Record 60s voiceover for architecture slide</h5>
+                  <div class="k-meta"><span>Assignee: Sarah</span><span>#deck-02</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="kanban-col">
+              <div class="col-header">
+                <span class="col-title">IN PROGRESS (2)</span>
+                <span class="col-count">02</span>
+              </div>
+              <div class="kanban-tasks" id="col-progress">
+                <div class="k-task active-task">
+                  <div class="k-tag tag-core">Core Engine</div>
+                  <h5>Wire Vector memory retrieval in Supabase</h5>
+                  <div class="k-meta"><span>Assignee: Dev</span><span class="task-pulse">Active</span></div>
+                </div>
+                <div class="k-task">
+                  <div class="k-tag tag-ui">UI Polish</div>
+                  <h5>Responsive dark-mode dashboard mobile styles</h5>
+                  <div class="k-meta"><span>Assignee: Maya</span><span>#ui-12</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="kanban-col">
+              <div class="col-header">
+                <span class="col-title">SHIPPED &amp; TESTED (3)</span>
+                <span class="col-count">03</span>
+              </div>
+              <div class="kanban-tasks" id="col-done">
+                <div class="k-task done-task">
+                  <div class="k-tag tag-done">Production Ready</div>
+                  <h5>One-click edge cloud deployment live on Vercel</h5>
+                  <div class="k-meta"><span>URL: neuromesh.dev</span><span>✓ 200 OK</span></div>
+                </div>
+                <div class="k-task done-task">
+                  <div class="k-tag tag-done">Sponsor Track</div>
+                  <h5>Polygon PoS smart contract testnet verification</h5>
+                  <div class="k-meta"><span>Tx Hash: 0x8a4b...</span><span>✓ Mined</span></div>
+                </div>
+                <div class="k-task done-task">
+                  <div class="k-tag tag-done">Documentation</div>
+                  <h5>Devpost markdown generated with architecture chart</h5>
+                  <div class="k-meta"><span>Score: 98/100</span><span>✓ Complete</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Judge Rubric Simulator -->
+        <div class="tab-panel" id="tab-rubric" role="tabpanel">
+          <div class="rubric-grid">
+            <div class="rubric-controls">
+              <h4>Real-Time Judge Scoring Rubric</h4>
+              <p>Calibrate your project against standard criteria used by venture capitalists, tech executives, and veteran hackathon judges.</p>
+
+              <div class="slider-group">
+                <div class="slider-header">
+                  <label for="rubric-innov">1. Innovation &amp; Ambition</label>
+                  <span id="innov-val">28 / 30</span>
+                </div>
+                <input type="range" id="rubric-innov" min="5" max="30" value="28" />
+                <small>Novelty of concept, high technical ambition, distinct approach.</small>
+              </div>
+
+              <div class="slider-group">
+                <div class="slider-header">
+                  <label for="rubric-tech">2. Technical Execution</label>
+                  <span id="tech-val">29 / 30</span>
+                </div>
+                <input type="range" id="rubric-tech" min="5" max="30" value="29" />
+                <small>Working prototype, robust architecture, real API integration, zero 404s.</small>
+              </div>
+
+              <div class="slider-group">
+                <div class="slider-header">
+                  <label for="rubric-design">3. UI, UX &amp; Polish</label>
+                  <span id="design-val">19 / 20</span>
+                </div>
+                <input type="range" id="rubric-design" min="5" max="20" value="19" />
+                <small>Intuitive user onboarding, delightful responsiveness, crisp typography.</small>
+              </div>
+
+              <div class="slider-group">
+                <div class="slider-header">
+                  <label for="rubric-pitch">4. Presentation &amp; Pitch</label>
+                  <span id="pitch-val">19 / 20</span>
+                </div>
+                <input type="range" id="rubric-pitch" min="5" max="20" value="19" />
+                <small>Clear problem statement, quantifiable impact, charismatic delivery.</small>
+              </div>
+            </div>
+
+            <div class="rubric-scorecard">
+              <div class="score-circle-wrap">
+                <svg class="score-svg" viewBox="0 0 120 120">
+                  <circle class="score-bg" cx="60" cy="60" r="50"></circle>
+                  <circle class="score-fill" id="score-meter" cx="60" cy="60" r="50"></circle>
+                </svg>
+                <div class="score-display">
+                  <strong id="total-score">95</strong>
+                  <span>/ 100</span>
+                </div>
+              </div>
+              <div class="score-tier" id="score-tier-badge">🏆 PODIUM FAVORITE (TOP 1%)</div>
+              <p class="score-analysis" id="score-feedback">
+                Outstanding submission. Your technical depth and high polish place your team squarely in contention for Grand Prize and Sponsor Track Bounties.
+              </p>
+              <div class="score-breakdown">
+                <div><span>Sponsor Bounty Odds:</span><strong class="text-green">94% High</strong></div>
+                <div><span>VC Mentor Interest:</span><strong class="text-cyan">High Traction</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Sponsor API Playground -->
+        <div class="tab-panel" id="tab-api" role="tabpanel">
+          <div class="api-playground">
+            <div class="api-selector-bar">
+              <label>Select Sponsor SDK:</label>
+              <div class="api-btns">
+                <button class="api-btn active" data-api="gemini">Google Gemini 2.5</button>
+                <button class="api-btn" data-api="polygon">Polygon zkEVM</button>
+                <button class="api-btn" data-api="supabase">Supabase Vector</button>
+                <button class="api-btn" data-api="eleven">ElevenLabs Voice</button>
+              </div>
+            </div>
+
+            <div class="api-console-view">
+              <div class="api-code-panel">
+                <div class="code-panel-header">
+                  <span id="code-snippet-title">gemini-service.ts</span>
+                  <button class="copy-code-btn" id="copy-api-code">Copy Code</button>
+                </div>
+                <pre><code id="api-code-display">// Initializing Gemini 2.5 Multimodal Client
+import { GoogleGenAI } from '@google/genai';
+
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+export async function analyzeHackathonIdea(prompt: string) {
+  const response = await ai.models.generateContent({
+    model: 'gemini-2.5-flash',
+    contents: prompt,
+    config: { temperature: 0.7, maxOutputTokens: 800 }
+  });
+  return response.text;
+}</code></pre>
+              </div>
+
+              <div class="api-response-panel">
+                <div class="response-header">
+                  <span>LIVE TEST SIMULATOR</span>
+                  <button class="run-api-btn" id="run-api-btn">▶ Run Simulated Call</button>
+                </div>
+                <div class="response-body">
+                  <pre><code id="api-response-output">{
+  "status": 200,
+  "service": "Google Gemini 2.5 Flash",
+  "latencyMs": 38,
+  "analysis": {
+    "viability": "9.6/10",
+    "uniqueDifferentiator": "Real-time edge telemetry with automated prompt caching",
+    "recommendedBounties": ["Google Cloud AI Track", "Best Multimodal Hack"]
+  }
+}</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: 3-Min Pitch Preview -->
+        <div class="tab-panel" id="tab-pitch" role="tabpanel">
+          <div class="pitch-studio-preview">
+            <div class="pitch-slides-container">
+              <div class="pitch-slide active" data-slide="1">
+                <div class="slide-badge">SLIDE 01 / 04 &bull; THE PROBLEM</div>
+                <h3>The 48-Hour Developer Bottleneck</h3>
+                <p>Hackathon teams spend 40% of their limited sprint on boilerplate, environment debugging, and uncohesive deployment pipelines.</p>
+                <div class="slide-stat-box">
+                  <strong>85%</strong>
+                  <span>of brilliant prototypes fail to impress judges due to incomplete submissions and dull presentations.</span>
+                </div>
+              </div>
+
+              <div class="pitch-slide" data-slide="2">
+                <div class="slide-badge">SLIDE 02 / 04 &bull; THE SOLUTION</div>
+                <h3>HackScale: The Hackathon Operating System</h3>
+                <p>An end-to-end command center combining pre-wired sponsor SDKs, real-time war room velocity tracking, and instant public edge hosting.</p>
+                <div class="slide-visual-chips">
+                  <span>⚡ 60s Boilerplate</span>
+                  <span>🤖 AI Auto-Scaffold</span>
+                  <span>🌐 One-Click Deploy</span>
+                </div>
+              </div>
+
+              <div class="pitch-slide" data-slide="3">
+                <div class="slide-badge">SLIDE 03 / 04 &bull; LIVE ARCHITECTURE</div>
+                <h3>Decoupled, Resilient, Edge-Native Stack</h3>
+                <p>High-concurrency serverless micro-services connected to multi-modal Gemini LLMs and immutable Polygon verification records.</p>
+                <div class="slide-tech-row">
+                  <span class="tech-tag">Next.js 15</span>
+                  <span class="tech-tag">Gemini Flash</span>
+                  <span class="tech-tag">Supabase</span>
+                  <span class="tech-tag">Polygon zkEVM</span>
+                </div>
+              </div>
+
+              <div class="pitch-slide" data-slide="4">
+                <div class="slide-badge">SLIDE 04 / 04 &bull; THE TRACTION &amp; VISION</div>
+                <h3>From Hackathon MVP to Venture Scale</h3>
+                <p>Over 1,200 teams accelerated. Winner of ETHGlobal 2026. Ready for full commercial enterprise expansion.</p>
+                <div class="slide-stat-box">
+                  <strong>$250K</strong>
+                  <span>in pre-seed grants unlocked within 3 weeks of winning the grand prize.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pitch-nav-controls">
+              <button class="slide-btn" id="prev-slide">← Previous Slide</button>
+              <div class="slide-dots">
+                <span class="s-dot active" data-dot="1"></span>
+                <span class="s-dot" data-dot="2"></span>
+                <span class="s-dot" data-dot="3"></span>
+                <span class="s-dot" data-dot="4"></span>
+              </div>
+              <button class="slide-btn" id="next-slide">Next Slide →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HACKATHON BLOG & FIELD NOTES SECTION (#blog) -->
+    <section class="blog-section section-pad" id="blog">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">01 / THE FIELD NOTES</span>
+        <h2>Battle-Tested Playbooks &amp; Case Studies</h2>
+        <p>Hard-won lessons from hackathon veterans who turned weekend experiments into 1st place trophies and venture-funded companies.</p>
+      </div>
+
+      <!-- Search & Category Filters Bar -->
+      <div class="blog-discovery-bar" data-reveal>
+        <div class="filter-group" role="group" aria-label="Filter blog posts by category">
+          <button class="filter-btn active" data-category="All">All Notes <span class="count-tag" id="all-count">6</span></button>
+          <button class="filter-btn" data-category="Playbooks">Winning Playbooks</button>
+          <button class="filter-btn" data-category="AI Workflows">AI Workflows</button>
+          <button class="filter-btn" data-category="Pitch Decks">Pitch Strategies</button>
+          <button class="filter-btn" data-category="Sponsor Bounties">Sponsor Bounties</button>
+          <button class="filter-btn saved-btn" data-category="Saved">★ Saved <span class="saved-count" id="saved-count-pill">0</span></button>
+        </div>
+
+        <div class="search-input-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="search" id="blog-search" placeholder="Search guides, strategies, prompts..." autocomplete="off" />
+        </div>
+      </div>
+
+      <!-- Live Search Message -->
+      <p class="search-feedback" id="search-feedback" aria-live="polite"></p>
+
+      <!-- Articles Grid -->
+      <div class="articles-grid" id="articles-grid" data-reveal>
+        <!-- Injected dynamically via script.js for full interactivity -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="blog-empty-state" hidden>
+        <div class="empty-icon">🔍</div>
+        <h3>No matching field notes found</h3>
+        <p>Try modifying your keyword search or select "All Notes" to view all articles.</p>
+        <button class="button secondary small" id="clear-search-btn">Reset Filters</button>
+      </div>
+    </section>
+
+    <!-- PRICING & HACKER TIERS SECTION (#pricing - Directly mirrors readytoscale.in/#pricing) -->
+    <section class="pricing-section section-pad" id="pricing">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">FAIR &amp; ACCESSIBLE</span>
+        <h2>Transparent Tiers For Hackers &amp; Teams</h2>
+        <p>100% free for students and weekend sprint teams. Upgraded plans for university clubs, incubators, and global hackathon organizers.</p>
+      </div>
+
+      <div class="pricing-grid" data-reveal>
+        <!-- Tier 1 -->
+        <article class="pricing-card">
+          <div class="tier-badge">COMMUNITY HACKER</div>
+          <h3>Free Forever</h3>
+          <p class="tier-desc">Essential tools and field guides for solo hackers and teams competing in any global hackathon.</p>
+          <div class="tier-price">
+            <span class="currency">$</span>
+            <span class="amount">0</span>
+            <span class="period">/ weekend</span>
+          </div>
+          <ul class="tier-features">
+            <li>✓ Full access to all 50+ Field Notes &amp; Playbooks</li>
+            <li>✓ Next.js &amp; Supabase starter boilerplates</li>
+            <li>✓ Sponsor bounty checklist templates</li>
+            <li>✓ Community Discord &amp; teammate finder</li>
+            <li>✓ Basic judge rubric simulator</li>
+          </ul>
+          <a href="#demo" class="button secondary full-width">Get Free Starter Kit</a>
+        </article>
+
+        <!-- Tier 2: Highlighted -->
+        <article class="pricing-card highlighted">
+          <div class="popular-ribbon">MOST POPULAR</div>
+          <div class="tier-badge">SPRINT PRO</div>
+          <h3>Pro Builder Squad</h3>
+          <p class="tier-desc">The complete competitive toolkit for squads aiming for Grand Prize and high-value sponsor bounties.</p>
+          <div class="tier-price">
+            <span class="currency">$</span>
+            <span class="amount">19</span>
+            <span class="period">/ team / sprint</span>
+          </div>
+          <ul class="tier-features">
+            <li>✓ <strong>Everything in Community, plus:</strong></li>
+            <li>✓ 48-Hour Real-Time Sprint Kanban &amp; War Room</li>
+            <li>✓ Automated Devpost markdown &amp; README generator</li>
+            <li>✓ 3-Minute Slide Deck Studio with Figma export</li>
+            <li>✓ Verified copy-paste code for 20+ sponsor SDKs</li>
+            <li>✓ Priority one-click edge deployment sandboxes</li>
+          </ul>
+          <a href="#demo" class="button primary full-width">Start Winning Sprint</a>
+        </article>
+
+        <!-- Tier 3 -->
+        <article class="pricing-card">
+          <div class="tier-badge">ORGANIZATIONS</div>
+          <h3>Hackathon Host &amp; University</h3>
+          <p class="tier-desc">For university ACM chapters, developer DAOs, and corporate hackathon organizers wanting custom infrastructure.</p>
+          <div class="tier-price">
+            <span class="currency">$</span>
+            <span class="amount">99</span>
+            <span class="period">/ event</span>
+          </div>
+          <ul class="tier-features">
+            <li>✓ Unlimited hacker teams (up to 2,000 participants)</li>
+            <li>✓ Custom sponsor bounty portal &amp; SDK distribution</li>
+            <li>✓ Live event leaderboards &amp; judging rubric portal</li>
+            <li>✓ Dedicated mentoring channels &amp; war rooms</li>
+            <li>✓ Custom white-label domain &amp; event branding</li>
+          </ul>
+          <a href="#contact" class="button secondary full-width">Talk To Our Team</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION (#faq - Directly mirrors readytoscale.in/#faq) -->
+    <section class="faq-section section-pad" id="faq">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">FREQUENTLY ASKED QUESTIONS</span>
+        <h2>Got Questions? We've Got Clear Answers.</h2>
+        <p>Everything you need to know about using HackScale to dominate your next competitive hackathon.</p>
+      </div>
+
+      <div class="faq-grid" data-reveal>
+        <details class="faq-item" open>
+          <summary>
+            <span>What is HackScale and how does it help me win hackathons?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              HackScale is an all-in-one hackathon operating system and knowledge platform. It provides high-performance project boilerplates, tested sponsor SDK integration snippets, 48-hour velocity trackers, automated pitch deck creators, and field-tested playbooks so you spend 90% of your sprint on core innovation rather than boilerplate and configuration chaos.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>Can I use HackScale starter templates for commercial or student hackathons?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Yes! All our boilerplates and field code snippets are released under permissive MIT licenses. They comply with all major hackathon guidelines (such as Major League Hacking, ETHGlobal, and Devpost rules), which allow starting from open-source boilerplate frameworks as long as the core project code is authored during the event.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>How does the Sponsor Bounty Fast-Track work?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Hackathons often feature $5,000 to $20,000 in sponsor bounties (e.g., "Best Use of Gemini", "Best Polygon Integration"). HackScale analyzes the exact rubric requirements and gives you drop-in TypeScript wrappers, authentication configs, and verification scripts to ensure your submission meets every single criteria required by sponsor judges.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>What is the 3-Minute Demo Rule mentioned in your field notes?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Most hackathon judges evaluate 30 to 50 projects in under 3 hours. They give you roughly 180 seconds. Our rule specifies allocating exactly: 30 seconds to the visceral human problem, 90 seconds to a live working demo (showing the 'magic moment'), 30 seconds to the technical architecture, and 30 seconds to business viability. Our pitch deck studio builds your slides around this exact formula.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>Is HackScale free to read and use for our upcoming sprint?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Yes, our entire Field Notes library, judge rubric simulator, and core boilerplates are completely free. If your team wants automated war room sync, Figma pitch deck exports, and priority cloud deployments, you can upgrade to the Sprint Pro tier.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>Can we turn our hackathon prototype into a funded startup?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Over 280 startups have spun out of projects built on HackScale. Check out our deep-dive field note *"Post-Hackathon Playbook: Turning a 48-Hour Prototype into a VC-Backed Startup"* for exact post-hackathon outreach scripts, investor pitch updates, and Y Combinator application tips.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT / WAR ROOM DISPATCH SECTION (#contact - Mirrors readytoscale.in/#contact) -->
+    <section class="contact-section section-pad" id="contact">
+      <div class="contact-panel" data-reveal>
+        <div class="contact-info">
+          <span class="section-kicker">GET IN TOUCH</span>
+          <h2>Connect With Our Hackathon War Room</h2>
+          <p>
+            Have a question about an upcoming hackathon? Looking for sprint mentorship, sponsor bounty advice, or custom workshop licensing? Drop us a line.
+          </p>
+
+          <div class="contact-methods">
+            <div class="c-method">
+              <span class="c-icon">⚡</span>
+              <div>
+                <strong>Discord Community</strong>
+                <span>discord.gg/hackscale (12k+ Builders)</span>
+              </div>
+            </div>
+            <div class="c-method">
+              <span class="c-icon">📬</span>
+              <div>
+                <strong>Direct Dispatch</strong>
+                <span>mentor@hackscale.dev</span>
+              </div>
+            </div>
+            <div class="c-method">
+              <span class="c-icon">📍</span>
+              <div>
+                <strong>Global Presence</strong>
+                <span>San Francisco &bull; Bengaluru &bull; Berlin &bull; Tokyo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="Alex Rivera" required />
+              </div>
+              <div class="form-field">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" name="email" placeholder="alex@buildfast.dev" required />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="contact-track">Upcoming Hackathon / Focus Track</label>
+              <select id="contact-track" name="track">
+                <option value="AI & LLMs">AI Agents &amp; Foundation Models</option>
+                <option value="Web3 & Crypto">Web3, DeFi &amp; zkEVM</option>
+                <option value="Developer Tools">Developer Tools &amp; Infrastructure</option>
+                <option value="FinTech">FinTech &amp; Global Payments</option>
+                <option value="Other">General / Student Hackathon</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="contact-message">What are you building or what help do you need?</label>
+              <textarea id="contact-message" name="message" rows="4" placeholder="Tell us about your project, team goals, or any sponsor bounty you're targeting..." required></textarea>
+            </div>
+
+            <button type="submit" class="button primary" id="submit-btn">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+
+            <p class="form-status" id="form-status" aria-live="polite"></p>
+          </form>
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- Slide-out Cart Drawer -->
-  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
-    <div class="cart-drawer" id="cart-drawer">
-      <!-- Cart Header -->
-      <div class="cart-header">
-        <div class="cart-title">
-          <span>🛒 Your Fresh Basket</span>
-          <span class="cart-count-badge">0</span>
-        </div>
-        <button class="close-cart-btn" onclick="toggleCartDrawer(false)" aria-label="Close cart">✕</button>
-      </div>
+  <!-- FLOATING COMMUNITY / DISCORD / WHATSAPP ACTION -->
+  <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Join HackScale Discord War Room">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+    </svg>
+  </a>
 
-      <!-- Free Delivery Progress Bar -->
-      <div class="delivery-tier-bar">
-        <div class="tier-text" id="tier-progress-text">
-          Add ₹499 for FREE Express Delivery
-        </div>
-        <div class="tier-progress">
-          <div class="tier-progress-fill" id="tier-progress-fill"></div>
-        </div>
-      </div>
-
-      <!-- Cart Items Body -->
-      <div class="cart-items-body" id="cart-items-body">
-        <!-- Rendered via JS -->
-      </div>
-
-      <!-- Cart Footer / Bill & Actions -->
-      <div class="cart-footer">
-        <!-- Coupon Code Box -->
-        <div class="coupon-box">
-          <input type="text" id="coupon-input" placeholder="Enter Coupon Code (FIRST50)">
-          <button type="button" onclick="applyCoupon()">Apply</button>
-        </div>
-
-        <!-- Bill Details -->
-        <div class="bill-rows">
-          <div class="bill-row">
-            <span>Item Subtotal</span>
-            <strong id="cart-subtotal">₹0</strong>
-          </div>
-          <div class="bill-row" id="cart-discount-row" style="display: none; color: var(--accent-green);">
-            <span>Coupon Discount</span>
-            <strong id="cart-discount-amount">-₹0</strong>
-          </div>
-          <div class="bill-row">
-            <span>Packaging (Chilled Food-Grade Tray)</span>
-            <span>₹20</span>
-          </div>
-          <div class="bill-row">
-            <span>Delivery Fee</span>
-            <span id="cart-delivery-fee">₹0</span>
-          </div>
-          <div class="bill-row total-row">
-            <span>Grand Total</span>
-            <span id="cart-grand-total">₹0</span>
-          </div>
-        </div>
-
-        <!-- Checkout Action Button -->
-        <button class="cart-checkout-btn" onclick="openCheckoutModal()">
-          <span>💬 Proceed to WhatsApp Checkout</span>
-          <span>→</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Checkout & Delivery Details Modal -->
-  <div class="modal-overlay" id="checkout-modal-overlay">
-    <div class="checkout-modal">
-      <div class="modal-header">
-        <div>
-          <h3 class="modal-title">Complete Your Order</h3>
-          <p class="modal-subtitle">We will generate your ready-to-send WhatsApp order slip instantly.</p>
-        </div>
-        <button class="modal-close-btn" onclick="closeCheckoutModal()" aria-label="Close modal">✕</button>
-      </div>
-
-      <form id="checkout-form" onsubmit="submitWhatsAppOrder(event)">
-        <div class="form-grid-2">
-          <div class="form-group">
-            <label class="form-label" for="cust-name">Your Full Name *</label>
-            <input type="text" id="cust-name" class="form-input" placeholder="e.g. Mahadhev S." required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="cust-phone">WhatsApp Number *</label>
-            <input type="tel" id="cust-phone" class="form-input" placeholder="e.g. 9876543210" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="cust-address">Delivery Address *</label>
-          <input type="text" id="cust-address" class="form-input" placeholder="House/Flat No, Street Name, Landmark" required>
-        </div>
-
-        <div class="form-grid-2">
-          <div class="form-group">
-            <label class="form-label" for="cust-pincode">PIN Code</label>
-            <input type="text" id="cust-pincode" class="form-input" value="636102">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Payment Mode</label>
-            <select class="form-select" id="cust-payment">
-              <option value="cod">Cash on Delivery</option>
-              <option value="upi">UPI / GPay on Delivery</option>
-              <option value="online">Pre-pay via WhatsApp UPI</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Preferred Delivery Slot</label>
-          <div class="time-slot-grid">
-            <button type="button" class="slot-btn active" onclick="selectSlot(this, 'Morning (7:30 AM - 9:30 AM)')">
-              Morning<br>7:30 - 9:30 AM
-            </button>
-            <button type="button" class="slot-btn" onclick="selectSlot(this, 'Afternoon (12:00 PM - 2:00 PM)')">
-              Afternoon<br>12:00 - 2:00 PM
-            </button>
-            <button type="button" class="slot-btn" onclick="selectSlot(this, 'Evening (5:30 PM - 7:30 PM)')">
-              Evening<br>5:30 - 7:30 PM
-            </button>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="cust-notes">Butchery &amp; Cutting Notes (Optional)</label>
-          <textarea id="cust-notes" class="form-textarea" rows="2" placeholder="e.g. Please cut into small curry pieces, keep liver separate, extra skin cleaned..."></textarea>
-        </div>
-
-        <div style="background: var(--bg-card); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-size: 0.86rem; color: var(--text-secondary);">Total Payable:</span>
-          <strong id="checkout-modal-total" style="font-size: 1.25rem; color: #fff;">₹0</strong>
-        </div>
-
-        <button type="submit" class="whatsapp-submit-btn">
-          <span>💬 Send Order to WhatsApp (+91 8489542722)</span>
-        </button>
-
-        <button type="button" class="order-direct-btn" onclick="submitDirectOrder()">
-          Confirm Order Without WhatsApp App
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Order Success Confirmation Modal -->
-  <div class="modal-overlay" id="success-modal-overlay">
-    <div class="checkout-modal" style="max-width: 480px;">
-      <div class="success-card">
-        <div class="success-badge-icon">✓</div>
-        <h3 class="success-title">Order Received!</h3>
-        <p class="success-desc">
-          Your order has been sent to our farm butcher station. Our master butcher is preparing your fresh cuts now!
-        </p>
-
-        <div class="order-receipt-summary" id="receipt-details">
-          <!-- Filled dynamically -->
-        </div>
-
-        <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 18px;">
-          You will receive delivery updates on WhatsApp. For instant assistance, call us at <strong style="color: #fff;">+91 8489542722</strong>.
-        </p>
-
-        <button class="btn-primary" style="width: 100%;" onclick="closeSuccessModal()">
-          Continue Shopping
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Mobile Floating Sticky Cart Bar -->
-  <div class="mobile-bottom-bar">
-    <div>
-      <div style="font-size: 0.75rem; color: var(--text-muted);">Total in Cart:</div>
-      <strong id="mobile-bar-total" style="font-size: 1.15rem; color: #fff;">₹0</strong>
-    </div>
-    <button class="cart-btn" onclick="toggleCartDrawer(true)">
-      <span>View Cart</span>
-      <span class="cart-count-badge">0</span>
-    </button>
-  </div>
-
-  <!-- Toast Notification Container -->
-  <div class="toast-container" id="toast-container"></div>
-
-  <!-- Site Footer -->
+  <!-- SITE FOOTER (Mirrors readytoscale.in 3-column footer) -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <div class="brand" style="margin-bottom: 14px;">
-            <div class="brand-icon">🍗</div>
-            <div class="brand-info">
-              <span class="brand-name">KOMBAN CUTS</span>
-              <span class="brand-tagline">Artisanal Farm Poultry</span>
-            </div>
-          </div>
-          <p>
-            Delivering clean, healthy, and ethically raised farm poultry straight from the pastures of Attur &amp; Salem. 100% antibiotic-free, butchered to order, and chilled to perfection.
-          </p>
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="brand-logo">
+          <div class="brand-orbit"></div>
+          <svg class="brand-svg" viewBox="0 0 40 40" fill="none">
+            <path d="M12 28L20 8L28 28L20 22L12 28Z" fill="url(#foot-grad)" />
+            <circle cx="20" cy="20" r="2.5" fill="#67e8f9" />
+            <defs>
+              <linearGradient id="foot-grad" x1="12" y1="8" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2563eb" />
+                <stop offset="0.5" stop-color="#7c3aed" />
+                <stop offset="1" stop-color="#06b6d4" />
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
-
-        <div class="footer-col">
-          <h4>Popular Fresh Cuts</h4>
-          <ul class="footer-links">
-            <li><a href="#catalog" onclick="selectVariant('naatu-curry', 0)">Naatu Kozhi (Country Chicken)</a></li>
-            <li><a href="#catalog" onclick="selectVariant('chicken-breast-boneless', 0)">Boneless Tender Breast</a></li>
-            <li><a href="#catalog" onclick="selectVariant('chicken-biryani-cut', 0)">Special Biryani Cut</a></li>
-            <li><a href="#catalog" onclick="selectVariant('naatu-eggs', 0)">Free-Range Country Eggs</a></li>
-            <li><a href="#catalog" onclick="selectVariant('chicken-drumsticks', 0)">Tender Chicken Drumsticks</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Why Choose Us</h4>
-          <ul class="footer-links">
-            <li><a href="#catalog">100% Free-Range &amp; Antibiotic Free</a></li>
-            <li><a href="#catalog">Triple RO Water Washed</a></li>
-            <li><a href="#catalog">Chilled 0-4°C Cold Chain</a></li>
-            <li><a href="#catalog">Express 90-Min Delivery</a></li>
-            <li><a href="#catalog">Traditional Flame-Singed Skin</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact &amp; Store</h4>
-          <p style="margin-bottom: 8px;">
-            📍 <strong>Farm &amp; Butchery:</strong><br>
-            Rasinagar, Kothambadi, Attur, Salem - 636102
-          </p>
-          <p style="margin-bottom: 8px;">
-            📱 <strong>WhatsApp Orders:</strong><br>
-            <a href="https://wa.me/918489542722" style="color: var(--whatsapp); font-weight: 700;">+91 8489542722</a>
-          </p>
-          <p>
-            ⏰ <strong>Butchery Hours:</strong><br>
-            Mon - Sun: 6:00 AM - 8:00 PM
-          </p>
-        </div>
+        <span class="logo-text">HACK<span>SCALE</span></span>
       </div>
-
-      <div class="footer-bottom">
-        <div>
-          © 2026 Komban Cuts (MGH Farm). All rights reserved.
-        </div>
-        <div style="display: flex; gap: 18px;">
-          <span>100% Chemical-Free Guarantee</span>
-          <span>•</span>
-          <span>Contact: sgmaha2005@gmail.com</span>
-        </div>
+      <p>
+        The definitive operating system and field knowledge base for builders turning 48-hour hackathon ideas into market-defining venture reality.
+      </p>
+      <div class="footer-credits">
+        <span>Architected with speed &bull; 2026 HackScale Platform</span>
       </div>
+    </div>
+
+    <div class="footer-links">
+      <h3>Platform</h3>
+      <a href="#features">Complete Stack</a>
+      <a href="#process">Sprint Workflow</a>
+      <a href="#demo">Live Sandbox</a>
+      <a href="#demo">Judge Rubric</a>
+      <a href="#pricing">Builder Tiers</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>Field Notes</h3>
+      <a href="#blog">Winning Playbooks</a>
+      <a href="#blog">AI Agent Stacks</a>
+      <a href="#blog">Pitch Deck Templates</a>
+      <a href="#blog">Sponsor Bounties</a>
+      <a href="#faq">Frequently Asked</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>Community</h3>
+      <a href="https://github.com" target="_blank" rel="noopener">GitHub Repositories</a>
+      <a href="https://discord.com" target="_blank" rel="noopener">Discord War Room</a>
+      <a href="https://x.com" target="_blank" rel="noopener">X / Twitter</a>
+      <a href="#contact">Contact Mentors</a>
     </div>
   </footer>
 
-  <!-- Application Logic -->
+  <!-- FULL ARTICLE MODAL VIEWER -->
+  <div class="article-modal-backdrop" id="article-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="article-modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close article">✕</button>
+      <div class="modal-article-body" id="modal-article-content">
+        <!-- Content injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
