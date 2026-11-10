@@ -9,7 +9,7 @@ export const WhatsAppFloating: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [customMsg, setCustomMsg] = useState('');
 
-  const cleanNumber = (settings.whatsappNumber || '+919842212345').replace(/[^0-9]/g, '');
+  const cleanNumber = (settings.whatsappNumber || '+918489542722').replace(/[^0-9]/g, '');
 
   const quickMessages = [
     'Hello KOMBAN CUTS, what are today’s fresh meat & fish specials?',

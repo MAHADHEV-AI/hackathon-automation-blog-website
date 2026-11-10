@@ -78,7 +78,7 @@ export default function AccountPage() {
 
     const newAddr: DeliveryAddress = {
       fullName: user?.fullName || 'Customer',
-      phone: user?.phone || '+91 98422 12345',
+      phone: user?.phone || '+91 84895 42722',
       houseNo: newHouseNo,
       street: newStreet,
       area: newArea,
@@ -233,7 +233,7 @@ export default function AccountPage() {
                     required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+91 98422 12345"
+                    placeholder="+91 84895 42722"
                     className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-brand-red focus:bg-white"
                   />
                 </div>

@@ -51,7 +51,7 @@ const DEFAULT_DEMO_USER: UserProfile = {
 const DEFAULT_ADMIN_USER: UserProfile = {
   id: 'usr-komban-admin',
   fullName: 'Komban Store Admin',
-  phone: '+91 98422 12345',
+  phone: '+91 84895 42722',
   email: 'admin@kombancuts.com',
   role: 'admin',
   savedAddresses: [],
@@ -125,7 +125,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const profile: UserProfile = {
       id: `usr-${Date.now()}`,
       fullName: isAdmin ? 'Komban Cuts Admin' : email.split('@')[0],
-      phone: '+91 98422 12345',
+      phone: '+91 84895 42722',
       email,
       role: isAdmin ? 'admin' : 'customer',
       savedAddresses: isAdmin ? [] : DEFAULT_DEMO_USER.savedAddresses,

@@ -2,7 +2,7 @@
 
 > **Fresh Cuts. Pure Quality. Delivered Fresh.**  
 > **142, Cross Cut Road, Gandhipuram, Coimbatore, Tamil Nadu – 641012**  
-> Direct Phone & WhatsApp: **+91 98422 12345** • Email: **orders@kombancuts.com**
+> Direct Phone & WhatsApp: **+91 84895 42722** • Email: **orders@kombancuts.com**
 
 ---
 
@@ -136,4 +136,4 @@ RAZORPAY_KEY_SECRET=your_razorpay_secret
 
 ## 📱 WhatsApp Business Integration
 
-The WhatsApp floating widget and order dispatch notifier automatically link to the phone number configured in `Store Settings` (`/admin/settings`). Default: `+91 98422 12345`.
+The WhatsApp floating widget and order dispatch notifier automatically link to the phone number configured in `Store Settings` (`/admin/settings`). Default: `+91 84895 42722`.
