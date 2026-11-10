@@ -2,13 +2,14 @@
 
 > **Est. 1997 • Rasinagar, Kothambadi, Attur, Salem, Tamil Nadu – 636102**  
 > Direct Phone & WhatsApp: **+91 8489542722**  
-> Live Website & GitHub Pages: [https://mahadhev-ai.github.io/MGH-farm/](https://mahadhev-ai.github.io/MGH-farm/)
+> **Live Working Website**: [https://mahadhev-ai.github.io/hackathon-automation-blog-website/](https://mahadhev-ai.github.io/hackathon-automation-blog-website/)  
+> *(If you rename this repo to `MGH-farm` in GitHub Settings, it will also be available at `https://mahadhev-ai.github.io/MGH-farm/`)*
 
 ---
 
 ## 🌾 About MGH Farm
 
-MGH Farm is a 42-acre family-run livestock and poultry farm operating since 1997. We raise healthy livestock, pasture-grazed goats, heritage country chickens (*Naatu Kozhi*), and supply farm-fresh meat, organic eggs, and day-old chicks directly from our farm gates.
+MGH Farm is a 42-acre family-run livestock and poultry farm operating since 1997 in Salem. We raise healthy livestock, pasture-grazed goats, heritage country chickens (*Naatu Kozhi*), and supply farm-fresh meat, organic eggs, and day-old chicks directly from our farm gates.
 
 ### What We Offer:
 - **Country Chicken (Naatu Kozhi):** 100% free-range native breed chickens fed on natural grains, butchered fresh to order into curry or biryani cuts.
