@@ -80,3 +80,4 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
     </Link>
   );
 };
+

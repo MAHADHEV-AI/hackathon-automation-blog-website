@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://mahadhev-ai.github.io/MGH-farm/sitemap.xml

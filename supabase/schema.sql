@@ -254,3 +254,4 @@ CREATE POLICY "Admins full manage variants" ON public.product_variants FOR ALL U
 CREATE POLICY "Admins full manage orders" ON public.orders FOR ALL USING (public.is_admin());
 CREATE POLICY "Admins full manage settings" ON public.store_settings FOR ALL USING (public.is_admin());
 CREATE POLICY "Admins full manage coupons" ON public.coupons FOR ALL USING (public.is_admin());
+

@@ -1,558 +1,1564 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MGH FARM | Fresh Meats, Country Chicken, Mutton &amp; Eggs</title>
+  <title>KOMBAN CUTS | Premium Online Meat & Seafood Delivery in Coimbatore</title>
   
   <!-- SEO & Social Meta -->
-  <meta name="description" content="MGH FARM in Rasinagar, Kothambadi, Attur, Salem. Order farm-fresh country chicken (Naatu Kozhi), tender broiler, fresh mutton, and country eggs online via WhatsApp or visit our farm.">
-  <meta name="keywords" content="MGH Farm, fresh meat Salem, country chicken Attur, naatu kozhi Salem, goat mutton Attur, fresh eggs Rasinagar, meat delivery Attur Salem">
-  <meta name="author" content="MGH FARM">
-  <link rel="canonical" href="https://mahadhev-ai.github.io/MGH-farm/">
-
-  <meta property="og:title" content="MGH FARM | Fresh Meats, Country Chicken, Mutton &amp; Eggs">
-  <meta property="og:description" content="Quality livestock, fresh butchered meats, organic country eggs, and healthy chicks from MGH FARM in Rasinagar, Kothambadi, Attur, Salem.">
-  <meta property="og:image" content="https://mahadhev-ai.github.io/MGH-farm/images/fresh_meats_hero.jpg">
-  <meta property="og:url" content="https://mahadhev-ai.github.io/MGH-farm/">
+  <meta name="description" content="KOMBAN CUTS - Fresh Cuts. Pure Quality. Delivered Fresh. Order antibiotic-free chicken, tender Salem goat mutton, morning ocean fish, and country eggs in Coimbatore. Express 45-60 min delivery across RS Puram, Gandhipuram, Saibaba Colony & Peelamedu.">
+  <meta name="keywords" content="Fresh chicken in Coimbatore, Fresh mutton in Coimbatore, Fresh fish in Coimbatore, Meat delivery Coimbatore, Online meat shop Coimbatore, Chicken home delivery Coimbatore, Vanjaram fish Coimbatore, Country eggs Coimbatore, Komban Cuts">
+  <meta name="author" content="KOMBAN CUTS">
+  
+  <!-- OpenGraph Meta -->
+  <meta property="og:title" content="KOMBAN CUTS – Premium Online Meat & Seafood E-Commerce Platform">
+  <meta property="og:description" content="Experience the freshness of quality chicken, mutton, fish and eggs with KOMBAN CUTS in Coimbatore.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mahadhev-ai.github.io/hackathon-automation-blog-website/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=1200&q=80">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Inter & Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#111111',
+              charcoal: '#202020',
+              red: '#D62828',
+              redDark: '#A31616',
+              redLight: '#FBE8E8',
+              accent: '#E63946',
+              gold: '#E5A93C',
+              goldLight: '#FEF9C3',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Montserrat', 'Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- Top Farm Announcement Strip -->
-  <div class="top-announcement">
-    <div class="announcement-content">
-      <span class="pulse-dot"></span>
-      <span><strong>TODAY AT THE FARM:</strong> Fresh Morning Butchered Stock Ready • Country Chicken, Mutton &amp; Farm Eggs • Farm Stand Open 9am–2pm • Order on WhatsApp: <strong>+91 8489542722</strong></span>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #111111; overflow-x: hidden; }
+    .font-display { font-family: 'Montserrat', sans-serif; }
+    /* Custom scrollbars */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #F1F1F1; }
+    ::-webkit-scrollbar-thumb { background: #D62828; border-radius: 3px; }
+  </style>
+</head>
+<body class="bg-white text-gray-900 antialiased min-h-screen flex flex-col">
+
+  <!-- ========================================== -->
+  <!-- 1. TOP PROMOTIONAL ANNOUNCEMENT BAR       -->
+  <!-- ========================================== -->
+  <div class="bg-brand-black text-gray-200 text-xs py-2 px-4 border-b border-brand-charcoal">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-4 text-gray-300">
+        <span class="flex items-center gap-1.5 font-semibold">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-red"></i>
+          <span>142 Cross Cut Road, Gandhipuram, Coimbatore – 641012</span>
+        </span>
+        <span class="hidden md:flex items-center gap-1.5 text-gray-400">
+          <i data-lucide="clock" class="w-3.5 h-3.5 text-brand-gold"></i>
+          <span>Open: 06:30 AM – 09:30 PM (All 7 Days)</span>
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2 text-center text-white">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-gold animate-pulse"></i>
+        <span class="font-bold text-brand-goldLight">Freshness You Can Trust – Flat ₹50 OFF with code <span class="bg-brand-red text-white px-1.5 py-0.5 rounded font-mono">FRESH50</span></span>
+      </div>
+
+      <div class="hidden lg:flex items-center gap-4 text-gray-300">
+        <a href="tel:+919842212345" class="flex items-center gap-1.5 hover:text-white transition-colors">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-red"></i>
+          <span>+91 98422 12345</span>
+        </a>
+        <button onclick="openAdminModal()" class="text-[11px] text-gray-400 hover:text-brand-gold transition-colors font-mono">
+          Admin Portal
+        </button>
+      </div>
     </div>
   </div>
 
-  <!-- Header -->
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="MGH Farm home">
-      <span class="brand-mark">MGH</span>
-      <div class="brand-text">
-        <span class="brand-title">FARM</span>
-        <span class="brand-sub">EST. 1997 / SALEM</span>
+  <!-- ========================================== -->
+  <!-- 2. MAIN NAVIGATION BAR                    -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <!-- Logo -->
+        <a href="#" class="group flex items-center gap-2.5 select-none">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-red to-[#A31616] p-1.5 shadow-md flex items-center justify-center transition-transform group-hover:scale-105">
+            <svg viewBox="0 0 24 24" fill="none" class="w-full h-full text-white">
+              <path d="M3 5C3 4.44772 3.44772 4 4 4H14C14.5523 4 15 4.44772 15 5V14C15 15.6569 13.6569 17 12 17H4C3.44772 17 3 16.5523 3 16V5Z" fill="currentColor"/>
+              <circle cx="12" cy="7" r="1" fill="#D62828"/>
+              <path d="M15 14L20.5 19.5C21.1667 20.1667 20.8333 21 20 21.5L18.5 21C18 20.5 14 16 14 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M3 9L7 5" stroke="#FEF9C3" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-center tracking-wider font-extrabold leading-none text-2xl font-display">
+              <span class="text-brand-black">KOMBAN</span>
+              <span class="text-brand-red ml-1.5">CUTS</span>
+            </div>
+            <span class="font-medium tracking-widest uppercase mt-0.5 text-gray-500 text-[10px]">
+              Fresh Cuts • Pure Quality • Coimbatore
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Links -->
+        <nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-gray-700">
+          <a href="#" class="hover:text-brand-red transition-colors py-2">Home</a>
+          <a href="#catalogue" class="hover:text-brand-red transition-colors py-2">Shop All Cuts</a>
+          <a href="#categories" class="hover:text-brand-red transition-colors py-2">Categories</a>
+          <a href="#offers" class="flex items-center gap-1 text-brand-red hover:text-brand-redDark transition-colors py-2">
+            <i data-lucide="flame" class="w-4 h-4 fill-brand-red"></i>
+            <span>Special Offers</span>
+          </a>
+          <a href="#why-us" class="hover:text-brand-red transition-colors py-2">Why Us</a>
+          <a href="#about" class="hover:text-brand-red transition-colors py-2">About Us</a>
+          <a href="#contact" class="hover:text-brand-red transition-colors py-2">Contact</a>
+        </nav>
+
+        <!-- Search Bar -->
+        <div class="hidden md:flex items-center flex-1 max-w-xs relative">
+          <input
+            id="searchInput"
+            type="text"
+            oninput="handleSearch(this.value)"
+            placeholder="Search chicken, mutton, vanjaram..."
+            class="w-full bg-gray-50 border border-gray-200 rounded-full pl-10 pr-4 py-2 text-xs font-medium focus:outline-none focus:border-brand-red focus:bg-white focus:ring-2 focus:ring-brand-redLight transition-all"
+          >
+          <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+        </div>
+
+        <!-- Right: Admin / Cart Buttons -->
+        <div class="flex items-center gap-3">
+          <button onclick="openAdminModal()" class="hidden sm:flex items-center gap-1.5 px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-xl text-xs font-bold transition-all">
+            <i data-lucide="shield-check" class="w-4 h-4 text-brand-red"></i>
+            <span>Admin</span>
+          </button>
+
+          <!-- Cart Drawer Button -->
+          <button
+            onclick="toggleCart(true)"
+            class="relative flex items-center gap-2.5 bg-brand-black hover:bg-brand-charcoal text-white px-4 py-2.5 rounded-xl shadow-md transition-all transform active:scale-95"
+            aria-label="View Shopping Cart"
+          >
+            <div class="relative">
+              <i data-lucide="shopping-cart" class="w-5 h-5 text-white"></i>
+              <span id="cartCountBadge" class="absolute -top-2 -right-2 w-5 h-5 bg-brand-red text-white text-[10px] font-black rounded-full flex items-center justify-center border-2 border-brand-black">
+                0
+              </span>
+            </div>
+            <div class="hidden sm:flex flex-col text-left">
+              <span class="text-[10px] text-gray-400 uppercase font-semibold leading-none">Cart</span>
+              <span id="cartSubtotalBadge" class="text-xs font-bold leading-tight">₹0</span>
+            </div>
+          </button>
+        </div>
+
       </div>
-    </a>
-
-    <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#story">Our Story</a>
-      <a href="#harvest">The Harvest</a>
-      <a href="#store" class="nav-store-link">Order Meat &amp; Eggs <span class="hot-badge">FRESH</span></a>
-      <a href="#recipes">Farm Recipes</a>
-      <a href="#visit">Visit Us</a>
-    </nav>
-
-    <div class="header-actions">
-      <a class="whatsapp-btn-header" href="https://wa.me/918489542722?text=Hello%20MGH%20Farm!%20I%20would%20like%20to%20order%20fresh%20meats/eggs." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        <span class="wa-icon">💬</span>
-        <span class="wa-text">WhatsApp</span>
-      </a>
-
-      <button class="cart-btn" id="open-cart-btn" type="button" aria-label="View Shopping Cart">
-        <span class="cart-icon">🛒</span>
-        <span class="cart-label">Cart</span>
-        <span class="cart-badge" id="cart-counter">0</span>
-      </button>
-
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
-        <span>Menu</span>
-        <span class="menu-icon" aria-hidden="true">+</span>
-      </button>
     </div>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
-    <a href="#story">Our story</a>
-    <a href="#harvest">The harvest</a>
-    <a href="#store" class="mobile-store-link">🥩 Order Fresh Meat &amp; Eggs</a>
-    <a href="#recipes">Farm Recipes</a>
-    <a href="#visit">Visit us</a>
-    <div class="mobile-nav-cta">
-      <a class="solid-link-sm" href="tel:+918489542722">📞 Call: 8489542722</a>
-      <a class="whatsapp-link-sm" href="https://wa.me/918489542722" target="_blank" rel="noopener">💬 WhatsApp +91 8489542722</a>
+  <!-- ========================================== -->
+  <!-- 3. HERO SECTION                            -->
+  <!-- ========================================== -->
+  <section class="relative bg-gradient-to-b from-brand-black via-[#161616] to-brand-black text-white overflow-hidden py-16 sm:py-24">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-charcoal/80 border border-brand-red/30 text-xs font-semibold text-brand-redLight">
+            <span class="w-2 h-2 rounded-full bg-brand-red animate-ping"></span>
+            <span>Coimbatore’s Trusted Fresh Meat & Seafood Destination</span>
+          </div>
+
+          <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight">
+            FRESH MEAT.<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-red-400 to-brand-accent">
+              FRESH SEAFOOD.
+            </span><br>
+            DELIVERED TO YOUR DOOR.
+          </h1>
+
+          <p class="text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed">
+            Experience the freshness of quality chicken, mutton, fish and eggs with <strong class="text-white font-bold">KOMBAN CUTS</strong>. Procured daily, hygienically butchered to order, and vacuum-sealed for true net weight.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs font-medium text-gray-300">
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-red"></i>
+              <span>100% Antibiotic-Free</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-red"></i>
+              <span>True Net Weight Pay</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-red"></i>
+              <span>45-Min Express Covai</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="#catalogue" class="px-8 py-4 bg-brand-red hover:bg-brand-redDark text-white text-sm font-extrabold rounded-2xl shadow-xl shadow-brand-red/25 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+              <span>SHOP NOW</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+
+            <a href="#categories" class="px-7 py-4 bg-brand-charcoal hover:bg-[#2a2a2a] text-white text-sm font-bold rounded-2xl border border-gray-700 transition-all">
+              EXPLORE CATEGORIES
+            </a>
+          </div>
+
+          <!-- Promo Banner -->
+          <div class="p-4 rounded-2xl bg-gradient-to-r from-brand-charcoal to-[#1a1a1a] border border-brand-red/30 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-brand-red/20 flex items-center justify-center text-brand-red flex-shrink-0">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs font-extrabold text-white">Freshness You Can Trust – Only at KOMBAN CUTS.</p>
+                <p class="text-[11px] text-gray-400">Flat ₹50 OFF on orders above ₹499! Use Code: <strong class="text-brand-gold">FRESH50</strong></p>
+              </div>
+            </div>
+            <button onclick="copyCoupon('FRESH50')" class="text-xs font-bold text-brand-red hover:underline whitespace-nowrap">
+              Copy Code →
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Hero Image -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border-2 border-brand-charcoal shadow-2xl aspect-square bg-brand-charcoal">
+            <img
+              src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=1000&q=80"
+              alt="Komban Cuts Prime Mutton and Meat"
+              class="w-full h-full object-cover"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="bg-brand-red text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md">
+                Today's Butchery Special
+              </span>
+              <h3 class="text-xl font-extrabold text-white mt-1">Pasture-Fed Salem Goat Mutton</h3>
+              <p class="text-xs text-gray-300">Tender curry cuts with ribs, marrow bones, and shoulder</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </nav>
+  </section>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-line"></span> Rasinagar, Kothambadi, Attur</p>
-        <h1>Grown with<br><em>patience.</em><br><span class="hero-h1-sub">Delivered fresh.</span></h1>
-        <p class="hero-intro">
-          We raise honest food and healthy livestock on 42 acres of living soil in Salem. Pure country chicken (Naatu Kozhi), tender farm mutton, wholesome organic eggs, and healthy chicks.
+  <!-- ========================================== -->
+  <!-- 4. CATEGORIES SECTION                      -->
+  <!-- ========================================== -->
+  <section id="categories" class="py-20 bg-gray-50/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-brand-red text-xs font-black uppercase tracking-widest bg-red-50 border border-brand-red/20 px-3.5 py-1 rounded-full">
+          Hand-Trimmed Selections
+        </span>
+        <h2 class="font-display font-black text-3xl sm:text-4xl text-gray-900 mt-3 tracking-tight">
+          Explore Our Fresh Categories
+        </h2>
+        <p class="text-sm text-gray-500 mt-2">
+          From fresh morning poultry to prime Coimbatore goat mutton and direct coastal catches
         </p>
-        <div class="hero-cta-group">
-          <a class="btn-primary" href="#store">
-            <span>Order Fresh Cuts</span>
-            <span class="btn-arrow">&#8595;</span>
-          </a>
-          <a class="circle-link" href="#story" aria-label="Discover MGH Farm">
-            <span>Discover<br>the farm</span>
-            <span class="arrow">&#8595;</span>
-          </a>
-        </div>
       </div>
 
-      <div class="hero-image-wrap">
-        <img class="hero-image" src="images/fresh_meats_hero.jpg" alt="Artisanal fresh meats and farm eggs at MGH Farm butcher display">
-        <div class="image-overlay"></div>
-        <div class="image-note">
-          <span>11.5977° N, 78.5967° E</span>
-          <span>Rasinagar • Attur • Salem</span>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Chicken -->
+        <div onclick="filterCategory('chicken')" class="group relative rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-end min-h-[340px] cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=800&q=80" alt="Fresh Chicken" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/50 to-transparent"></div>
+          <div class="relative z-10 p-6 text-white">
+            <span class="bg-brand-red text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full">Daily Fresh Cut</span>
+            <h3 class="font-display font-extrabold text-2xl mt-2 group-hover:text-brand-redLight transition-colors">CHICKEN</h3>
+            <p class="text-xs text-brand-gold font-medium">கோழி இறைச்சி</p>
+            <p class="text-xs text-gray-300 mt-2 line-clamp-2">Tender, antibiotic-free broiler and country Naatu Kozhi.</p>
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-white group-hover:text-brand-red mt-4 uppercase tracking-wider">
+              Explore Cuts →
+            </span>
+          </div>
         </div>
-        <div class="hero-stamp">
-          EST.<br><strong>1997</strong>
+
+        <!-- Mutton -->
+        <div onclick="filterCategory('mutton')" class="group relative rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-end min-h-[340px] cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=800&q=80" alt="Fresh Mutton" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/50 to-transparent"></div>
+          <div class="relative z-10 p-6 text-white">
+            <span class="bg-brand-red text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full">Heritage Quality</span>
+            <h3 class="font-display font-extrabold text-2xl mt-2 group-hover:text-brand-redLight transition-colors">MUTTON</h3>
+            <p class="text-xs text-brand-gold font-medium">ஆட்டு இறைச்சி</p>
+            <p class="text-xs text-gray-300 mt-2 line-clamp-2">Pasture-fed tender goat and lamb cuts, trimmed to perfection.</p>
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-white group-hover:text-brand-red mt-4 uppercase tracking-wider">
+              Explore Cuts →
+            </span>
+          </div>
         </div>
-        <div class="hero-floating-card">
-          <span class="hfc-title">100% Antibiotic-Free</span>
-          <span class="hfc-sub">Hand-cut &amp; chilled to order</span>
+
+        <!-- Fish & Seafood -->
+        <div onclick="filterCategory('fish-seafood')" class="group relative rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-end min-h-[340px] cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=800&q=80" alt="Fish and Seafood" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/50 to-transparent"></div>
+          <div class="relative z-10 p-6 text-white">
+            <span class="bg-brand-red text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full">Morning Catch</span>
+            <h3 class="font-display font-extrabold text-2xl mt-2 group-hover:text-brand-redLight transition-colors">FISH &amp; SEAFOOD</h3>
+            <p class="text-xs text-brand-gold font-medium">மீன் &amp; கடல் உணவு</p>
+            <p class="text-xs text-gray-300 mt-2 line-clamp-2">Direct ocean catch: Vanjaram steaks, Pomfret, Mathi, and Prawns.</p>
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-white group-hover:text-brand-red mt-4 uppercase tracking-wider">
+              Explore Cuts →
+            </span>
+          </div>
         </div>
+
+        <!-- Eggs -->
+        <div onclick="filterCategory('eggs')" class="group relative rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-end min-h-[340px] cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?auto=format&fit=crop&w=800&q=80" alt="Country and Farm Eggs" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/50 to-transparent"></div>
+          <div class="relative z-10 p-6 text-white">
+            <span class="bg-brand-red text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full">Daily Harvest</span>
+            <h3 class="font-display font-extrabold text-2xl mt-2 group-hover:text-brand-redLight transition-colors">EGGS</h3>
+            <p class="text-xs text-brand-gold font-medium">முட்டை</p>
+            <p class="text-xs text-gray-300 mt-2 line-clamp-2">Sanitized farm table eggs &amp; free-range golden yolk Country Naatu Kozhi eggs.</p>
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-white group-hover:text-brand-red mt-4 uppercase tracking-wider">
+              Explore Cuts →
+            </span>
+          </div>
+        </div>
+
       </div>
+    </div>
+  </section>
 
-      <div class="hero-footer">
-        <span>01 / 05</span>
-        <span>Country Chicken / Tender Mutton / Farm Eggs / Healthy Livestock</span>
-        <span>Scroll to explore <b>&#8595;</b></span>
-      </div>
-    </section>
-
-    <!-- Trust Feature Badges -->
-    <section class="trust-strip">
-      <div class="trust-grid">
-        <div class="trust-item">
-          <span class="trust-icon">🌿</span>
-          <div>
-            <h4>100% Farm Reared</h4>
-            <p>Naturally grain-fed and free-grazing animals without steroids or hormones.</p>
-          </div>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">🔪</span>
-          <div>
-            <h4>Butchered Fresh Daily</h4>
-            <p>Cut fresh upon order. Never frozen, no chemical preservatives.</p>
-          </div>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">🧼</span>
-          <div>
-            <h4>Clean &amp; Hygienic Packing</h4>
-            <p>RO-water washed, sealed in temperature-controlled food-grade pouches.</p>
-          </div>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">⚡</span>
-          <div>
-            <h4>Express Delivery &amp; Pickup</h4>
-            <p>Fast doorstep delivery in Attur &amp; Salem, or drive-through farm stand pickup.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 02: Our Story -->
-    <section id="story" class="story story-full section-grid">
-      <div class="section-label"><span>02</span><span>Our story</span></div>
-      <div class="story-content">
-        <p class="kicker">Welcome to MGH Farm</p>
-        <h2>Quality livestock, <em>trusted farming.</em></h2>
-        <p class="body-copy">
-          At <strong>MGH Farm</strong>, we are passionate about raising healthy livestock and poultry and providing quality farm products to our customers across Salem and Tamil Nadu.
-        </p>
-        <p class="body-copy">
-          Our farm focuses on <strong>chickens, goats, eggs, and chicks</strong>, with attention to proper care, healthy growth, and responsible farming practices. We believe that good food starts with caring for our animals and maintaining a clean, chemical-free farm environment.
-        </p>
-
-        <div class="story-block">
-          <p class="kicker">How we started</p>
-          <h3>From a passion for farming to a growing livestock farm.</h3>
-          <p class="body-copy">
-            MGH Farm started with a passion for farming and livestock. With dedication and hard work, we began raising chickens and goats and gradually expanded our farm to provide a wider range of quality farm products.
+  <!-- ========================================== -->
+  <!-- 5. MAIN PRODUCT CATALOGUE & FILTERING      -->
+  <!-- ========================================== -->
+  <section id="catalogue" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Catalogue Header & Tabs -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="text-brand-red text-xs font-black uppercase tracking-widest bg-red-50 border border-brand-red/20 px-3.5 py-1 rounded-full mb-2 inline-block">
+            Fresh Butchery Stock
+          </span>
+          <h2 class="font-display font-black text-3xl sm:text-4xl text-gray-900 tracking-tight">
+            Order Fresh Cuts Online
+          </h2>
+          <p class="text-xs sm:text-sm text-gray-500 mt-1">
+            Hand-trimmed to order with 100% net weight guarantee. Select portion size &amp; add to cart.
           </p>
-          <p class="body-copy">
-            Today, MGH Farm serves customers looking for <strong>healthy chickens, goats, fresh eggs, and chicks</strong> for their homes, farms, and poultry needs.
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="filterCategory('all')" id="tab-all" class="cat-tab px-4 py-2 rounded-xl text-xs font-bold bg-brand-black text-white shadow-xs">
+            All Cuts (26)
+          </button>
+          <button onclick="filterCategory('chicken')" id="tab-chicken" class="cat-tab px-4 py-2 rounded-xl text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200">
+            Chicken (8)
+          </button>
+          <button onclick="filterCategory('mutton')" id="tab-mutton" class="cat-tab px-4 py-2 rounded-xl text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200">
+            Mutton (6)
+          </button>
+          <button onclick="filterCategory('fish-seafood')" id="tab-fish-seafood" class="cat-tab px-4 py-2 rounded-xl text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200">
+            Fish &amp; Seafood (7)
+          </button>
+          <button onclick="filterCategory('eggs')" id="tab-eggs" class="cat-tab px-4 py-2 rounded-xl text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200">
+            Eggs (5)
+          </button>
+        </div>
+      </div>
+
+      <!-- Products Grid Container -->
+      <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 6. WHY CHOOSE US (6 PILLARS)              -->
+  <!-- ========================================== -->
+  <section id="why-us" class="py-20 bg-gray-50/70 border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-brand-red text-xs font-black uppercase tracking-widest bg-red-50 border border-brand-red/20 px-3.5 py-1 rounded-full">
+          The Komban Cuts Standard
+        </span>
+        <h2 class="font-display font-black text-3xl sm:text-4xl text-gray-900 mt-3 tracking-tight">
+          Why Choose KOMBAN CUTS?
+        </h2>
+        <p class="text-sm text-gray-600 mt-3 leading-relaxed">
+          We are redefining how Coimbatore buys fresh meat. From farm sourcing to hygienic cutting and speedy delivery, here is why Covai families trust us daily.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 rounded-2xl bg-red-50 text-brand-red flex items-center justify-center mb-6">
+            <i data-lucide="sparkles" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-display font-extrabold text-lg text-gray-900">Fresh and Quality Products</h3>
+          <p class="text-xs text-brand-gold font-medium mt-0.5">தினசரி புத்தம் புதிய இறைச்சி</p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            Daily morning butchering. 100% antibiotic-residue-free chicken, tender grass-fed Salem goat mutton, and fresh ocean-to-counter seafood.
           </p>
         </div>
 
-        <div class="story-block">
-          <p class="kicker">What we offer</p>
-          <h3>Healthy animals and quality farm products.</h3>
-          <p class="body-copy">We care for every part of our farm so customers can choose products with confidence.</p>
-          <ul class="belief-list">
-            <li>
-              <strong>Chickens</strong>
-              <span>Heritage Country Chickens (Naatu Kozhi) and healthy birds raised with proper care and attention for different customer needs.</span>
+        <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 rounded-2xl bg-red-50 text-brand-red flex items-center justify-center mb-6">
+            <i data-lucide="shield-check" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-display font-extrabold text-lg text-gray-900">Hygienic Preparation</h3>
+          <p class="text-xs text-brand-gold font-medium mt-0.5">சுகாதாரமான வெட்டுமுறை</p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            Sanitized stainless steel butchery surfaces, RO-water washing, temperature-controlled 0-4°C cutting environment for zero contamination.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 rounded-2xl bg-red-50 text-brand-red flex items-center justify-center mb-6">
+            <i data-lucide="package-check" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-display font-extrabold text-lg text-gray-900">Quality Packaging</h3>
+          <p class="text-xs text-brand-gold font-medium mt-0.5">உயர்தர சீல் செய்யப்பட்ட பேக்கிங்</p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            Food-grade vacuum packs with chilled ice gel packs ensure true net weight and maximum kitchen-ready freshness right to your door.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 rounded-2xl bg-red-50 text-brand-red flex items-center justify-center mb-6">
+            <i data-lucide="badge-percent" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-display font-extrabold text-lg text-gray-900">Affordable Pricing</h3>
+          <p class="text-xs text-brand-gold font-medium mt-0.5">நியாயமான சிறந்த விலை</p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            Transparent net-weight pricing. You never pay for waste fat, feathers, or unwanted bones. Regular special discounts and weekly deals.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 rounded-2xl bg-red-50 text-brand-red flex items-center justify-center mb-6">
+            <i data-lucide="truck" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-display font-extrabold text-lg text-gray-900">Convenient Home Delivery</h3>
+          <p class="text-xs text-brand-gold font-medium mt-0.5">விரைவான வீட்டு டெலிவரி</p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            Express 45-60 min delivery across Coimbatore (RS Puram, Gandhipuram, Peelamedu, Saibaba Colony, etc.) in temperature-regulated delivery bags.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 rounded-2xl bg-red-50 text-brand-red flex items-center justify-center mb-6">
+            <i data-lucide="store" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-display font-extrabold text-lg text-gray-900">Easy Shop Pickup</h3>
+          <p class="text-xs text-brand-gold font-medium mt-0.5">நேரடி கடை பிக்கப் (₹0 கட்டணம்)</p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            Order online, skip the weekend queue, and collect your vacuum-sealed cuts fresh at our Cross Cut Road store counter in Gandhipuram.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 7. SPECIAL OFFERS SECTION                  -->
+  <!-- ========================================== -->
+  <section id="offers" class="py-16 bg-gradient-to-r from-brand-black via-brand-charcoal to-brand-black text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8 mb-12">
+        <div>
+          <span class="text-brand-gold text-xs font-black uppercase tracking-widest bg-brand-charcoal border border-brand-gold/30 px-3.5 py-1 rounded-full mb-3 inline-block">
+            Limited Time Savings
+          </span>
+          <h2 class="font-display font-black text-3xl sm:text-4xl text-white tracking-tight">
+            Exclusive Coimbatore Meat Offers
+          </h2>
+          <p class="text-sm text-gray-300 mt-1 max-w-xl">
+            Apply these coupon codes during checkout to enjoy flat discounts and free delivery on fresh cuts.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-3xl bg-brand-charcoal/90 border border-gray-700 hover:border-brand-red/60 transition-all flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-10 h-10 rounded-xl bg-brand-red/20 flex items-center justify-center text-brand-red">
+                <i data-lucide="percent" class="w-5 h-5"></i>
+              </span>
+              <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full bg-emerald-950/80 text-emerald-400 border border-emerald-800">
+                Active Coupon
+              </span>
+            </div>
+            <h3 class="font-display font-black text-2xl text-white">₹50 FLAT OFF</h3>
+            <p class="text-xs text-gray-300 mt-2">Flat ₹50 OFF on orders above ₹499 across all cuts.</p>
+            <p class="text-[11px] text-gray-400 mt-1">Min order value: <strong>₹499</strong></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-700 flex items-center justify-between">
+            <span class="font-mono text-sm font-black text-brand-gold bg-black/50 px-3 py-1.5 rounded-lg border border-brand-gold/30">FRESH50</span>
+            <button onclick="copyCoupon('FRESH50')" class="text-xs font-bold text-gray-300 hover:text-white flex items-center gap-1">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Code
+            </button>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-brand-charcoal/90 border border-gray-700 hover:border-brand-red/60 transition-all flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-10 h-10 rounded-xl bg-brand-red/20 flex items-center justify-center text-brand-red">
+                <i data-lucide="percent" class="w-5 h-5"></i>
+              </span>
+              <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full bg-emerald-950/80 text-emerald-400 border border-emerald-800">
+                Active Coupon
+              </span>
+            </div>
+            <h3 class="font-display font-black text-2xl text-white">10% OFF</h3>
+            <p class="text-xs text-gray-300 mt-2">10% OFF on all fresh meat &amp; seafood up to ₹100.</p>
+            <p class="text-[11px] text-gray-400 mt-1">Min order value: <strong>₹399</strong></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-700 flex items-center justify-between">
+            <span class="font-mono text-sm font-black text-brand-gold bg-black/50 px-3 py-1.5 rounded-lg border border-brand-gold/30">KOMBAN10</span>
+            <button onclick="copyCoupon('KOMBAN10')" class="text-xs font-bold text-gray-300 hover:text-white flex items-center gap-1">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Code
+            </button>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-brand-charcoal/90 border border-gray-700 hover:border-brand-red/60 transition-all flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-10 h-10 rounded-xl bg-brand-red/20 flex items-center justify-center text-brand-red">
+                <i data-lucide="percent" class="w-5 h-5"></i>
+              </span>
+              <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full bg-emerald-950/80 text-emerald-400 border border-emerald-800">
+                Welcome Deal
+              </span>
+            </div>
+            <h3 class="font-display font-black text-2xl text-white">₹75 FLAT OFF</h3>
+            <p class="text-xs text-gray-300 mt-2">Welcome special: ₹75 OFF on your first purchase above ₹599.</p>
+            <p class="text-[11px] text-gray-400 mt-1">Min order value: <strong>₹599</strong></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-700 flex items-center justify-between">
+            <span class="font-mono text-sm font-black text-brand-gold bg-black/50 px-3 py-1.5 rounded-lg border border-brand-gold/30">FIRSTBUY</span>
+            <button onclick="copyCoupon('FIRSTBUY')" class="text-xs font-bold text-gray-300 hover:text-white flex items-center gap-1">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Code
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 8. HOW IT WORKS (4 STEPS)                  -->
+  <!-- ========================================== -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-brand-red text-xs font-black uppercase tracking-widest bg-red-50 border border-brand-red/20 px-3.5 py-1 rounded-full">
+          Transparent Freshness
+        </span>
+        <h2 class="font-display font-black text-3xl sm:text-4xl text-gray-900 mt-3 tracking-tight">
+          How KOMBAN CUTS Works
+        </h2>
+        <p class="text-sm text-gray-500 mt-2">
+          Simple 4-step farm-to-kitchen workflow designed for pure quality and zero hassle
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="p-6 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-xl transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-brand-red">
+              <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+            </div>
+            <span class="font-mono text-3xl font-black text-gray-300">01</span>
+          </div>
+          <h3 class="font-display font-black text-base text-gray-900">Choose Your Cuts</h3>
+          <p class="text-[11px] text-brand-gold font-medium mt-0.5">இறைச்சியை தேர்வு செய்யுங்கள்</p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            Browse fresh farm chicken, pasture-fed Salem mutton, morning coastal catch, and organic eggs.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-xl transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-brand-red">
+              <i data-lucide="scissors" class="w-6 h-6"></i>
+            </div>
+            <span class="font-mono text-3xl font-black text-gray-300">02</span>
+          </div>
+          <h3 class="font-display font-black text-base text-gray-900">Butchered to Order</h3>
+          <p class="text-[11px] text-brand-gold font-medium mt-0.5">ஆர்டரின்படி வெட்டப்படுகிறது</p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            Expertly trimmed, washed in RO water, and portioned. You only pay for true 100% net weight.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-xl transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-brand-red">
+              <i data-lucide="package-check" class="w-6 h-6"></i>
+            </div>
+            <span class="font-mono text-3xl font-black text-gray-300">03</span>
+          </div>
+          <h3 class="font-display font-black text-base text-gray-900">Chilled Vacuum Pack</h3>
+          <p class="text-[11px] text-brand-gold font-medium mt-0.5">குளிர்ந்த காற்றுப்புகா பேக்கிங்</p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            Packed in food-grade insulated boxes with ice chill pads to preserve farm-fresh moisture at 0-4°C.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-xl transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-brand-red">
+              <i data-lucide="truck" class="w-6 h-6"></i>
+            </div>
+            <span class="font-mono text-3xl font-black text-gray-300">04</span>
+          </div>
+          <h3 class="font-display font-black text-base text-gray-900">Doorstep or Pickup</h3>
+          <p class="text-[11px] text-brand-gold font-medium mt-0.5">வீட்டு டெலிவரி அல்லது கடை பிக்கப்</p>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+            Get fast 45-60 min delivery in Coimbatore or pick up in 15 mins at our Cross Cut Road store.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 9. COIMBATORE CUSTOMER REVIEWS             -->
+  <!-- ========================================== -->
+  <section class="py-20 bg-gray-50/70 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-brand-red text-xs font-black uppercase tracking-widest bg-red-50 border border-brand-red/20 px-3.5 py-1 rounded-full">
+          Real Covai Reviews
+        </span>
+        <h2 class="font-display font-black text-3xl sm:text-4xl text-gray-900 mt-3 tracking-tight">
+          Loved by Coimbatore Families
+        </h2>
+        <p class="text-sm text-gray-500 mt-2">
+          See what our regular customers in RS Puram, Saibaba Colony, Gandhipuram &amp; Peelamedu say
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-3xl bg-white border border-gray-100 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-3">★★★★★</div>
+            <p class="text-xs text-gray-700 leading-relaxed italic">
+              "The quality of mutton from Komban Cuts is unmatched in Coimbatore. Absolutely tender, fresh, and zero chemical smell. Delivered in chill packs within 45 minutes!"
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-gray-100">
+            <h4 class="text-xs font-bold text-gray-900">Dr. Rajesh Sundaram</h4>
+            <p class="text-[11px] text-gray-400">R.S. Puram, Coimbatore</p>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white border border-gray-100 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-3">★★★★★</div>
+            <p class="text-xs text-gray-700 leading-relaxed italic">
+              "Their Vanjaram fish steaks are so fresh! Clean cuts, no scales, perfect for tawa fry. It saves me so much prep time on Sunday mornings."
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-gray-100">
+            <h4 class="text-xs font-bold text-gray-900">Kavitha Ramachandran</h4>
+            <p class="text-[11px] text-gray-400">Saibaba Colony, Coimbatore</p>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white border border-gray-100 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-3">★★★★★</div>
+            <p class="text-xs text-gray-700 leading-relaxed italic">
+              "As a fitness enthusiast, their boneless chicken breast is my weekly staple. Freshly cut, vacuum sealed, and exactly 500g net weight. Best meat shop in Covai!"
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-gray-100">
+            <h4 class="text-xs font-bold text-gray-900">Karthik Sivakumar</h4>
+            <p class="text-[11px] text-gray-400">Gandhipuram, Coimbatore</p>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white border border-gray-100 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-3">★★★★★</div>
+            <p class="text-xs text-gray-700 leading-relaxed italic">
+              "The Naatu Kozhi eggs have real golden yolks and rich taste. Ordering through their website is super smooth, and the WhatsApp tracking updates keep me informed."
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-gray-100">
+            <h4 class="text-xs font-bold text-gray-900">Ananya Meenakshi</h4>
+            <p class="text-[11px] text-gray-400">Peelamedu, Coimbatore</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 10. ABOUT US & CONTACT SUMMARY             -->
+  <!-- ========================================== -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-xs font-black uppercase tracking-wider text-brand-red">Our Butchery Heritage</span>
+          <h2 class="font-display font-black text-3xl text-gray-900 mt-2">
+            KOMBAN CUTS – Coimbatore, Tamil Nadu
+          </h2>
+          <p class="text-sm text-gray-600 mt-4 leading-relaxed">
+            Founded with a passion for authentic freshness and culinary hygiene, KOMBAN CUTS serves Coimbatore families with premium cuts butchered strictly upon order confirmation.
+          </p>
+          <p class="text-sm text-gray-600 mt-3 leading-relaxed">
+            We never freeze or thaw our meats. Our stainless steel butchery chamber operates at 0-4°C to retain natural succulence, while our transparent weighing guarantees that you only pay for edible meat.
+          </p>
+          
+          <div class="mt-6 flex flex-wrap gap-4 text-xs font-bold text-gray-700">
+            <div class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-brand-red"></i>
+              <span>Cross Cut Road Counter Pickup</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-brand-red"></i>
+              <span>45-Min Home Delivery</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-brand-red"></i>
+              <span>Cash on Delivery / UPI QR</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="contact" class="p-8 rounded-3xl bg-brand-black text-white space-y-6">
+          <h3 class="font-display font-black text-2xl text-white">Visit Our Coimbatore Store</h3>
+          
+          <ul class="space-y-4 text-xs text-gray-300">
+            <li class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5"></i>
+              <span>142, Cross Cut Road, Gandhipuram, Coimbatore, Tamil Nadu – 641012</span>
             </li>
-            <li>
-              <strong>Goats</strong>
-              <span>Quality goats raised with proper natural grazing, clean water, and a healthy farm environment.</span>
+            <li class="flex items-center gap-3">
+              <i data-lucide="phone" class="w-5 h-5 text-brand-red flex-shrink-0"></i>
+              <span>Hotline: +91 98422 12345</span>
             </li>
-            <li>
-              <strong>Fresh eggs</strong>
-              <span>Nutrient-dense country and farm eggs collected fresh every morning, handled with supreme cleanliness.</span>
-            </li>
-            <li>
-              <strong>Chicks</strong>
-              <span>Healthy, active flock starters for customers who want to start or expand poultry farming.</span>
+            <li class="flex items-center gap-3">
+              <i data-lucide="clock" class="w-5 h-5 text-brand-gold flex-shrink-0"></i>
+              <span>Hours: Mon – Sun / 06:30 AM – 09:30 PM</span>
             </li>
           </ul>
-        </div>
 
-        <div class="story-block">
-          <p class="kicker">Our commitment</p>
-          <h3>Healthy animals are the foundation of a successful farm.</h3>
-          <p class="body-copy">
-            At MGH Farm, we give importance to healthy livestock and poultry, proper feeding and care, clean and hygienic surroundings, quality farm products, customer satisfaction, and responsible farming practices.
-          </p>
-        </div>
-
-        <div class="story-block story-close">
-          <p class="kicker">Growing with you</p>
-          <p class="body-copy">
-            Farming is a journey that requires patience, dedication, and care. At MGH Farm, we are proud to be part of that journey and look forward to growing together with our customers.
-          </p>
-          <p class="story-signoff">Thank you for being part of our journey.</p>
-          <p class="story-motto">
-            <strong>MGH Farm</strong><br>
-            Quality Livestock. Fresh Eggs. Healthy Chicks. Trusted Farming.
-          </p>
-        </div>
-      </div>
-      <div class="story-aside">
-        <span class="aside-number">42</span>
-        <span>Acres of<br>living soil</span>
-        <div class="aside-stamp">Salem, TN</div>
-      </div>
-    </section>
-
-    <!-- Section 03: The Harvest / Farm Showcase -->
-    <section id="harvest" class="produce">
-      <div class="produce-heading section-grid">
-        <div class="section-label"><span>03</span><span>What is growing</span></div>
-        <div>
-          <p class="kicker">Right now at the farm</p>
-          <h2>Good animals, <em>good food.</em></h2>
-        </div>
-        <span class="season">HARVEST / 2026</span>
-      </div>
-
-      <div class="produce-grid">
-        <article class="produce-card card-large">
-          <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=1100&q=80" alt="Goat standing on MGH farm in Salem" loading="lazy">
-          <div class="card-caption">
-            <span>01</span>
-            <h3>Goat sale &amp; Fresh Mutton</h3>
-            <p>Healthy, pasture-grazed goats and tender hand-butchered mutton cuts.</p>
+          <div class="pt-4 border-t border-brand-charcoal flex gap-3">
+            <a href="https://wa.me/919842212345" target="_blank" class="flex-1 py-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold rounded-xl text-center flex items-center justify-center gap-1.5 transition-colors">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>WhatsApp Store</span>
+            </a>
+            <a href="tel:+919842212345" class="flex-1 py-3 bg-brand-charcoal hover:bg-gray-800 text-white text-xs font-bold rounded-xl text-center flex items-center justify-center gap-1.5 transition-colors">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              <span>Call Us</span>
+            </a>
           </div>
-        </article>
-        
-        <article class="produce-card">
-          <img src="images/chicks.png" alt="Young chicks among fresh eggs at MGH farm" loading="lazy">
-          <div class="card-caption">
-            <span>02</span>
-            <h3>Healthy Chicks</h3>
-            <p>Flock starters, vaccinated &amp; active for backyard farm homes.</p>
-          </div>
-        </article>
-
-        <article class="produce-card">
-          <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=900&q=80" alt="Country Chickens in a farm yard at MGH farm" loading="lazy">
-          <div class="card-caption">
-            <span>03</span>
-            <h3>Country Chickens (Naatu Kozhi)</h3>
-            <p>Authentic native free-range birds raised with natural grain feeds.</p>
-          </div>
-        </article>
-
-        <article class="produce-card">
-          <img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=900&q=80" alt="Fresh brown country eggs in a basket at MGH Farm" loading="lazy">
-          <div class="card-caption">
-            <span>04</span>
-            <h3>Organic Country Eggs</h3>
-            <p>Collected fresh each morning from our happy, pastured flock.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="produce-footer">
-        <span>Available at the farm stand MON-SUN (9:00 AM - 2:00 PM)</span>
-        <a class="text-link" href="#store">Order fresh cuts online <span>&#8594;</span></a>
-      </div>
-    </section>
-
-    <!-- Section 04: The Fresh Meats & Eggs Online Store -->
-    <section id="store" class="store-section">
-      <div class="store-header section-grid">
-        <div class="section-label"><span>04</span><span>Online Store</span></div>
-        <div class="store-header-title">
-          <p class="kicker">Farm Direct Butchery &amp; Poultry</p>
-          <h2>Fresh Meats, <em>Cut to Order.</em></h2>
-          <p class="body-copy">
-            Choose your cut, weight, and style. We butcher fresh upon your order confirmation and deliver in hygienic food-grade pouches across Attur &amp; Salem, or have it ready at our farm stand gate!
-          </p>
-        </div>
-        <div class="store-header-badge">
-          <span class="store-guarantee">✨ 100% Chemical-Free</span>
-          <span class="store-guarantee">⚡ Delivered in 90 Mins</span>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Category Filter Tabs -->
-      <div class="category-filter-wrap">
-        <div class="category-tabs" role="tablist" aria-label="Meat product categories">
-          <button class="cat-tab active" data-category="all" role="tab" aria-selected="true">All Cuts &amp; Eggs</button>
-          <button class="cat-tab" data-category="country-chicken" role="tab" aria-selected="false">🐓 Country Chicken</button>
-          <button class="cat-tab" data-category="broiler" role="tab" aria-selected="false">🍗 Broiler Chicken</button>
-          <button class="cat-tab" data-category="mutton" role="tab" aria-selected="false">🐐 Farm Mutton</button>
-          <button class="cat-tab" data-category="eggs" role="tab" aria-selected="false">🥚 Farm Eggs</button>
-          <button class="cat-tab" data-category="chicks" role="tab" aria-selected="false">🐣 Chicks &amp; Birds</button>
+  <!-- ========================================== -->
+  <!-- 11. FOOTER                                 -->
+  <!-- ========================================== -->
+  <footer class="bg-brand-black text-gray-400 text-xs border-t border-brand-charcoal py-12 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-brand-charcoal">
+        <div class="flex items-center gap-2 text-white font-display font-black text-xl">
+          <span class="text-brand-red">KOMBAN</span> CUTS
         </div>
-
-        <!-- Search Bar -->
-        <div class="store-search">
-          <input type="text" id="store-search-input" placeholder="Search Naatu Kozhi, mutton chops, eggs..." aria-label="Search meat and egg products">
-          <span class="store-search-icon">🔍</span>
-        </div>
-      </div>
-
-      <!-- Product Catalog Grid -->
-      <div class="products-grid" id="products-container">
-        <!-- Products injected dynamically via script.js for full interactive cart functionality -->
-      </div>
-
-      <!-- Quick WhatsApp Order Strip -->
-      <div class="quick-order-banner">
-        <div class="qob-text">
-          <h3>Need a custom whole bird or bulk goat order?</h3>
-          <p>For whole live goats, party orders, wedding catering cuts, or bulk country chicken, speak directly with our farm team on WhatsApp.</p>
-        </div>
-        <a class="qob-btn" href="https://wa.me/918489542722?text=Hello%20MGH%20Farm!%20I%20have%20a%20bulk/custom%20meat%20inquiry." target="_blank" rel="noopener">
-          <span>Chat on WhatsApp</span>
-          <span>&#8599;</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- Section 05: Traditional Farm Recipes -->
-    <section id="recipes" class="recipes-section section-grid">
-      <div class="section-label"><span>05</span><span>Kitchen notes</span></div>
-      <div class="recipes-content">
-        <p class="kicker">Salem Style Cooking</p>
-        <h2>Authentic <em>Farm Recipes.</em></h2>
-        <p class="body-copy">How to cook traditional South Indian Country Chicken (Naatu Kozhi) and Salem Mutton Chukka to tender perfection.</p>
-        
-        <div class="recipe-cards">
-          <article class="recipe-card">
-            <div class="recipe-tag">Village Style</div>
-            <h3>Salem Naatu Kozhi Kulambu</h3>
-            <p>Real country chicken needs gentle, slow braising with stone-ground shallots, dry red chillies, and freshly roasted coriander. Pressure cook for 4–5 whistles with fresh sesame oil for deeply rich, aromatic bone gravy.</p>
-            <div class="recipe-meta">
-              <span>⏱ Prep: 15m | Cook: 40m</span>
-              <span>Best cut: <strong>Naatu Kozhi Curry Cut</strong></span>
-            </div>
-          </article>
-
-          <article class="recipe-card">
-            <div class="recipe-tag">Special Occasion</div>
-            <h3>Attur Mutton Chukka Varuval</h3>
-            <p>Tender mutton cuts pan-roasted in cold-pressed coconut oil with whole peppercorns, curry leaves, and ginger-garlic paste until dark and crisp on the edges while remaining juicy inside.</p>
-            <div class="recipe-meta">
-              <span>⏱ Prep: 10m | Cook: 35m</span>
-              <span>Best cut: <strong>Fresh Goat Mutton Chops &amp; Ribs</strong></span>
-            </div>
-          </article>
-        </div>
-      </div>
-      <div class="recipe-aside">
-        <div class="recipe-quote">
-          “Nothing compares to meat from birds that ran free under open Salem skies.”
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 06: Visit Us & Contact -->
-    <section id="visit" class="visit section-grid">
-      <div class="section-label"><span>06</span><span>Come by</span></div>
-      <div class="visit-content">
-        <p class="kicker">Your next good day</p>
-        <h2>Meet us<br><em>at the farm.</em></h2>
-        <p class="body-copy">
-          The farm stand gate is open MON–SUN from 9:00 AM to 2:00 PM. Pick up your fresh cuts directly from our cold-butchery room, view our healthy flocks, or have our farm team deliver straight to your kitchen.
+        <p class="text-xs text-gray-500">
+          Fresh Cuts. Pure Quality. Delivered Fresh. • Coimbatore, Tamil Nadu
         </p>
-
-        <div class="visit-details">
-          <div>
-            <span>Farm Stand Hours</span>
-            <strong>MON–SUN / 09:00 – 14:00</strong>
-          </div>
-          <div>
-            <span>Farm Address</span>
-            <strong>Rasinagar, Kothambadi, Attur, Salem, Tamil Nadu – 636102</strong>
-          </div>
-          <div>
-            <span>Direct Phone</span>
-            <strong>+91 8489542722</strong>
-          </div>
-          <div>
-            <span>WhatsApp Orders</span>
-            <strong>+91 8489542722 (Instant confirmation)</strong>
-          </div>
-        </div>
-
-        <div class="visit-actions">
-          <a class="solid-link" href="tel:+918489542722">
-            Call us: 8489542722 <span>&#8599;</span>
-          </a>
-          <a class="whatsapp-link" href="https://wa.me/918489542722?text=Hello%20MGH%20Farm!%20I%20am%20planning%20a%20visit." target="_blank" rel="noopener">
-            WhatsApp Farm Desk: +91 8489542722 <span>&#8599;</span>
-          </a>
-          <a class="maps-link" href="https://maps.app.goo.gl/haxFqUBa182Mk37S9" target="_blank" rel="noopener">
-            Open in Google Maps <span>&#8599;</span>
-          </a>
+        <div class="flex items-center gap-4">
+          <button onclick="openAdminModal()" class="text-brand-gold hover:underline font-bold">
+            Store Admin Dashboard
+          </button>
         </div>
       </div>
-    </section>
-  </main>
-
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="footer-brand">
-      <span class="brand-mark">MGH</span>
-      <p class="footer-motto">
-        <strong>MGH FARM</strong><br>
-        Grown with patience.<br>
-        Shared with purpose.<br>
-        Rasinagar, Kothambadi, Attur, Salem
-      </p>
-    </div>
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <a href="#story">Our Story &amp; 42 Acres</a>
-      <a href="#harvest">Livestock &amp; Harvest</a>
-      <a href="#store">Order Meats &amp; Eggs Online</a>
-      <a href="#recipes">Farm Recipes</a>
-      <a href="#visit">Directions &amp; Hours</a>
-      <a href="mailto:sgmaha2005@gmail.com">sgmaha2005@gmail.com</a>
-    </div>
-    <div class="footer-end">
-      <span>MGH FARM / 1997 – 2026</span>
-      <span>Quality Livestock. Fresh Eggs. Healthy Chicks. Trusted Farming.</span>
-      <a class="back-to-top" href="#top">Back to top &#8593;</a>
+      <div class="pt-6 text-center text-[11px] text-gray-600">
+        © 2026 KOMBAN CUTS. All Rights Reserved. Coimbatore, Tamil Nadu, India.
+      </div>
     </div>
   </footer>
 
-  <!-- Slide-Out Cart Drawer -->
-  <div class="cart-backdrop" id="cart-backdrop"></div>
-  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart Drawer">
-    <div class="cart-drawer-header">
-      <div class="cd-title">
-        <h3>Your Fresh Basket</h3>
-        <span class="cd-badge" id="drawer-item-count">0 items</span>
+  <!-- ========================================== -->
+  <!-- 12. SLIDE-OUT CART DRAWER                  -->
+  <!-- ========================================== -->
+  <div id="cartDrawerBackdrop" onclick="toggleCart(false)" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden transition-opacity"></div>
+  
+  <div id="cartDrawer" class="fixed inset-y-0 right-0 max-w-md w-full bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+    <!-- Header -->
+    <div class="p-5 bg-brand-black text-white flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-red"></i>
+        <h3 class="font-bold text-base">Your Fresh Meat Cart</h3>
       </div>
-      <button class="cart-close-btn" id="close-cart-btn" type="button" aria-label="Close cart">&times;</button>
-    </div>
-
-    <!-- Items List -->
-    <div class="cart-items" id="cart-items-container">
-      <!-- Injected via JavaScript -->
-    </div>
-
-    <!-- Coupon Box -->
-    <div class="cart-coupon-wrap" id="coupon-section">
-      <div class="coupon-input-group">
-        <input type="text" id="coupon-code-input" placeholder="Coupon (e.g. FARM10)" aria-label="Discount Coupon Code">
-        <button type="button" id="apply-coupon-btn">Apply</button>
-      </div>
-      <p class="coupon-msg" id="coupon-msg"></p>
-    </div>
-
-    <!-- Checkout Details Form -->
-    <div class="cart-checkout-form" id="checkout-form-section">
-      <h4>Delivery / Pickup Details</h4>
-      
-      <div class="delivery-toggle-group">
-        <label class="delivery-option">
-          <input type="radio" name="delivery_type" value="delivery" checked id="del-home">
-          <span>🚚 Home Delivery (Attur/Salem)</span>
-        </label>
-        <label class="delivery-option">
-          <input type="radio" name="delivery_type" value="pickup" id="del-pickup">
-          <span>🚜 Farm Gate Pickup (Rasinagar)</span>
-        </label>
-      </div>
-
-      <div class="form-field">
-        <label for="cust-name">Your Full Name *</label>
-        <input type="text" id="cust-name" placeholder="e.g. Mahadhev" required>
-      </div>
-
-      <div class="form-field">
-        <label for="cust-phone">WhatsApp / Phone Number *</label>
-        <input type="tel" id="cust-phone" placeholder="e.g. 9876543210" required>
-      </div>
-
-      <div class="form-field" id="address-field">
-        <label for="cust-address">Delivery Address (Door No, Street, Landmark, Area) *</label>
-        <textarea id="cust-address" rows="2" placeholder="e.g. 12/4 Gandhipuram, near bus stand, Attur, Salem"></textarea>
-      </div>
-
-      <div class="form-field">
-        <label for="cust-instructions">Butchering / Cutting Note (Optional)</label>
-        <input type="text" id="cust-instructions" placeholder="e.g. Small curry pieces, medium cuts, skin on...">
-      </div>
-    </div>
-
-    <!-- Cart Summary & Actions -->
-    <div class="cart-drawer-footer" id="cart-drawer-footer">
-      <div class="cart-summary-row">
-        <span>Items Subtotal:</span>
-        <strong id="summary-subtotal">₹0</strong>
-      </div>
-      <div class="cart-summary-row">
-        <span>Packaging &amp; Delivery:</span>
-        <span id="summary-delivery">₹0</span>
-      </div>
-      <div class="cart-summary-row discount-row" id="summary-discount-row" style="display: none;">
-        <span>Farm Discount (10%):</span>
-        <strong id="summary-discount">-₹0</strong>
-      </div>
-      <div class="cart-summary-row total-row">
-        <span>Grand Total:</span>
-        <span class="total-amount" id="summary-grand-total">₹0</span>
-      </div>
-
-      <button type="button" class="btn-whatsapp-order" id="btn-submit-order">
-        <span class="wa-order-icon">💬</span>
-        <span>Order via WhatsApp Now</span>
+      <button onclick="toggleCart(false)" class="p-1 text-gray-400 hover:text-white rounded-lg">
+        <i data-lucide="x" class="w-5 h-5"></i>
       </button>
-      <p class="order-guarantee-note">🔒 Pay cash/UPI on delivery or at farm stand. Freshly butchered upon order.</p>
     </div>
-  </aside>
 
-  <!-- Floating Sticky Cart Button on Mobile -->
-  <button class="mobile-sticky-cart-btn" id="mobile-sticky-cart" type="button" aria-label="Open Cart">
-    <div class="msc-left">
-      <span class="msc-icon">🛒</span>
-      <span class="msc-count" id="msc-counter">0 items</span>
+    <!-- Fulfillment selector -->
+    <div class="p-3 bg-gray-100 flex gap-2 text-xs font-bold">
+      <button onclick="setDeliveryMode('home_delivery')" id="btn-delivery-home" class="flex-1 py-2 rounded-lg bg-white text-brand-black shadow-xs flex items-center justify-center gap-1.5">
+        <i data-lucide="truck" class="w-3.5 h-3.5 text-brand-red"></i> Home Delivery
+      </button>
+      <button onclick="setDeliveryMode('shop_pickup')" id="btn-delivery-pickup" class="flex-1 py-2 rounded-lg text-gray-600 hover:text-black flex items-center justify-center gap-1.5">
+        <i data-lucide="store" class="w-3.5 h-3.5 text-emerald-600"></i> Shop Pickup (Free)
+      </button>
     </div>
-    <div class="msc-right">
-      <span class="msc-view">View Cart</span>
-      <strong class="msc-total" id="msc-total">₹0</strong>
-    </div>
-  </button>
 
-  <script src="script.js"></script>
+    <!-- Free Delivery Goal -->
+    <div id="freeDeliveryBar" class="p-3 bg-amber-50 text-[11px] text-amber-900 border-b border-amber-100 font-medium">
+      <!-- Injected -->
+    </div>
+
+    <!-- Cart Items List -->
+    <div id="cartItemsList" class="flex-1 overflow-y-auto p-4 space-y-3">
+      <!-- Injected -->
+    </div>
+
+    <!-- Cart Footer & Checkout -->
+    <div class="p-5 bg-gray-50 border-t border-gray-100 space-y-3">
+      <!-- Coupon input -->
+      <div class="flex gap-2">
+        <input id="couponInput" type="text" placeholder="Coupon Code (e.g. FRESH50)" class="flex-1 bg-white border border-gray-200 rounded-xl px-3 py-2 text-xs font-mono uppercase focus:outline-none focus:border-brand-red">
+        <button onclick="applyCartCoupon()" class="px-4 py-2 bg-brand-black text-white text-xs font-bold rounded-xl hover:bg-brand-charcoal">Apply</button>
+      </div>
+      <div id="couponStatus" class="text-[11px] font-bold"></div>
+
+      <!-- Price totals -->
+      <div class="text-xs space-y-1.5 text-gray-600 pt-2 border-t border-gray-200">
+        <div class="flex justify-between">
+          <span>Subtotal</span>
+          <span id="cartSubtotalText" class="font-bold text-gray-900">₹0</span>
+        </div>
+        <div id="discountRow" class="flex justify-between text-emerald-600 font-bold hidden">
+          <span>Coupon Discount</span>
+          <span id="discountText">-₹0</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Delivery Charge</span>
+          <span id="deliveryFeeText" class="font-bold text-gray-900">₹40</span>
+        </div>
+        <div class="flex justify-between text-base font-black text-gray-900 pt-2 border-t border-gray-200">
+          <span>Final Total</span>
+          <span id="cartFinalTotalText" class="text-brand-red">₹0</span>
+        </div>
+      </div>
+
+      <button onclick="openCheckoutModal()" class="w-full py-3.5 bg-brand-red hover:bg-brand-redDark text-white text-sm font-black rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+        <span>Proceed to Checkout</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 13. CHECKOUT MODAL                         -->
+  <!-- ========================================== -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div onclick="closeCheckoutModal()" class="fixed inset-0 bg-black/60 backdrop-blur-xs"></div>
+    <div class="relative bg-white rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl z-10 space-y-6">
+      
+      <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+        <div>
+          <h3 class="font-display font-black text-xl text-gray-900">Checkout &amp; Place Order</h3>
+          <p class="text-xs text-gray-400">Coimbatore fresh meat delivery / counter pickup</p>
+        </div>
+        <button onclick="closeCheckoutModal()" class="p-1 text-gray-400 hover:text-gray-700">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handlePlaceOrder(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold text-gray-700 mb-1">Full Name *</label>
+          <input id="chkName" type="text" required placeholder="Arun Kumar" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 font-bold focus:outline-none focus:border-brand-red">
+        </div>
+
+        <div>
+          <label class="block font-bold text-gray-700 mb-1">Mobile Number (WhatsApp) *</label>
+          <input id="chkPhone" type="tel" required placeholder="+91 98422 12345" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 font-bold focus:outline-none focus:border-brand-red">
+        </div>
+
+        <div id="chkAddressSection">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block font-bold text-gray-700 mb-1">House / Flat No. *</label>
+              <input id="chkHouse" type="text" placeholder="14/B, Gokulam" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-brand-red">
+            </div>
+            <div>
+              <label class="block font-bold text-gray-700 mb-1">Street / Landmark *</label>
+              <input id="chkStreet" type="text" placeholder="7th Cross Street" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-brand-red">
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <label class="block font-bold text-gray-700 mb-1">Coimbatore Locality *</label>
+            <select id="chkArea" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 font-bold focus:outline-none focus:border-brand-red">
+              <option>Gandhipuram &amp; Ram Nagar</option>
+              <option>R.S. Puram &amp; D.B. Road</option>
+              <option>Saibaba Colony &amp; KK Pudur</option>
+              <option>Peelamedu &amp; Hopes College</option>
+              <option>Race Course &amp; Redfields</option>
+              <option>Singanallur &amp; Ondipudur</option>
+              <option>Saravanampatti &amp; CHIL SEZ</option>
+              <option>Vadavalli &amp; Marudhamalai Rd</option>
+              <option>Ramanathapuram &amp; Sungam</option>
+              <option>Town Hall &amp; Ukkadam</option>
+            </select>
+          </div>
+
+          <div class="mt-3">
+            <label class="block font-bold text-gray-700 mb-1">Delivery Slot</label>
+            <select id="chkSlot" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 font-bold focus:outline-none focus:border-brand-red">
+              <option>Express (45-60 mins) - Immediate Dispatch</option>
+              <option>Morning: 07:00 AM – 09:30 AM</option>
+              <option>Afternoon: 11:30 AM – 01:30 PM</option>
+              <option>Evening: 04:30 PM – 07:00 PM</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-gray-700 mb-1">Payment Method *</label>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-gray-200 cursor-pointer hover:bg-gray-50">
+              <input type="radio" name="chkPayment" value="cod" checked class="w-4 h-4 text-brand-red">
+              <div>
+                <span class="font-bold text-gray-900 block">Cash on Delivery / UPI on Delivery</span>
+                <span class="text-[10px] text-gray-500">Pay cash or scan QR when your package arrives</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-gray-200 cursor-pointer hover:bg-gray-50">
+              <input type="radio" name="chkPayment" value="online" class="w-4 h-4 text-brand-red">
+              <div>
+                <span class="font-bold text-gray-900 block">Online Payment (Razorpay / UPI / Cards)</span>
+                <span class="text-[10px] text-gray-500">Instant secure online transaction</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="p-4 bg-gray-50 rounded-2xl flex justify-between items-center font-bold text-sm">
+          <span>Amount to Pay:</span>
+          <span id="chkTotalDisplay" class="text-xl font-black text-brand-red">₹0</span>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 bg-brand-red hover:bg-brand-redDark text-white font-black text-sm rounded-xl shadow-lg transition-all">
+          Confirm &amp; Place Order
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 14. LIVE ORDER TRACKING MODAL              -->
+  <!-- ========================================== -->
+  <div id="trackingModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div onclick="closeTrackingModal()" class="fixed inset-0 bg-black/60 backdrop-blur-xs"></div>
+    <div class="relative bg-white rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl z-10 space-y-6">
+      
+      <div class="text-center pb-4 border-b border-gray-100">
+        <span class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-2 font-bold text-xl">
+          ✓
+        </span>
+        <h3 class="font-display font-black text-2xl text-gray-900">Order Placed Successfully!</h3>
+        <p class="text-xs text-gray-500 mt-1">Unique Order ID: <strong id="trkOrderId" class="font-mono text-brand-red">KC-2026-1043</strong></p>
+      </div>
+
+      <!-- Tracking Timeline -->
+      <div class="space-y-4 text-xs">
+        <div class="flex items-start gap-3">
+          <span class="w-6 h-6 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-xs flex-shrink-0">1</span>
+          <div>
+            <h4 class="font-bold text-gray-900">Order Received</h4>
+            <p class="text-gray-500 text-[11px]">Dispatched to our Gandhipuram butchery floor</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="w-6 h-6 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-xs flex-shrink-0">2</span>
+          <div>
+            <h4 class="font-bold text-gray-900">Preparing Fresh Cuts</h4>
+            <p class="text-gray-500 text-[11px]">Hand-trimmed to net weight &amp; sealed in chill-packs</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="w-6 h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-bold text-xs flex-shrink-0">3</span>
+          <div>
+            <h4 class="font-bold text-gray-700">Out for Delivery / Ready for Pickup</h4>
+            <p class="text-gray-400 text-[11px]">Express courier dispatching across Coimbatore</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-gray-50 rounded-2xl text-xs space-y-2">
+        <div class="flex justify-between">
+          <span class="text-gray-500">Customer:</span>
+          <span id="trkCustomer" class="font-bold text-gray-900">Arun Kumar</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-500">Total Amount:</span>
+          <span id="trkTotal" class="font-bold text-brand-red">₹540</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-500">Fulfillment:</span>
+          <span id="trkFulfillment" class="font-bold text-gray-900">Home Delivery</span>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <button onclick="dispatchWhatsAppNotification()" class="w-full py-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 shadow-md">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Send Order Summary to WhatsApp</span>
+        </button>
+        <button onclick="closeTrackingModal()" class="w-full py-2.5 bg-gray-100 text-gray-700 text-xs font-bold rounded-xl hover:bg-gray-200">
+          Close Window
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 15. ADMIN DASHBOARD MODAL                  -->
+  <!-- ========================================== -->
+  <div id="adminModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div onclick="closeAdminModal()" class="fixed inset-0 bg-black/70 backdrop-blur-xs"></div>
+    <div class="relative bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl z-10 space-y-6">
+      
+      <div class="flex items-center justify-between pb-4 border-b border-gray-100">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="bg-brand-black text-brand-gold text-[10px] font-black px-2 py-0.5 rounded uppercase">Store Admin</span>
+            <h3 class="font-display font-black text-2xl text-gray-900">KOMBAN CUTS Control Panel</h3>
+          </div>
+          <p class="text-xs text-gray-400 mt-0.5">Manage products, live orders, prices, and Coimbatore settings</p>
+        </div>
+        <button onclick="closeAdminModal()" class="p-1 text-gray-400 hover:text-gray-700">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- KPI Metrics -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+        <div class="p-4 bg-gray-50 rounded-2xl border border-gray-100">
+          <span class="text-gray-400 block font-semibold uppercase text-[10px]">Total Sales</span>
+          <span id="admTotalSales" class="font-display font-black text-xl text-gray-900 block mt-1">₹34,850</span>
+          <span class="text-[10px] text-emerald-600 font-bold">+18% this week</span>
+        </div>
+        <div class="p-4 bg-gray-50 rounded-2xl border border-gray-100">
+          <span class="text-gray-400 block font-semibold uppercase text-[10px]">Active Orders</span>
+          <span id="admActiveOrders" class="font-display font-black text-xl text-brand-red block mt-1">5</span>
+          <span class="text-[10px] text-gray-500 font-bold">In butchery / delivery</span>
+        </div>
+        <div class="p-4 bg-gray-50 rounded-2xl border border-gray-100">
+          <span class="text-gray-400 block font-semibold uppercase text-[10px]">Total Cuts</span>
+          <span class="font-display font-black text-xl text-gray-900 block mt-1">26 Products</span>
+          <span class="text-[10px] text-gray-500 font-bold">Chicken, Mutton, Fish, Eggs</span>
+        </div>
+        <div class="p-4 bg-gray-50 rounded-2xl border border-gray-100">
+          <span class="text-gray-400 block font-semibold uppercase text-[10px]">Coimbatore Hotline</span>
+          <span class="font-display font-black text-sm text-gray-900 block mt-2">+91 98422 12345</span>
+          <span class="text-[10px] text-emerald-600 font-bold">Gandhipuram Counter</span>
+        </div>
+      </div>
+
+      <!-- Products Quick Price Manager -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <h4 class="font-bold text-sm text-gray-900">Manage Product Prices (Live Update)</h4>
+          <span class="text-[11px] text-gray-400">Edits update the storefront immediately</span>
+        </div>
+
+        <div class="max-h-60 overflow-y-auto border border-gray-100 rounded-2xl divide-y divide-gray-100 text-xs">
+          <div id="adminProductTable" class="divide-y divide-gray-100">
+            <!-- Injected -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Orders Manager -->
+      <div class="space-y-3">
+        <h4 class="font-bold text-sm text-gray-900">Live Orders Dispatch</h4>
+        <div id="adminOrdersTable" class="max-h-60 overflow-y-auto border border-gray-100 rounded-2xl divide-y divide-gray-100 text-xs">
+          <!-- Injected -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 16. FLOATING WHATSAPP BUTTON               -->
+  <!-- ========================================== -->
+  <a
+    href="https://wa.me/919842212345?text=Hello%20KOMBAN%20CUTS!%20I%20would%20like%20to%20order%20fresh%20meat/fish%20in%20Coimbatore."
+    target="_blank"
+    rel="noopener"
+    class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#1EBE5D] text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-transform hover:scale-105 active:scale-95"
+    aria-label="Order on WhatsApp"
+  >
+    <i data-lucide="message-circle" class="w-6 h-6 fill-white"></i>
+    <span class="hidden sm:inline font-bold text-xs tracking-wide">Order on WhatsApp</span>
+  </a>
+
+  <!-- ========================================== -->
+  <!-- 17. CLIENT DATA & CORE SCRIPT              -->
+  <!-- ========================================== -->
+  <script>
+    // Complete 26-product database
+    const PRODUCTS = [
+      // Chicken
+      { id: 'chicken-curry-cut', name: 'Chicken Curry Cut', tamil: 'கோழி கறி வெட்டு', category: 'chicken', desc: 'Juicy bone-in pieces for succulent South Indian curries and gravies.', price: 139, original: 149, img: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=80', badge: 'Bestseller', variants: ['250g', '500g', '1kg'] },
+      { id: 'chicken-breast-boneless', name: 'Chicken Breast Boneless', tamil: 'எலும்பில்லா கோழி நெஞ்சு', category: 'chicken', desc: 'Trimmed lean fillets, high protein, perfect for fitness meal prep.', price: 199, original: 219, img: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=80', badge: 'High Protein', variants: ['250g', '500g', '1kg'] },
+      { id: 'chicken-boneless', name: 'Chicken Boneless Cubes', tamil: 'எலும்பில்லா கோழி கறி', category: 'chicken', desc: 'Bite-sized cubes from thigh & breast for Chicken 65 & butter chicken.', price: 185, original: 199, img: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=800&q=80', variants: ['250g', '500g', '1kg'] },
+      { id: 'skinless-chicken', name: 'Skinless Chicken', tamil: 'தோல் நீக்கிய கோழி', category: 'chicken', desc: 'Deskinned bone-in mixed portions for wholesome daily cooking.', price: 135, original: 145, img: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80', variants: ['500g', '1kg'] },
+      { id: 'whole-chicken', name: 'Whole Dressed Chicken', tamil: 'முழு கோழி', category: 'chicken', desc: 'Fully dressed whole bird for Sunday roasting or tandoori.', price: 279, original: 299, img: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80', variants: ['1.2kg Whole'] },
+      { id: 'chicken-leg-pieces', name: 'Chicken Drumsticks (Leg Pieces)', tamil: 'கோழி கால் துண்டுகள்', category: 'chicken', desc: 'Meaty drumsticks with high bone marrow richness for biryani.', price: 175, original: 189, img: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=800&q=80', badge: 'Kids Favorite', variants: ['500g (4-5 pcs)', '1kg'] },
+      { id: 'chicken-wings', name: 'Chicken Wings', tamil: 'கோழி இறக்கைகள்', category: 'chicken', desc: 'Juicy wingettes & drumettes for crispy appetizers.', price: 139, original: 149, img: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=800&q=80', variants: ['500g', '1kg'] },
+      { id: 'chicken-lollipop', name: 'Chicken Lollipop (Frenched)', tamil: 'சிக்கன் லாலிபாப்', category: 'chicken', desc: 'Hand-frenched winglets pushed back for Indo-Chinese starters.', price: 185, original: 199, img: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=800&q=80', badge: 'Starters', variants: ['500g (8-10 pcs)', '1kg'] },
+
+      // Mutton
+      { id: 'mutton-curry-cut', name: 'Mutton Curry Cut', tamil: 'ஆட்டுக் கறி வெட்டு', category: 'mutton', desc: 'Pasture-fed Salem goat meat with ribs, shoulder & marrow bone.', price: 469, original: 489, img: 'https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=800&q=80', badge: 'Bestseller', variants: ['250g', '500g', '1kg'] },
+      { id: 'mutton-boneless', name: 'Mutton Boneless Cubes', tamil: 'எலும்பில்லா ஆட்டுக் கறி', category: 'mutton', desc: '100% boneless cubes hand-trimmed of tough sinews for ghee roast.', price: 589, original: 620, img: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80', variants: ['250g', '500g', '1kg'] },
+      { id: 'mutton-biryani-cut', name: 'Mutton Biryani Cut', tamil: 'மட்டன் பிரியாணி வெட்டு', category: 'mutton', desc: 'Large succulent chunks from shoulder & leg for fragrant biryani.', price: 479, original: 499, img: 'https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=800&q=80', badge: 'Sunday Special', variants: ['500g', '1kg'] },
+      { id: 'mutton-chops', name: 'Mutton Chops (Ribs)', tamil: 'மட்டன் சாப்ஸ்', category: 'mutton', desc: 'Prime rib chops with meat clinging around the bone for pan roast.', price: 499, original: 530, img: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80', variants: ['500g', '1kg'] },
+      { id: 'mutton-liver', name: 'Mutton Liver', tamil: 'ஆட்டு ஈரல்', category: 'mutton', desc: 'Fresh iron-rich liver slices for Coimbatore pepper fry and sukka.', price: 220, original: 240, img: 'https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=800&q=80', variants: ['250g', '500g'] },
+      { id: 'mutton-keema', name: 'Mutton Keema (Minced)', tamil: 'மட்டன் கொத்துக்கறி', category: 'mutton', desc: 'Finely minced tender boneless meat for Kola Urundai and samosas.', price: 529, original: 560, img: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80', badge: 'Kola Urundai', variants: ['250g', '500g', '1kg'] },
+
+      // Fish & Seafood
+      { id: 'seer-fish-vanjaram', name: 'Seer Fish Steaks (Vanjaram)', tamil: 'வஞ்சரம் மீன் துண்டுகள்', category: 'fish-seafood', desc: 'The King of fish! Descaled, gutted, circular steaks for tawa fry.', price: 549, original: 599, img: 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=800&q=80', badge: 'Bestseller', variants: ['500g (3-4 steaks)', '1kg'] },
+      { id: 'pomfret-fish', name: 'White Pomfret (Vavval)', tamil: 'வெள்ளை வவ்வால் மீன்', category: 'fish-seafood', desc: 'Buttery soft texture with sweet ocean flavor, cleaned whole.', price: 419, original: 449, img: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80', variants: ['500g', '1kg'] },
+      { id: 'sardine-mathi', name: 'Sardines (Mathi)', tamil: 'மத்தி மீன்', category: 'fish-seafood', desc: 'Omega-3 rich fresh sardines for authentic spicy Meen Kuzhambu.', price: 149, original: 169, img: 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=800&q=80', badge: 'Omega 3', variants: ['500g', '1kg'] },
+      { id: 'fresh-prawns', name: 'Coastal Prawns (Peeled &amp; Deveined)', tamil: 'கடல் இறால்', category: 'fish-seafood', desc: 'Sweet ocean prawns cleaned ready to cook in biryani or 65.', price: 359, original: 389, img: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=800&q=80', badge: 'Cleaned', variants: ['250g', '500g', '1kg'] },
+      { id: 'fresh-crab', name: 'Fresh Sea Crab (Nandu)', tamil: 'உயிருள்ள நண்டு', category: 'fish-seafood', desc: 'Cleaned blue swimmer crabs for traditional Coimbatore Nandu Rasam.', price: 319, original: 349, img: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=800&q=80', variants: ['500g (3-4 pcs)', '1kg'] },
+      { id: 'rohu-fish', name: 'Rohu River Fish Cutlets', tamil: 'ரோகு மீன்', category: 'fish-seafood', desc: 'Freshwater river carp cutlets with skin on for homestyle curry.', price: 159, original: 179, img: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80', variants: ['500g', '1kg'] },
+      { id: 'catla-fish', name: 'Catla Belly Steaks', tamil: 'கட்லா மீன்', category: 'fish-seafood', desc: 'Thick fleshy freshwater carp belly steaks and head cuts.', price: 169, original: 189, img: 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=800&q=80', variants: ['500g', '1kg'] },
+
+      // Eggs
+      { id: 'country-eggs', name: 'Country Eggs (Naatu Kozhi Muttai)', tamil: 'நாட்டுக்கோழி முட்டை', category: 'eggs', desc: 'Free-range golden yolk country eggs gathered fresh daily.', price: 79, original: 85, img: 'https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?auto=format&fit=crop&w=800&q=80', badge: 'Golden Yolk', variants: ['Pack of 6', 'Pack of 12', 'Tray of 30'] },
+      { id: 'farm-eggs', name: 'Farm Fresh White Eggs', tamil: 'பண்ணை வெள்ளை முட்டை', category: 'eggs', desc: 'UV-sanitized wholesome table eggs with bright yellow yolks.', price: 42, original: 45, img: 'https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=800&q=80', variants: ['Pack of 6', 'Pack of 12', 'Tray of 30'] },
+      { id: 'egg-tray', name: 'Bulk Egg Tray (30 Eggs)', tamil: 'முழு முட்டை தட்டு (30)', category: 'eggs', desc: 'Economical 30-egg tray packed in shock-absorbing molded pulp.', price: 195, original: 215, img: 'https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=800&q=80', badge: 'Value Pack', variants: ['Tray of 30 (30 Eggs)'] },
+      { id: 'half-dozen-eggs', name: 'Half Dozen Carton (6 Eggs)', tamil: 'அரை டஜன் முட்டைகள்', category: 'eggs', desc: 'Convenient 6-egg pack in protective eco carton.', price: 42, original: 45, img: 'https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?auto=format&fit=crop&w=800&q=80', variants: ['Pack of 6'] },
+      { id: 'one-dozen-eggs', name: 'One Dozen Carton (12 Eggs)', tamil: 'ஒரு டஜன் முட்டைகள்', category: 'eggs', desc: 'Standard 12-egg family weekly pack.', price: 79, original: 88, img: 'https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=800&q=80', variants: ['Pack of 12'] },
+    ];
+
+    // State
+    let cart = JSON.parse(localStorage.getItem('komban_cart') || '[]');
+    let currentCategory = 'all';
+    let currentSearch = '';
+    let deliveryMode = 'home_delivery'; // 'home_delivery' or 'shop_pickup'
+    let appliedDiscount = 0;
+    let appliedCouponCode = '';
+
+    // Sample Orders for Admin
+    let ordersList = [
+      { id: 'KC-2026-1042', customer: 'Senthil Nathan', phone: '+91 94433 11223', items: 'Chicken Curry Cut (1kg)', total: 269, status: 'Preparing' },
+      { id: 'KC-2026-1041', customer: 'Priya Dharshini', phone: '+91 98421 99887', items: 'Mutton Curry Cut (500g), Vanjaram (500g)', total: 968, status: 'Out for Delivery' },
+      { id: 'KC-2026-1040', customer: 'Manojkumar', phone: '+91 99440 55443', items: 'Boneless Breast (1kg)', total: 389, status: 'Delivered' },
+    ];
+
+    function saveCart() {
+      localStorage.setItem('komban_cart', JSON.stringify(cart));
+      renderCartUI();
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      grid.innerHTML = '';
+
+      const filtered = PRODUCTS.filter(p => {
+        const matchCat = currentCategory === 'all' || p.category === currentCategory;
+        const matchSearch = p.name.toLowerCase().includes(currentSearch.toLowerCase()) || p.tamil.includes(currentSearch);
+        return matchCat && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div class="col-span-full py-12 text-center text-gray-500 font-bold">No products match your search.</div>';
+        return;
+      }
+
+      filtered.forEach(p => {
+        const hasDiscount = p.price < p.original;
+        const card = document.createElement('div');
+        card.className = 'group bg-white rounded-3xl border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden';
+        
+        card.innerHTML = `
+          <div>
+            <div class="relative aspect-4/3 w-full bg-gray-100 overflow-hidden">
+              <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              ${p.badge ? `<span class="absolute top-3 left-3 bg-brand-black text-brand-gold text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-md">${p.badge}</span>` : ''}
+              ${hasDiscount ? `<span class="absolute top-3 right-3 bg-brand-red text-white text-[10px] font-black px-2 py-0.5 rounded shadow">SAVE ₹${p.original - p.price}</span>` : ''}
+            </div>
+
+            <div class="p-5">
+              <span class="text-[10px] font-extrabold uppercase tracking-wider text-brand-red">${p.category.replace('-', ' & ')}</span>
+              <h3 class="font-extrabold text-gray-900 text-base mt-1 group-hover:text-brand-red transition-colors">${p.name}</h3>
+              <p class="text-xs text-gray-500 font-medium">${p.tamil}</p>
+              <p class="text-xs text-gray-600 mt-2 line-clamp-2">${p.desc}</p>
+
+              <div class="mt-4">
+                <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Portion:</label>
+                <select id="variant-${p.id}" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs font-bold text-gray-800 focus:outline-none focus:border-brand-red">
+                  ${p.variants.map(v => `<option value="${v}">${v}</option>`).join('')}
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 border-t border-gray-100 flex items-center justify-between mt-2">
+            <div>
+              <div class="flex items-baseline gap-1.5">
+                <span class="text-xl font-black text-gray-900">₹${p.price}</span>
+                ${hasDiscount ? `<span class="text-xs text-gray-400 line-through">₹${p.original}</span>` : ''}
+              </div>
+              <span class="text-[10px] text-emerald-600 font-bold">✓ Net Weight Cleaned</span>
+            </div>
+
+            <button onclick="addToCart('${p.id}')" class="px-4 py-2.5 bg-brand-red hover:bg-brand-redDark text-white text-xs font-extrabold rounded-xl shadow-md transition-all active:scale-95 flex items-center gap-1.5">
+              <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+              <span>Add</span>
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function filterCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-tab').forEach(b => {
+        b.className = 'cat-tab px-4 py-2 rounded-xl text-xs font-bold bg-gray-100 text-gray-700 hover:bg-gray-200';
+      });
+      const activeBtn = document.getElementById(`tab-${cat}`);
+      if (activeBtn) activeBtn.className = 'cat-tab px-4 py-2 rounded-xl text-xs font-bold bg-brand-black text-white shadow-xs';
+      renderProducts();
+    }
+
+    function handleSearch(val) {
+      currentSearch = val;
+      renderProducts();
+    }
+
+    function addToCart(productId) {
+      const prod = PRODUCTS.find(p => p.id === productId);
+      if (!prod) return;
+      const variantSelect = document.getElementById(`variant-${productId}`);
+      const variant = variantSelect ? variantSelect.value : prod.variants[0];
+
+      const itemKey = `${prod.id}-${variant}`;
+      const existing = cart.find(i => i.key === itemKey);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ key: itemKey, id: prod.id, name: prod.name, price: prod.price, img: prod.img, variant: variant, qty: 1 });
+      }
+
+      saveCart();
+      toggleCart(true);
+    }
+
+    function updateCartQty(key, delta) {
+      const item = cart.find(i => i.key === key);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.key !== key);
+      }
+      saveCart();
+    }
+
+    function setDeliveryMode(mode) {
+      deliveryMode = mode;
+      document.getElementById('btn-delivery-home').className = mode === 'home_delivery' ? 'flex-1 py-2 rounded-lg bg-white text-brand-black shadow-xs flex items-center justify-center gap-1.5' : 'flex-1 py-2 rounded-lg text-gray-600 hover:text-black flex items-center justify-center gap-1.5';
+      document.getElementById('btn-delivery-pickup').className = mode === 'shop_pickup' ? 'flex-1 py-2 rounded-lg bg-white text-brand-black shadow-xs flex items-center justify-center gap-1.5' : 'flex-1 py-2 rounded-lg text-gray-600 hover:text-black flex items-center justify-center gap-1.5';
+      
+      const addrSec = document.getElementById('chkAddressSection');
+      if (addrSec) addrSec.style.display = mode === 'shop_pickup' ? 'none' : 'block';
+
+      renderCartUI();
+    }
+
+    function renderCartUI() {
+      const totalCount = cart.reduce((sum, i) => sum + i.qty, 0);
+      const subtotal = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+      
+      const deliveryFee = (deliveryMode === 'shop_pickup' || subtotal >= 499 || subtotal === 0) ? 0 : 40;
+      const finalTotal = Math.max(0, subtotal - appliedDiscount + deliveryFee);
+
+      document.getElementById('cartCountBadge').textContent = totalCount;
+      document.getElementById('cartSubtotalBadge').textContent = `₹${subtotal}`;
+      document.getElementById('cartSubtotalText').textContent = `₹${subtotal}`;
+      document.getElementById('deliveryFeeText').textContent = deliveryFee === 0 ? 'FREE' : `₹${deliveryFee}`;
+      document.getElementById('cartFinalTotalText').textContent = `₹${finalTotal}`;
+
+      // Free Delivery Bar
+      const freeBar = document.getElementById('freeDeliveryBar');
+      if (deliveryMode === 'home_delivery') {
+        const needMore = Math.max(0, 499 - subtotal);
+        if (needMore > 0) {
+          freeBar.innerHTML = `Add <strong class="text-brand-red">₹${needMore}</strong> more for <strong>FREE Express Delivery</strong> in Coimbatore!`;
+        } else {
+          freeBar.innerHTML = `<span class="text-emerald-700 font-bold">🎉 You unlocked FREE Delivery across Coimbatore!</span>`;
+        }
+      } else {
+        freeBar.innerHTML = `<span class="text-emerald-700 font-bold">🏪 Shop Pickup selected: ₹0 delivery charge at Cross Cut Road counter.</span>`;
+      }
+
+      // Cart Items HTML
+      const list = document.getElementById('cartItemsList');
+      if (cart.length === 0) {
+        list.innerHTML = `<div class="py-12 text-center text-gray-400 text-xs font-semibold">Your cart is empty. Add fresh chicken, mutton, or fish to begin.</div>`;
+      } else {
+        list.innerHTML = cart.map(item => `
+          <div class="p-3 bg-white border border-gray-100 rounded-2xl flex items-center justify-between gap-3 shadow-2xs">
+            <img src="${item.img}" alt="${item.name}" class="w-14 h-14 rounded-xl object-cover">
+            <div class="flex-1">
+              <h4 class="font-bold text-xs text-gray-900 line-clamp-1">${item.name}</h4>
+              <span class="text-[10px] text-gray-500 font-semibold">${item.variant}</span>
+              <div class="text-xs font-black text-gray-900 mt-1">₹${item.price * item.qty}</div>
+            </div>
+            <div class="flex items-center border border-gray-200 rounded-lg bg-gray-50 p-1">
+              <button onclick="updateCartQty('${item.key}', -1)" class="p-1 hover:text-brand-red text-gray-600">-</button>
+              <span class="w-6 text-center text-xs font-bold">${item.qty}</span>
+              <button onclick="updateCartQty('${item.key}', 1)" class="p-1 hover:text-brand-red text-gray-600">+</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function toggleCart(show) {
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('cartDrawerBackdrop');
+      if (show) {
+        backdrop.classList.remove('hidden');
+        drawer.classList.remove('translate-x-full');
+      } else {
+        backdrop.classList.add('hidden');
+        drawer.classList.add('translate-x-full');
+      }
+    }
+
+    function applyCartCoupon() {
+      const code = document.getElementById('couponInput').value.trim().toUpperCase();
+      const status = document.getElementById('couponStatus');
+      const subtotal = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+
+      if (code === 'FRESH50') {
+        if (subtotal < 499) {
+          status.className = 'text-[11px] font-bold text-red-600';
+          status.textContent = 'Min order of ₹499 required for FRESH50.';
+          return;
+        }
+        appliedDiscount = 50;
+        appliedCouponCode = 'FRESH50';
+        document.getElementById('discountRow').classList.remove('hidden');
+        document.getElementById('discountText').textContent = '-₹50';
+        status.className = 'text-[11px] font-bold text-emerald-600';
+        status.textContent = 'Coupon FRESH50 applied successfully (-₹50)!';
+      } else if (code === 'KOMBAN10') {
+        appliedDiscount = Math.round(subtotal * 0.1);
+        appliedCouponCode = 'KOMBAN10';
+        document.getElementById('discountRow').classList.remove('hidden');
+        document.getElementById('discountText').textContent = `-₹${appliedDiscount}`;
+        status.className = 'text-[11px] font-bold text-emerald-600';
+        status.textContent = `Coupon KOMBAN10 applied (-₹${appliedDiscount})!`;
+      } else {
+        status.className = 'text-[11px] font-bold text-red-600';
+        status.textContent = 'Invalid coupon code. Try FRESH50 or KOMBAN10.';
+      }
+      renderCartUI();
+    }
+
+    function copyCoupon(code) {
+      navigator.clipboard.writeText(code);
+      alert(`Coupon code "${code}" copied to clipboard! Paste it during checkout.`);
+    }
+
+    function openCheckoutModal() {
+      if (cart.length === 0) {
+        alert('Your cart is empty. Add products to continue.');
+        return;
+      }
+      toggleCart(false);
+      const subtotal = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+      const deliveryFee = (deliveryMode === 'shop_pickup' || subtotal >= 499) ? 0 : 40;
+      const finalTotal = Math.max(0, subtotal - appliedDiscount + deliveryFee);
+      document.getElementById('chkTotalDisplay').textContent = `₹${finalTotal}`;
+      document.getElementById('checkoutModal').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      const name = document.getElementById('chkName').value;
+      const phone = document.getElementById('chkPhone').value;
+      const subtotal = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+      const deliveryFee = (deliveryMode === 'shop_pickup' || subtotal >= 499) ? 0 : 40;
+      const finalTotal = Math.max(0, subtotal - appliedDiscount + deliveryFee);
+      const orderId = `KC-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+
+      ordersList.unshift({
+        id: orderId,
+        customer: name,
+        phone: phone,
+        items: cart.map(i => `${i.name} (${i.variant}) x${i.qty}`).join(', '),
+        total: finalTotal,
+        status: 'Preparing'
+      });
+
+      document.getElementById('trkOrderId').textContent = orderId;
+      document.getElementById('trkCustomer').textContent = `${name} (${phone})`;
+      document.getElementById('trkTotal').textContent = `₹${finalTotal}`;
+      document.getElementById('trkFulfillment').textContent = deliveryMode === 'home_delivery' ? 'Express Home Delivery' : 'Shop Pickup (Cross Cut Rd)';
+
+      closeCheckoutModal();
+      cart = [];
+      appliedDiscount = 0;
+      saveCart();
+      document.getElementById('trackingModal').classList.remove('hidden');
+      renderAdminData();
+    }
+
+    function closeTrackingModal() {
+      document.getElementById('trackingModal').classList.add('hidden');
+    }
+
+    function dispatchWhatsAppNotification() {
+      const orderId = document.getElementById('trkOrderId').textContent;
+      const cust = document.getElementById('trkCustomer').textContent;
+      const total = document.getElementById('trkTotal').textContent;
+      const ful = document.getElementById('trkFulfillment').textContent;
+
+      const msg = `*KOMBAN CUTS Order Confirmation* 🥩\n\n*Order ID:* ${orderId}\n*Customer:* ${cust}\n*Total:* ${total}\n*Fulfillment:* ${ful}\n\nOur Gandhipuram butchery team is preparing your fresh order now!`;
+      window.open(`https://wa.me/919842212345?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // Admin Dashboard Functions
+    function openAdminModal() {
+      renderAdminData();
+      document.getElementById('adminModal').classList.remove('hidden');
+    }
+    function closeAdminModal() {
+      document.getElementById('adminModal').classList.add('hidden');
+    }
+
+    function renderAdminData() {
+      // Product pricing table
+      const pTable = document.getElementById('adminProductTable');
+      pTable.innerHTML = PRODUCTS.slice(0, 10).map(p => `
+        <div class="p-3 flex items-center justify-between gap-4">
+          <div>
+            <span class="font-bold text-gray-900 block">${p.name}</span>
+            <span class="text-[10px] text-gray-400 capitalize">${p.category}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-500">₹</span>
+            <input type="number" value="${p.price}" onchange="updateProductPriceAdmin('${p.id}', this.value)" class="w-16 bg-gray-50 border border-gray-300 rounded px-2 py-1 text-xs font-bold text-brand-red">
+          </div>
+        </div>
+      `).join('');
+
+      // Orders table
+      const oTable = document.getElementById('adminOrdersTable');
+      oTable.innerHTML = ordersList.map(o => `
+        <div class="p-3 flex items-center justify-between gap-4">
+          <div>
+            <span class="font-mono font-bold text-gray-900">${o.id}</span>
+            <span class="text-[11px] text-gray-600 block">${o.customer} • ₹${o.total}</span>
+            <span class="text-[10px] text-gray-400">${o.items}</span>
+          </div>
+          <select onchange="updateOrderStatusAdmin('${o.id}', this.value)" class="bg-gray-100 border border-gray-200 rounded px-2 py-1 text-[11px] font-bold">
+            <option ${o.status === 'Preparing' ? 'selected' : ''}>Preparing</option>
+            <option ${o.status === 'Out for Delivery' ? 'selected' : ''}>Out for Delivery</option>
+            <option ${o.status === 'Delivered' ? 'selected' : ''}>Delivered</option>
+          </select>
+        </div>
+      `).join('');
+    }
+
+    function updateProductPriceAdmin(id, newPrice) {
+      const prod = PRODUCTS.find(p => p.id === id);
+      if (prod) {
+        prod.price = Number(newPrice);
+        renderProducts();
+        renderCartUI();
+      }
+    }
+
+    function updateOrderStatusAdmin(id, newStatus) {
+      const order = ordersList.find(o => o.id === id);
+      if (order) order.status = newStatus;
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
+      renderCartUI();
+      if (window.lucide) lucide.createIcons();
+    });
+  </script>
+
 </body>
 </html>

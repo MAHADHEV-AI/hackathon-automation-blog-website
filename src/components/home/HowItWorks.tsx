@@ -79,3 +79,4 @@ export const HowItWorks: React.FC = () => {
     </section>
   );
 };
+

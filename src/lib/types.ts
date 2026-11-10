@@ -159,3 +159,4 @@ export interface Review {
   verifiedPurchase: boolean;
   createdAt: string;
 }
+

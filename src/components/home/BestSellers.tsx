@@ -47,3 +47,4 @@ export const BestSellers: React.FC = () => {
     </section>
   );
 };
+

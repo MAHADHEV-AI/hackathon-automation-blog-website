@@ -105,3 +105,4 @@ export const SpecialOffers: React.FC = () => {
     </section>
   );
 };
+

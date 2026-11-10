@@ -965,3 +965,4 @@ export const FAQS_DATA = [
     answer: 'Once your order is placed, you receive a unique Order ID (e.g. KC-2026-0001). You can track real-time status (Confirmed -> Preparing -> Out for Delivery -> Delivered) directly on our website or click the WhatsApp button for instant live support.',
   },
 ];
+

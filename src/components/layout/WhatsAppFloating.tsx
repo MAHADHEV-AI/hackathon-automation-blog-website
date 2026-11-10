@@ -128,3 +128,4 @@ export const WhatsAppFloating: React.FC = () => {
     </div>
   );
 };
+
